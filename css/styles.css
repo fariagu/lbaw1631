@@ -2,6 +2,10 @@ body {
     overflow-x: hidden;
  }
 
+#tmp {
+    margin-bottom: 0px;
+}
+
 /* Toggle Styles */
 
 #wrapper {

@@ -1,6 +1,6 @@
 <?php if(true) { ?>
 	
-	 <nav class="navbar navbar-inverse">
+	 <nav class="navbar navbar-inverse" id="tmp">
 	  <div class="container-fluid">
 		<ul class="nav navbar-nav">
 		  <li class="active"><a href="#menu-toggle" id="menu-toggle">Topics</a></li>
