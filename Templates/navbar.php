@@ -15,7 +15,7 @@
 		<?php include('navbar-left.php'); ?>
 		
 		<ul class="nav navbar-nav">
-		  <li><a href="#">Home</a></li>
+		  <li><a href="index.php">Home</a></li>
 		  <li><a href="#">Post a question</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
