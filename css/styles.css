@@ -10,6 +10,20 @@ body {
     margin-left: 15px;
 }
 
+#topic-title {
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+#register-form {
+	margin-top: 20px;
+    text-align: center;
+}
+
+#register-form input {
+	width: auto;
+}
+
 /* Toggle Styles */
 
 #wrapper {
