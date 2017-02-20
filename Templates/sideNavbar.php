@@ -3,31 +3,27 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        Topics
-                    </a>
+               
+                <li>
+                    <a href="#">Topic 1</a>
                 </li>
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="#">Topic 2</a>
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
+                    <a href="#">Topic 3</a>
                 </li>
                 <li>
-                    <a href="#">Overview</a>
+                    <a href="#">Topic 4</a>
                 </li>
                 <li>
-                    <a href="#">Events</a>
+                    <a href="#">Topic 5</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="#">Topic 6</a>
                 </li>
                 <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                    <a href="#">Topic n</a>
                 </li>
             </ul>
         </div>
