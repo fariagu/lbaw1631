@@ -1,8 +1,8 @@
 <?php if(1) {  ?>
 	
-		<?php include('navbar-left.php'); ?>
+		<?php include('navbar-left-simple.php'); ?>
 		
-		<ul class="nav navbar-nav navbar-right">
+				<ul class="nav navbar-nav navbar-right">
 			<li><a href="/register"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
 			<li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
 		</ul>
@@ -12,7 +12,7 @@
 	
 	<?php }else { ?>
 	
-		<?php include('navbar-left.php'); ?>
+		<?php include('navbar-left-simple.php'); ?>
 		
 		<ul class="nav navbar-nav">
 		  <li><a href="">Home</a></li>
@@ -25,5 +25,4 @@
 		
 		<?php include('navbar-search.php'); ?>
 		<?php include('navbar-right.php'); ?>
-		
 <?php } ?>

@@ -24,7 +24,25 @@ body {
 	width: auto;
 }
 
-/* Toggle Styles */
+#viewAll2 {
+	background-color: black;
+	color: white;
+}
+
+#viewAll2:hover {
+	background-color: #222;
+	color: white;
+}
+
+.list-group a {
+	background-color: #222;
+	color: white;
+}
+
+.list-group a:hover {
+	background-color: black;
+	color: white;
+}
 
 #wrapper {
     padding-left: 0;

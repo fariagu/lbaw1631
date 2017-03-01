@@ -4,25 +4,28 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li>
-                    <a href="category.php">Topic 1</a>
+                    <a href="#">Topic 1</a>
                 </li>
                 <li>
-                    <a href="category.php">Topic 2</a>
+                    <a href="#">Topic 2</a>
                 </li>
                 <li>
-                    <a href="category.php">Topic 3</a>
+                    <a href="#">Topic 3</a>
                 </li>
                 <li>
-                    <a href="category.php">Topic 4</a>
+                    <a href="#">Topic 4</a>
                 </li>
                 <li>
-                    <a href="category.php">Topic 5</a>
+                    <a href="#">Topic 5</a>
                 </li>
                 <li>
-                    <a href="category.php">Topic 6</a>
+                    <a href="#">Topic 6</a>
                 </li>
                 <li>
-                    <a href="category.php">Topic n</a>
+                    <a href="#">Topic n</a>
+                </li>
+				<li>
+                    <a href="/categories" id="viewAll">View all</a>
                 </li>
             </ul>
         </div>
@@ -35,9 +38,16 @@
                     <div class="col-lg-12">
 						<h2 id="topic-title">Topic 1</h2>
 						<div class="list-group">
-							<a href="question.php" class="list-group-item">Question 1</a>
-							<a href="question.php" class="list-group-item">Question 2</a>
-							<a href="question.php" class="list-group-item">Question 3</a>
+							<a href="/question" class="list-group-item">Question 1</a>
+							<a href="/question" class="list-group-item">Question 2</a>
+							<a href="/question" class="list-group-item">Question 3</a>
+						</div>
+                    </div>
+                </div>
+				<div class="row">
+                    <div class="col-lg-12">
+						<div class="list-group">
+							<a href="/category" class="list-group-item" id="viewAll2">View all</a>
 						</div>
                     </div>
                 </div>
