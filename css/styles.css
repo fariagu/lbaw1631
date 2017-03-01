@@ -16,8 +16,13 @@ body {
 }
 
 #register-form {
+	margin: auto;
 	margin-top: 20px;
-    text-align: center;
+}
+
+
+#register-form label{
+	margin: auto;
 }
 
 #register-form input {
