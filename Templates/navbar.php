@@ -1,4 +1,4 @@
-<?php if(1) {  ?>
+<?php if(0) {  ?>
 	
 		<?php include('navbar-left.php'); ?>
 		
