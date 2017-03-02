@@ -25,7 +25,7 @@
                     <a href="#">Topic n</a>
                 </li>
 				<li>
-                    <a href="/categories" id="viewAll">View all</a>
+                    <a href="/LBAW/categories" id="viewAll">View all</a>
                 </li>
             </ul>
         </div>
@@ -38,16 +38,16 @@
                     <div class="col-lg-12">
 						<h2 id="topic-title">Topic 1</h2>
 						<div class="list-group">
-							<a href="/question" class="list-group-item">Question 1</a>
-							<a href="/question" class="list-group-item">Question 2</a>
-							<a href="/question" class="list-group-item">Question 3</a>
+							<a href="question" class="list-group-item">Question 1</a>
+							<a href="question" class="list-group-item">Question 2</a>
+							<a href="question" class="list-group-item">Question 3</a>
 						</div>
                     </div>
                 </div>
 				<div class="row">
                     <div class="col-lg-12">
 						<div class="list-group">
-							<a href="/category" class="list-group-item" id="viewAll2">View all</a>
+							<a href="/LBAW/category" class="list-group-item" id="viewAll2">View all</a>
 						</div>
                     </div>
                 </div>

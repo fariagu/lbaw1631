@@ -15,18 +15,10 @@ body {
 	margin-bottom: 20px;
 }
 
-#register-form {
-	margin: auto;
-	margin-top: 20px;
-}
-
-
-#register-form label{
-	margin: auto;
-}
-
-#register-form input {
-	width: auto;
+.enter-info {
+    margin-top: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 #viewAll2 {
