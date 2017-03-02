@@ -2,7 +2,7 @@
 	  <div class="form-group">
 			<label class="control-label col-sm-2" for="question">Question:</label>
 			<div class="col-sm-10">
-				<input type="textarea" class="form-control" id="question" placeholder="Enter username">
+				<input type="textarea" class="form-control" id="question" placeholder="Your Question here">
 			</div>
 	  </div>
 	  <div class="form-group">
