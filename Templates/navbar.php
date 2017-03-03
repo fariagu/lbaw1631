@@ -1,4 +1,4 @@
-<?php $var = 0; ?>
+<?php $var = 2; ?>
 
 <?php if($var == 0) {  ?>
 	

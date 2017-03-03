@@ -258,3 +258,8 @@ body {
 #question-body {
 	display:block;
 }
+
+#reportTitle {
+	background-color: #222;
+	color:white;
+}
