@@ -6,6 +6,11 @@ body {
     margin-bottom: 0px;
 }
 
+#reportedUser {
+	background-color: #222;
+	color: white;
+}
+
 #logo {
     margin-left: 15px;
 }
