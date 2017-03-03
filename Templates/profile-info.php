@@ -1,6 +1,3 @@
-<?php
-
-?>
 <div id="for-margin-purposes">
     <div id="user-space" class="container-fluid">
         <img src="../resources/profile_picture.jpg" height="100" width="80">

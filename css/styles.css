@@ -6,6 +6,27 @@ body {
     margin-bottom: 0px;
 }
 
+/*For demonstration purposes (later to be done dynamically) */
+#answerComment {
+	margin-left:50px;
+}
+
+/*For demonstration purposes (later to be done dynamically) */
+#answerComment2 {
+	margin-left:100px;
+}
+
+/*For demonstration purposes (later to be done dynamically) */
+#correctAnswer {
+	background-color: #222;
+	color: white;
+}
+
+#correctAnswer a{
+	background-color: #222;
+	color: white;
+}
+
 #reportedUser {
 	background-color: #222;
 	color: white;
@@ -206,4 +227,34 @@ body {
 
 #for-margin-purposes {
     padding: 3%;
+}
+
+#question-space {
+    padding: 5%;
+    margin: 0px;
+    background-color: #222;
+    border-radius: 5px;
+}
+
+#question-space > * {
+    padding: 0;
+    margin: 5px;
+    display: inline-block;
+    color: white;
+}
+
+#question-space > *:last-child {
+    margin-top: 5%;
+}
+
+#question-space div {
+    float: right;   
+}
+
+#question-space div * {
+    margin: 10px;
+}
+
+#question-body {
+	display:block;
 }
