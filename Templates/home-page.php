@@ -7,48 +7,66 @@
 						<div class="list-group">
 							<a href="../question" class="list-group-item">
                                 <p>Question 1</p>
-                                <p>354 votes</p>
-                                <p>12 answers</p>
+                                <div>
+                                    <p>354 votes</p>
+                                    <p>12 answers</p>
+                                </div>
                             </a>
                             <a href="../question" class="list-group-item">
                                 <p>Question 2</p>
-                                <p>354 votes</p>
-                                <p>12 answers</p>
+                                <div>
+                                    <p>354 votes</p>
+                                    <p>12 answers</p>
+                                </div>
                             </a>
                             <a href="../question" class="list-group-item">
                                 <p>Question 3</p>
-                                <p>354 votes</p>
-                                <p>12 answers</p>
+                                <div>
+                                    <p>354 votes</p>
+                                    <p>12 answers</p>
+                                </div>
                             </a>
                             <a href="../question" class="list-group-item">
                                 <p>Question 4</p>
-                                <p>354 votes</p>
-                                <p>12 answers</p>
+                                <div>
+                                    <p>354 votes</p>
+                                    <p>12 answers</p>
+                                </div>
                             </a>
                             <a href="../question" class="list-group-item">
                                 <p>Question 5</p>
-                                <p>354 votes</p>
-                                <p>12 answers</p>
+                                <div>
+                                    <p>354 votes</p>
+                                    <p>12 answers</p>
+                                </div>
                             </a>
                             <a href="../question" class="list-group-item">
                                 <p>Question 6</p>
-                                <p>354 votes</p>
-                                <p>12 answers</p>
+                                <div>
+                                    <p>354 votes</p>
+                                    <p>12 answers</p>
+                                </div>
                             </a>
                             <a href="../question" class="list-group-item">
                                 <p>Question 7</p>
-                                <p>354 votes</p>
-                                <p>12 answers</p>
+                                <div>
+                                    <p>354 votes</p>
+                                    <p>12 answers</p>
+                                </div>
                             </a>
                             <a href="../question" class="list-group-item">
                                 <p>Question 8</p>
-                                <p>354 votes</p>
-                                <p>12 answers</p>
+                                <div>
+                                    <p>354 votes</p>
+                                    <p>12 answers</p>
+                                </div>
                             </a>
                             <a href="../question" class="list-group-item">
                                 <p>Question 9</p>
-                                <p>354 votes</p>
-                                <p>12 answers</p>
+                                <div>
+                                    <p>354 votes</p>
+                                    <p>12 answers</p>
+                                </div>
                             </a>
 						</div>
                     </div>

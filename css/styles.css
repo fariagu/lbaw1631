@@ -50,8 +50,8 @@ body {
     margin: 5px;
 }
 
-.list-group-item *:first-child {
-    margin-right: 75%;
+.list-group-item div {
+    float: right;
 }
 
 #wrapper {
@@ -171,4 +171,34 @@ body {
         position: relative;
         margin-right: 0;
     }
+}
+
+#user-space {
+    padding: 5%;
+    margin: 0px;
+    background-color: #222;
+    border-radius: 5px;
+}
+
+#user-space > * {
+    padding: 0;
+    margin: 5px;
+    display: inline-block;
+    color: white;
+}
+
+#user-space > *:last-child {
+    margin-top: 5%;
+}
+
+#user-space div {
+    float: right;   
+}
+
+#user-space div * {
+    margin: 10px;
+}
+
+#for-margin-purposes {
+    padding: 3%;
 }
