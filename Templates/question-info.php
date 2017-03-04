@@ -4,6 +4,7 @@
         <div>
             <p>327 upvotes</p>
             <a href="../profile" class="list-group-item">User</a>
+			<a href="../category" class="list-group-item">Category</a>
         </div>
 		<p id="question-body">Question body</p>
     </div>    
