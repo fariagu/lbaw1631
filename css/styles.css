@@ -302,8 +302,11 @@ body {
 }
 
 #picButton *:last-child {
-    margin: 0;
-    padding: 0;
-    width: 100px;
-    border: 0 none;
+	height: 35px;
+}
+
+#forgotPassword {
+	background-color: white;
+	color: black;
+	margin-left: 80px;
 }

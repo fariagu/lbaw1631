@@ -12,6 +12,9 @@
                     <input type="password" class="form-control" id="pwd" placeholder="Enter password">
                 </div>
           </div>
+		  <div class="list-group">
+				<a href="#" class="list-group-item" id="forgotPassword">Forgot your password?</a>
+		  </div>
           <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default">Login</button>
