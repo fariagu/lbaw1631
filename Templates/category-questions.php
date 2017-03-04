@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 id="topic-title">Topic 1</h2>
+				<h2 id="topic-title">Category 1</h2>
 				<div class="list-group">
 					<a href="../question" class="list-group-item">Question 1</a>
 					<a href="../question" class="list-group-item">Question 2</a>
