@@ -1,4 +1,5 @@
 <div class="enter-info">
+    <h1>Create New Account</h1>
     <form class="form-horizontal" id="register-form">
       <div class="form-group">
             <label class="control-label col-sm-2" for="username">Username:</label>
@@ -29,7 +30,11 @@
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
             </div>
-      </div>
+      </div><!--
+      <div class="form-group" id="picButton">
+            <label class="control-label col-sm-2" for="profilePic">Profile Picture:</label>
+            <input type="image" src="../resources/FFFFFF-0.png" class="btn btn-default" width="100" value="Choose file">
+      </div>-->
       <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-default">Register</button>

@@ -296,3 +296,14 @@ body {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+#picButton * {
+    display: inline-block;
+}
+
+#picButton *:last-child {
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    border: 0 none;
+}
