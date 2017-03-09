@@ -4,25 +4,25 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li>
-                    <a href="../category">Category 1</a>
+                    <a href="../category">java</a>
                 </li>
                 <li>
-                    <a href="../category">Category 2</a>
+                    <a href="../category">javascript</a>
                 </li>
                 <li>
-                    <a href="../category">Category 3</a>
+                    <a href="../category">c#</a>
                 </li>
                 <li>
-                    <a href="../category">Category 4</a>
+                    <a href="../category">php</a>
                 </li>
                 <li>
-                    <a href="../category">Category 5</a>
+                    <a href="../category">android</a>
                 </li>
                 <li>
-                    <a href="../category">Category 6</a>
+                    <a href="../category">jquery</a>
                 </li>
                 <li>
-                    <a href="../category">Category n</a>
+                    <a href="../category">python</a>
                 </li>
 				<li>
                     <a href="../categories" id="viewAll">View all</a>

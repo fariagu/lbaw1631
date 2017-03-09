@@ -14,19 +14,19 @@
 		<div class="form-group">
 			<label for="sel1">Category:</label>
 			<select class="form-control" id="sel1">
-				<option>Category 1</option>
-				<option>Category 2</option>
-				<option>Category 3</option>
-				<option>Category 4</option>
-				<option>Category 5</option>
-				<option>Category 6</option>
-				<option>Category 7</option>
-				<option>Category 8</option>
-				<option>Category 9</option>
-				<option>Category 10</option>
-				<option>Category 11</option>
-				<option>Category 12</option>
-				<option>Category 13</option>
+				<option>java</option>
+				<option>javascript</option>
+				<option>c#</option>
+				<option>php</option>
+				<option>android</option>
+				<option>jquery</option>
+				<option>python</option>
+				<option>html</option>
+				<option>c++</option>
+				<option>ios</option>
+				<option>css</option>
+				<option>mysql</option>
+				<option>sql</option>
 			</select>
 		</div>
         <button type="submit" class="btn btn-default">Post</button>

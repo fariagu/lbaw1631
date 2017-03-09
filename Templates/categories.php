@@ -4,19 +4,19 @@
 			<div class="col-lg-12">
 				<h2 id="topic-title">All categories</h2>
 				<div class="list-group">
-					<a href="../category" class="list-group-item">Category 1</a>
-					<a href="../category" class="list-group-item">Category 2</a>
-					<a href="../category" class="list-group-item">Category 3</a>
-					<a href="../category" class="list-group-item">Category 4</a>
-					<a href="../category" class="list-group-item">Category 5</a>
-					<a href="../category" class="list-group-item">Category 6</a>
-					<a href="../category" class="list-group-item">Category 7</a>
-					<a href="../category" class="list-group-item">Category 8</a>
-					<a href="../category" class="list-group-item">Category 9</a>
-					<a href="../category" class="list-group-item">Category 10</a>
-					<a href="../category" class="list-group-item">Category 11</a>
-					<a href="../category" class="list-group-item">Category 12</a>
-					<a href="../category" class="list-group-item">Category 13</a>
+					<a href="../category" class="list-group-item">java</a>
+					<a href="../category" class="list-group-item">javascript</a>
+					<a href="../category" class="list-group-item">c#</a>
+					<a href="../category" class="list-group-item">php</a>
+					<a href="../category" class="list-group-item">android</a>
+					<a href="../category" class="list-group-item">jquery</a>
+					<a href="../category" class="list-group-item">python</a>
+					<a href="../category" class="list-group-item">html</a>
+					<a href="../category" class="list-group-item">c++</a>
+					<a href="../category" class="list-group-item">ios</a>
+					<a href="../category" class="list-group-item">css</a>
+					<a href="../category" class="list-group-item">mysql</a>
+					<a href="../category" class="list-group-item">sql</a>
 				</div>
 			</div>
 		</div>
