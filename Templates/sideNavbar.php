@@ -4,25 +4,25 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li>
-                    <a href="../category">java</a>
+                    <a href="../category">Programming</a>
                 </li>
                 <li>
-                    <a href="../category">javascript</a>
+                    <a href="../category">Music</a>
                 </li>
                 <li>
-                    <a href="../category">c#</a>
+                    <a href="../category">Film</a>
                 </li>
                 <li>
-                    <a href="../category">php</a>
+                    <a href="../category">Sports</a>
                 </li>
                 <li>
-                    <a href="../category">android</a>
+                    <a href="../category">Math</a>
                 </li>
                 <li>
-                    <a href="../category">jquery</a>
+                    <a href="../category">Politics</a>
                 </li>
                 <li>
-                    <a href="../category">python</a>
+                    <a href="../category">Science</a>
                 </li>
 				<li>
                     <a href="../categories" id="viewAll">View all</a>
