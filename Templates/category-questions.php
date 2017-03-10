@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 id="topic-title">Java</h2>
+				<h2 id="topic-title">Programming</h2>
 				<div class="list-group">
 					<a href="../question" class="list-group-item">How to initialize 2D list of custom class objects - Java</a>
 					<a href="../question" class="list-group-item">Qr scanning app is crashing when device orientation is changed</a>
