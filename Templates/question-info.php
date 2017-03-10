@@ -3,8 +3,8 @@
         <h1>How to initialize an array in Java?</h1>
         <div>
             <p>327 upvotes</p>
-            <a href="../profile" class="list-group-item">User</a>
-			<a href="../category" class="list-group-item">Category</a>
+            <a href="../profile" class="list-group-item">joaozinho</a>
+			<a href="../category" class="list-group-item">Programming</a>
         </div>
 		<p id="question-body">I am initializing an array data like this :
 
