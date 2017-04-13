@@ -3,29 +3,13 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li>
-                    <a href="../category">Programming</a>
-                </li>
-                <li>
-                    <a href="../category">Music</a>
-                </li>
-                <li>
-                    <a href="../category">Film</a>
-                </li>
-                <li>
-                    <a href="../category">Sports</a>
-                </li>
-                <li>
-                    <a href="../category">Math</a>
-                </li>
-                <li>
-                    <a href="../category">Politics</a>
-                </li>
-                <li>
-                    <a href="../category">Science</a>
-                </li>
+				{foreach $categories as $category}
+					<li>
+						<a href="{$BASE_URL}pages/categories/category.php?id={$category.id}">{$category.name}</a>
+					</li>
+				{/foreach}
 				<li>
-                    <a href="../categories" id="viewAll">View all</a>
+                    <a href="{$BASE_URL}pages/categories/categories.php" id="viewAll">View all</a>
                 </li>
             </ul>
         </div>
