@@ -1,8 +1,8 @@
 <?php
   include_once('../../config/init.php');
-  include_once($BASE_DIR .'database/categories.php');
+  include_once($BASE_DIR .'database/category.php');
   
-  $top_categories = topCategories();
+  $top_categories = getTopCategories();
   
   $smarty->assign('top_categories', $top_categories);
   

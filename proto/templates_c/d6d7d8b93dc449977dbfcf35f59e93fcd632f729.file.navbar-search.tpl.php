@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-13 17:51:18
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-14 18:52:05
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\common\navbar-search.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:73831550558ef9e765a9ba3-78483859%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd6d7d8b93dc449977dbfcf35f59e93fcd632f729' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\common\\navbar-search.tpl',
-      1 => 1492098217,
+      1 => 1492188678,
       2 => 'file',
     ),
   ),
@@ -15,16 +15,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_58ef9e765abf47_49389146',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_58ef9e765abf47_49389146',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58ef9e765abf47_49389146')) {function content_58ef9e765abf47_49389146($_smarty_tpl) {?><form class="navbar-form navbar-right" data-toggle="collapse" data-target=".navbar-collapse.in" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/post/search-question.php">
+pages/posts/search-question.php">
 	<div class="form-group">
 		<input type="text" class="form-control" placeholder="Search" >
 	</div>
