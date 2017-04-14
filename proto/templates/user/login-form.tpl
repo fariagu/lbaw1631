@@ -1,5 +1,5 @@
 <div class="enter-info">
-    <form class="form-horizontal" id="login-form">
+    <form class="form-horizontal" id="login-form" action="{$BASE_URL}actions/user/login.php" method="post" enctype="multipart/form-data">
           <div class="form-group">
                 <label class="control-label col-sm-2" for="username">Username:</label>
                 <div class="col-sm-10">
