@@ -3,7 +3,7 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-				{foreach $categories as $category}
+				{foreach $top_categories as $category}
 					<li>
 						<a href="{$BASE_URL}pages/categories/category.php?id={$category.id}">{$category.name}</a>
 					</li>

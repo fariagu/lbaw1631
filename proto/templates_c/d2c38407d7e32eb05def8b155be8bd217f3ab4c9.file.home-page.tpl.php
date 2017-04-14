@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-13 18:28:13
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-14 14:35:19
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\home\home-page.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:118547159258efa30672f419-81385442%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd2c38407d7e32eb05def8b155be8bd217f3ab4c9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\home\\home-page.tpl',
-      1 => 1492100892,
+      1 => 1492173305,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_58efa306730948_52327314',
   'variables' => 
   array (
-    'questions' => 0,
+    'top_questions' => 0,
     'BASE_URL' => 0,
     'question' => 0,
   ),
@@ -33,7 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<h2 id="topic-title">Top questions</h2>
 						<div class="list-group">
 							<?php  $_smarty_tpl->tpl_vars['question'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['question']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['questions']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['top_questions']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['question']->key => $_smarty_tpl->tpl_vars['question']->value) {
 $_smarty_tpl->tpl_vars['question']->_loop = true;
 ?>

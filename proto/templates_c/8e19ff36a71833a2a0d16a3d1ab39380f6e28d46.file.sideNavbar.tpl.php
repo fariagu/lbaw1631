@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-13 18:35:16
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-14 14:35:46
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\common\sideNavbar.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3608419758ef9e765e8716-57066267%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8e19ff36a71833a2a0d16a3d1ab39380f6e28d46' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\common\\sideNavbar.tpl',
-      1 => 1492101304,
+      1 => 1492173338,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_58ef9e765e97c7_72791206',
   'variables' => 
   array (
-    'categories' => 0,
+    'top_categories' => 0,
     'BASE_URL' => 0,
     'category' => 0,
   ),
@@ -31,7 +31,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
 				<?php  $_smarty_tpl->tpl_vars['category'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['category']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['categories']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['top_categories']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['category']->key => $_smarty_tpl->tpl_vars['category']->value) {
 $_smarty_tpl->tpl_vars['category']->_loop = true;
 ?>

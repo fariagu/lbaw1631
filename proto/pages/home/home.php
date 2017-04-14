@@ -3,11 +3,11 @@
   include_once($BASE_DIR .'database/category.php');
   include_once($BASE_DIR .'database/question.php');
   
-  $questions = getTopQuestions();  
-  $categories = getTopCategories();  
+  $top_questions = getTopQuestions();  
+  $top_categories = getTopCategories();  
   
-  $smarty->assign('questions', $questions);
-  $smarty->assign('categories', $categories);
+  $smarty->assign('top_questions', $top_questions);
+  $smarty->assign('top_categories', $top_categories);
   
   $smarty->display('home/home.tpl');
 

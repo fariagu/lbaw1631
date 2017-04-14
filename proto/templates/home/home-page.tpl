@@ -5,7 +5,7 @@
                     <div class="col-lg-12">
 						<h2 id="topic-title">Top questions</h2>
 						<div class="list-group">
-							{foreach $questions as $question}
+							{foreach $top_questions as $question}
 								<a href="{$BASE_URL}pages/posts/question.php?id={$question.id_question}" class="list-group-item">
 									<p>{$question.title}</p>
 									<div>
