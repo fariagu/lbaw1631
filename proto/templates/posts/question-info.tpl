@@ -1,26 +1,12 @@
 <div id="for-margin-purposes">
     <div id="question-space" class="container-fluid">
-        <h1>How to initialize an array in Java?</h1>
+        <h1>{$question.title}</h1>
         <div>
-            <p>327 upvotes</p>
-            <a href="../profile" class="list-group-item">joaozinho</a>
-			<a href="../category" class="list-group-item">Programming</a>
+            <p>{$question.rating} votes</p>
+            <a href="{$BASE_URL}pages/user/profile.php?id={$question.id_author}" class="list-group-item">{$question.author_name}</a>
+			<a href="{$BASE_URL}pages/categories/category.php?id={$question.id_category}" class="list-group-item">{$question.category_name}</a>
         </div>
-		<p id="question-body">I am initializing an array data like this :
-
-public class Array {<br>
-<br>
-    int data[] = new int[10]; <br>
-    /** Creates a new instance of Array */<br>
-    public Array() {<br>
-        data[10] = {10,20,30,40,50,60,71,80,90,91};<br>
-    }<br>
-<br>
-}<br>
-NetBeans points an error at the line<br>
-<br>
-data[10] = {10,20,30,40,50,60,71,80,90,91};<br>
-How can I solve the problem?</p>
+		<p id="question-body">{$question.description}</p>
     </div>    
 </div>
 
@@ -36,10 +22,6 @@ How can I solve the problem?</p>
 				<div class="panel panel-default" id="answerComment">
 					<a href="../profile" class="list-group-item">airhost</a>
 					<div class="panel-body">I agree!</div>
-				</div>
-				<div class="panel panel-default">
-					<a href="../profile" class="list-group-item">merrylegs</a>
-					<div class="panel-body">Try data = new int[] {10,20,30,40,50,60,71,80,90,91 };</div>
 				</div>
 				<div class="panel panel-default" id="answerComment">
 					<a href="../profile" class="list-group-item">gritlumpish</a>
