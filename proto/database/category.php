@@ -15,7 +15,7 @@
 	function getAllCategories() {
 		global $conn;
 		$stmt = $conn->prepare("SELECT id, name
-								FROM category");
+								FROM category;");
 		$stmt->execute();
 		return $stmt->fetchAll();
 	}
@@ -24,7 +24,7 @@
 		global $conn;
 		$stmt = $conn->prepare("SELECT name
 								FROM category
-								WHERE id = ?");
+								WHERE id = ?;");
 		$stmt->execute(array($id));
 		return $stmt->fetch();
 	}

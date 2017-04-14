@@ -21,7 +21,7 @@
 								INNER JOIN post ON question.id = post.id
 								WHERE id_category = ?
 								GROUP BY id_question, title, rating
-								ORDER BY counter DESC");
+								ORDER BY counter DESC;");
 		$stmt->execute(array($id));
 		return $stmt->fetchAll();
 	}
@@ -33,7 +33,7 @@
 								INNER JOIN category ON category.id = question.id_category
 								INNER JOIN post ON question.id = post.id
 								INNER JOIN member ON post.id_author = member.id
-								WHERE question.id = ?");
+								WHERE question.id = ?;");
 		$stmt->execute(array($id));
 		return $stmt->fetch();
 	}
