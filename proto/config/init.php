@@ -4,7 +4,8 @@
 
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-  $BASE_DIR = 'C:/xampp/htdocs/lbaw1631/proto/'; //FIXME
+  $BASE_DIR = '/mnt/d/CODE/www/lbaw1631/proto/'; //gustavo
+//  $BASE_DIR = 'C:/xampp/htdocs/lbaw1631/proto/'; //daniel
   $BASE_URL = '/lbaw1631/proto/'; //FIXME
 
   $conn = new PDO('pgsql:host=dbm.fe.up.pt;dbname=lbaw1631', 'lbaw1631', 'iy55xp91'); //FIXME
