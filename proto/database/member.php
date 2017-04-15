@@ -119,4 +119,11 @@
 		return $stmt->fetchAll();
 	}
 
+	function getAllUsers() {
+		global $conn;
+		$stmt = $conn->prepare("SELECT id, username 
+								FROM member;");
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
 ?>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-15 01:37:33
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-15 17:30:08
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\user\register-form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:29886032358f0c9a7c44259-22514250%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa7542bd604014a76404e47aeaf743b329cdf7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\user\\register-form.tpl',
-      1 => 1492212395,
+      1 => 1492270143,
       2 => 'file',
     ),
   ),
