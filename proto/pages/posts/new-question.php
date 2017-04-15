@@ -9,8 +9,10 @@
   }
   
   $top_categories = getTopCategories();
+  $categories = getAllCategories();
   
   $smarty->assign('top_categories', $top_categories);
+  $smarty->assign('categories', $categories);
   
   $smarty->display('posts/new-question.tpl');
 ?>

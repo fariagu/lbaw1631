@@ -11,6 +11,9 @@
 					<div class="panel panel-default">
 						<div class="panel-body">{$report.description}</div>
 					</div>
+					<div class="panel panel-default">
+						<a href="{$BASE_URL}pages/admin/solve.php?id_member={$reported_member.id}&id_post={$reported_post}" class="list-group-item">Solve</a>
+					</div>
 				</div>
 			</div>
 		</div>

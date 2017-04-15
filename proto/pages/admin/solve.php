@@ -16,19 +16,14 @@
 	  exit;
   }
   
-  $member = $_GET['id_member'];
-  $post = $_GET['id_post'];
+  $reported_member = $_GET['id_member'];
+  $reported_post = $_GET['id_post'];
   
   $top_categories = getTopCategories();
-  $report = getReportInfo($member, $post);
-  $reported_member['id'] = $member;
-  $reported_member['username'] = getMemberUsername($member);
-  $reported_post = $post;
-  
+
   $smarty->assign('top_categories', $top_categories);
-  $smarty->assign('report', $report);
   $smarty->assign('reported_member', $reported_member);
   $smarty->assign('reported_post', $reported_post);
   
-  $smarty->display('admin/report.tpl');
+  $smarty->display('admin/solve.tpl');
 ?>
