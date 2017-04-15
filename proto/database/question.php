@@ -37,4 +37,22 @@
 		$stmt->execute(array($id));
 		return $stmt->fetch();
 	}
+
+    function createQuestion($title, $description, $category, $id) {
+        global $conn1, $conn2, $conn3;
+        
+        $post_stmt = $conn1->prepare("INSERT INTO post (description,id_author) VALUES (?,?)");
+        $post_stmt->execute(array($description, $id));
+        
+        $post_id = mysql_insert_id();
+        
+        $category_stmt = $conn2->prepare("SELECT id
+                                         FROM category
+                                         WHERE description = ?;");
+        $category_stmt->execute(array($category));
+        $category_id = $category_stmt->fetch();
+        
+        $question_stmt = $conn3->prepare("INSERT INTO question (id, title, id_category) VALUES (?,?,?)");
+        $question_stmt->execute(array($post_id, $title, $category_id));
+    }
 ?>
