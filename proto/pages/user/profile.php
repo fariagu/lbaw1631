@@ -9,8 +9,8 @@
 	  $profile = getProfileInfo($id);
 	  $own = false;
   }
-  else if($USER_ID) {
-	  $profile = getProfileInfo($USER_ID);
+  else if($_SESSION['id']) {
+	  $profile = getProfileInfo($_SESSION['id']);
 	  $own = true;
   }
   else {
@@ -18,6 +18,16 @@
     header("Location: $BASE_URL");
     exit;
   }
+  
+  $user = rtrim($profile['username'], " ");
+  
+  	unset($photo);
+	if (file_exists($BASE_DIR.'images/users/'.$user.'.png'))
+	  $photo = 'images/users/'.$user.'.png';
+	if (file_exists($BASE_DIR.'images/users/'.$user.'.jpg'))
+	  $photo = 'images/users/'.$user.'.jpg';
+	if (!$photo) $photo = 'images/assets/default.png';
+	$profile['photo'] = $photo;
   
   $top_categories = getTopCategories();
   

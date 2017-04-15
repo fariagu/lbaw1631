@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-14 16:55:11
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-15 14:24:22
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\user\profile-info.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:58803249558f0d916e1b6e6-44309226%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '57e31d0a92d58daab3e57837d7ff1f96c325fa8e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\user\\profile-info.tpl',
-      1 => 1492181709,
+      1 => 1492258994,
       2 => 'file',
     ),
   ),
@@ -28,7 +28,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_58f0d916e25335_10881854')) {function content_58f0d916e25335_10881854($_smarty_tpl) {?><div id="for-margin-purposes">
     <div id="user-space" class="container-fluid">
         <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/assets/default.png" height="100" width="80">
+<?php echo $_smarty_tpl->tpl_vars['profile']->value['photo'];?>
+" height="100" width="80">
         <h1><?php echo $_smarty_tpl->tpl_vars['profile']->value['username'];?>
 /<?php echo $_smarty_tpl->tpl_vars['profile']->value['email'];?>
 </h1>
@@ -41,6 +42,8 @@ images/assets/default.png" height="100" width="80">
             <p><?php echo $_smarty_tpl->tpl_vars['profile']->value['no_questions'];?>
  questions</p>
             <p>score: <?php echo $_smarty_tpl->tpl_vars['profile']->value['score'];?>
+</p>
+			<p><?php echo $_smarty_tpl->tpl_vars['profile']->value['photo'];?>
 </p>
         </div>
     </div>    

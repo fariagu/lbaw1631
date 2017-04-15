@@ -24,6 +24,39 @@
 		$stmt->execute(array($username));
 		return $stmt->fetch() == true;
 	}
+	
+	function getMemberId($username) {
+		global $conn;
+		$stmt = $conn->prepare("SELECT id 
+								FROM member 
+								WHERE username = ?");
+		$stmt->execute(array($username));
+		return $stmt->fetch()['id'];
+	}
+	
+	function changeFirstName($firstname, $username) {
+		global $conn;
+		$stmt = $conn->prepare("UPDATE member
+								SET firstname = ?
+								WHERE username = ?;");
+		$stmt->execute(array($firstname, $username));
+	}
+	
+	function changeLastName($lastname, $username) {
+		global $conn;
+		$stmt = $conn->prepare("UPDATE member
+								SET lastname = ?
+								WHERE username = ?;");
+		$stmt->execute(array($lastname, $username));
+	}
+	
+	function changePassword($password, $username) {
+		global $conn;
+		$stmt = $conn->prepare("UPDATE member
+								SET password = ?
+								WHERE username = ?;");
+		$stmt->execute(array(sha1($password), $username));
+	}
   
 	function getProfileInfo($id) {
 		global $conn;

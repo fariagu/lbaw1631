@@ -1,12 +1,13 @@
 <div id="for-margin-purposes">
     <div id="user-space" class="container-fluid">
-        <img src="{$BASE_URL}images/assets/default.png" height="100" width="80">
+        <img src="{$BASE_URL}{$profile.photo}" height="100" width="80">
         <h1>{$profile.username}/{$profile.email}</h1>
         <h2>{$profile.firstname} {$profile.lastname}</h2>
         <div>
             <p>{$profile.no_answers} answers</p>
             <p>{$profile.no_questions} questions</p>
             <p>score: {$profile.score}</p>
+			<p>{$profile.photo}</p>
         </div>
     </div>    
 </div>

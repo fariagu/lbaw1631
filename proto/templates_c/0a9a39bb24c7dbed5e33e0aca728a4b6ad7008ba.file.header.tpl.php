@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-15 11:31:03
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-14 16:40:10
          compiled from "/mnt/d/CODE/www/lbaw1631/proto/templates/common/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:148137959158f0ed5a4f4b49-00631462%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0a9a39bb24c7dbed5e33e0aca728a4b6ad7008ba' => 
     array (
       0 => '/mnt/d/CODE/www/lbaw1631/proto/templates/common/header.tpl',
-      1 => 1492252203,
+      1 => 1492183391,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_58f0ed5a4fc3d2_89352084',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_58f0ed5a4fc3d2_89352084',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58f0ed5a4fc3d2_89352084')) {function content_58f0ed5a4fc3d2_89352084($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
@@ -45,5 +45,4 @@ css/styles.css" rel="stylesheet">
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-<?php }} ?>
+  <body><?php }} ?>
