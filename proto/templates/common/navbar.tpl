@@ -3,7 +3,7 @@
 {if $USERNAME}
 	{include file='common/navbar-center.tpl'}
 	{if $ADMIN}
-		{include file='common/admin.tpl'}
+		{include file='common/navbar-admin.tpl'}
 	{/if}
 {else}
 	{include file='common/navbar-center-visitor.tpl'}

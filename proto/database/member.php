@@ -1,4 +1,29 @@
 <?php
+
+	function createMember($username, $password, $firstname, $lastname, $email) {
+		global $conn;
+		$stmt = $conn->prepare("INSERT INTO member (username,password,firstname,lastname,email) VALUES (?, ?, ?, ?, ?)");
+		$stmt->execute(array($username, sha1($password), $firstname, $lastname, $email));
+	}
+
+	function isLoginCorrect($username, $password) {
+		global $conn;
+		$stmt = $conn->prepare("SELECT * 
+								FROM member 
+								WHERE username = ? AND password = ?");
+		$stmt->execute(array($username, sha1($password)));
+		return $stmt->fetch() == true;
+	}
+	
+	function isAdmin($username) {
+		global $conn;
+		$stmt = $conn->prepare("SELECT * 
+								FROM admin
+								INNER JOIN member ON member.id = admin.id
+								WHERE username = ?");
+		$stmt->execute(array($username));
+		return $stmt->fetch() == true;
+	}
   
 	function getProfileInfo($id) {
 		global $conn;

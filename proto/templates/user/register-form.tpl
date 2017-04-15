@@ -4,42 +4,42 @@
       <div class="form-group">
             <label class="control-label col-sm-2" for="username">Username:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="username" placeholder="Enter username">
+                <input name="username" type="text" class="form-control" id="username" placeholder="Enter username" value="{$FORM_VALUES.username}">
             </div>
       </div>
       <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Password:</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                <input name="password" type="password" class="form-control" id="pwd" placeholder="Enter password" value="">
             </div>
       </div>
       <div class="form-group">
             <label class="control-label col-sm-2" for="pwd2">Confirm Password:</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="pwd2" placeholder="Enter password">
+                <input name="confirmpassword" type="password" class="form-control" id="pwd2" placeholder="Enter password" value="">
             </div>
       </div>
 	  <div class="form-group">
             <label class="control-label col-sm-2" for="email">E-mail:</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                <input name="email" type="email" class="form-control" id="email" placeholder="Enter email" value="{$FORM_VALUES.email}">
             </div>
       </div>
       <div class="form-group">
             <label class="control-label col-sm-2" for="firstName">First name:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+                <input name="firstname" type="text" class="form-control" id="firstName" placeholder="Enter your first name" value="{$FORM_VALUES.firstname}">
             </div>
       </div>
       <div class="form-group">
             <label class="control-label col-sm-2" for="lastName">Last name:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+                <input name="lastname" type="text" class="form-control" id="lastName" placeholder="Enter your last name" value="{$FORM_VALUES.lastname}">
             </div>
       </div>
       <div class="form-group" id="picButton">
             <label class="control-label col-sm-2" for="profilePic">Profile Picture:</label>
-            <input type="file" name="image" id="profilePic"/>
+            <input name="photo" type="file" name="image" id="profilePic"/>
       </div>
       <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">

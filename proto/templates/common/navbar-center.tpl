@@ -10,7 +10,7 @@
         <div class="dropdown-content">
             <a href="../profile">Your Profile</a>
             <a href="../edit-profile">Edit Info</a>
-            <a href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a>
+            <a href="{$BASE_URL}actions/user/logout.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a>
         </div>
     </li>
 </ul>
