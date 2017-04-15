@@ -15,13 +15,12 @@
 	
 	function getAllQuestionsFromCategory($id) {
 		global $conn;
-		$stmt = $conn->prepare("SELECT id_question, title, rating, COUNT(answer.id) AS counter
-								FROM answer
-								INNER JOIN question ON answer.id_question = question.id
+		$stmt = $conn->prepare("SELECT question.id, title, rating
+								FROM question
 								INNER JOIN post ON question.id = post.id
 								WHERE id_category = ?
-								GROUP BY id_question, title, rating
-								ORDER BY counter DESC;");
+								GROUP BY question.id, title, rating
+								ORDER BY rating DESC;");
 		$stmt->execute(array($id));
 		return $stmt->fetchAll();
 	}

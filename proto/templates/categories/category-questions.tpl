@@ -8,7 +8,6 @@
 						<a href="{$BASE_URL}pages/posts/question.php?id={$question.id_question}" class="list-group-item">
 							<p>{$question.title}</p>
 							<div>
-								<p>{$question.counter} answers</p>
 								<p>{$question.rating} votes</p>
 							</div>
 						</a>
