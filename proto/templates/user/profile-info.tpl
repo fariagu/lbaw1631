@@ -7,7 +7,6 @@
             <p>{$profile.no_answers} answers</p>
             <p>{$profile.no_questions} questions</p>
             <p>score: {$profile.score}</p>
-			<p>{$profile.photo}</p>
         </div>
     </div>    
 </div>
