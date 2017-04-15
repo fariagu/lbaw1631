@@ -4,33 +4,9 @@
 			<div class="col-lg-12">
 				<h2 id="topic-title">Reports</h2>
 				<div class="list-group">
-					<a href="../public-report" class="list-group-item">Duplicate Post</a>
-					<a href="../public-report" class="list-group-item">User manel123 used offensive language</a>
-					<a href="../public-report" class="list-group-item">Off Topic</a>
-					<a href="../public-report" class="list-group-item">Flagged as fluf content</a>
-					<a href="../public-report" class="list-group-item">User xico666 used offensive language</a>
-					<a href="../public-report" class="list-group-item">Duplicate Post</a>
-					<a href="../public-report" class="list-group-item">Duplicate Post</a>
-					<a href="../public-report" class="list-group-item">Off Topic</a>
-					<a href="../public-report" class="list-group-item">Flagged as fluf content</a>
-					<a href="../public-report" class="list-group-item">Off Topic</a>
-					<a href="../public-report" class="list-group-item">User rui99 used offensive language</a>
-					<a href="../public-report" class="list-group-item">Flagged as fluf content</a>
-					<a href="../public-report" class="list-group-item">Flagged as fluf content</a>
-					<a href="../public-report" class="list-group-item">Duplicate Post</a>
-					<a href="../public-report" class="list-group-item">Off Topic</a>
-					<a href="../public-report" class="list-group-item">Flagged as fluf content</a>
-					<a href="../public-report" class="list-group-item">User ppedroo used offensive language</a>
-					<a href="../public-report" class="list-group-item">User coolguy used offensive language</a>
-					<a href="../public-report" class="list-group-item">User feup_ale used offensive language</a>
-					<a href="../public-report" class="list-group-item">Duplicate Post</a>
-					<a href="../public-report" class="list-group-item">Off Topic</a>
-					<a href="../public-report" class="list-group-item">Off Topic</a>
-					<a href="../public-report" class="list-group-item">Duplicate Post</a>
-					<a href="../public-report" class="list-group-item">Flagged as fluf content</a>
-					<a href="../public-report" class="list-group-item">Duplicate Post</a>
-					<a href="../public-report" class="list-group-item">User joaozinho used offensive language</a>
-					<a href="../public-report" class="list-group-item">Off Topic</a>
+					{foreach $reports as $report}
+						<a href="{$BASE_URL}pages/admin/report.php?id_member={$report.id_member}&id_post={$report.id_post}" class="list-group-item">{$report.description}</a>
+					{/foreach}
 				</div>
 			</div>
 		</div>

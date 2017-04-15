@@ -1,6 +1,7 @@
 <?php
   include_once('../../config/init.php');
   include_once($BASE_DIR .'database/category.php');
+  include_once($BASE_DIR .'database/report.php');
   
   if(!$_SESSION['admin'])
   {
@@ -9,8 +10,10 @@
   }
   
   $top_categories = getTopCategories();
+  $reports = getAllUnsolvedReports();
   
   $smarty->assign('top_categories', $top_categories);
+  $smarty->assign('reports', $reports);
   
   $smarty->display('admin/reports.tpl');
 ?>
