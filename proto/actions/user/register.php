@@ -37,11 +37,9 @@
       $_SESSION['field_errors']['username'] = 'Username already exists';
     }
     else $_SESSION['error_messages'][] = 'Error creating user';
-	
-	echo $e->getMessage();
 
     $_SESSION['form_values'] = $_POST;
-    //header("Location: $BASE_URL" . 'pages/user/register.php');
+    header("Location: $BASE_URL" . 'pages/user/register.php');
     exit;
   }
   $_SESSION['success_messages'][] = 'User registered successfully';  
