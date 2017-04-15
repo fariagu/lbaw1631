@@ -39,20 +39,22 @@
 	}
 
     function createQuestion($title, $description, $category, $id) {
-        global $conn1, $conn2, $conn3;
+        global $conn;
         
-        $post_stmt = $conn1->prepare("INSERT INTO post (description,id_author) VALUES (?,?)");
+        $post_stmt = $conn->prepare("INSERT INTO post (description,id_author) VALUES (?,?)");
         $post_stmt->execute(array($description, $id));
         
-        $post_id = mysql_insert_id();
+        $post_id = $conn->prepare("SELECT MAX(id) as id_post
+									FROM post");
+        $post_id->execute();
         
-        $category_stmt = $conn2->prepare("SELECT id
+        $category_stmt = $conn->prepare("SELECT id
                                          FROM category
-                                         WHERE description = ?;");
+                                         WHERE name = ?;");
         $category_stmt->execute(array($category));
-        $category_id = $category_stmt->fetch();
+        $category_id = $category_stmt->fetch()['id'];
         
-        $question_stmt = $conn3->prepare("INSERT INTO question (id, title, id_category) VALUES (?,?,?)");
-        $question_stmt->execute(array($post_id, $title, $category_id));
+        $question_stmt = $conn->prepare("INSERT INTO question (id, title, id_category) VALUES (?,?,?)");
+        $question_stmt->execute(array($post_id->fetch()['id_post'], $title, $category_id));
     }
 ?>
