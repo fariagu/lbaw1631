@@ -126,4 +126,14 @@
 		$stmt->execute();
 		return $stmt->fetchAll();
 	}
+	
+	function getMemberUsername($id)
+	{
+		global $conn;
+		$stmt = $conn->prepare("SELECT username 
+								FROM member
+								WHERE id = ?;");
+		$stmt->execute(array($id));
+		return $stmt->fetch()['username'];
+	}
 ?>
