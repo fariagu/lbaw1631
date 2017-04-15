@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-15 17:43:50
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-15 18:58:32
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\admin\admin-options.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:155100884858f23fb608ca37-00447274%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b3aa170624747fd979e37687ad44421989f63122' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\admin\\admin-options.tpl',
-      1 => 1492271016,
+      1 => 1492275206,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_58f23fb6092ae1_30708592',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_58f23fb6092ae1_30708592',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58f23fb6092ae1_30708592')) {function content_58f23fb6092ae1_30708592($_smarty_tpl) {?><div id="page-content-wrapper">
 	<div class="container-fluid">
@@ -33,6 +33,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 pages/management/users.php" class="list-group-item">View all users</a>
 					<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/admin/reports.php" class="list-group-item">View reports</a>
+					<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/categories/add.php" class="list-group-item">Add category</a>
 				</div>
 			</div>
 		</div>
