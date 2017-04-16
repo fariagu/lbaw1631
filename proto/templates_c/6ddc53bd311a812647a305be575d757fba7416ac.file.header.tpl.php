@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-16 17:28:00
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-16 17:57:09
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\common\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:6303113858ef9e7645d411-38276974%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6ddc53bd311a812647a305be575d757fba7416ac' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\common\\header.tpl',
-      1 => 1492356454,
+      1 => 1492357946,
       2 => 'file',
     ),
   ),
@@ -39,7 +39,7 @@ css/bootstrap.min.css" rel="stylesheet">
 css/styles.css" rel="stylesheet">
 	  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	  <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/main.js"></script>
+javascript/common/main.js"></script>
 	
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

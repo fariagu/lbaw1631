@@ -29,4 +29,12 @@
 		return $stmt->fetch();
 	}
 
+	function deleteCategory($id) {
+		global $conn;
+		$stmt = $conn->prepare("DELETE
+								FROM category
+								WHERE id = ?;");
+		$stmt->execute(array($id));
+		return $stmt->fetch();
+	}
 ?>

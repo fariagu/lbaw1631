@@ -5,7 +5,7 @@
 				<h2 id="topic-title">All categories</h2>
 				<div class="list-group">
 					{foreach $categories as $category}
-						<a href="{$BASE_URL}pages/categories/category.php?id={$category.id}" class="list-group-item">{$category.name}</a>
+						<a id="{$category.id}" href="{$BASE_URL}pages/categories/category.php?id={$category.id}" class="list-group-item">{$category.name}</a>
 					{/foreach}
 				</div>
 			</div>

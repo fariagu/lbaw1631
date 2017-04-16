@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-15 17:35:08
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-16 18:50:21
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\common\navbar-center.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:157855231658f161f336c946-65471212%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '745687420f1010b784c43093872bf0b72bd94a02' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\common\\navbar-center.tpl',
-      1 => 1492270143,
+      1 => 1492361420,
       2 => 'file',
     ),
   ),
@@ -32,7 +32,7 @@ pages/posts/new-question.php">Post a question</a></li>
 <ul class="nav navbar-nav navbar-right">
     <li data-toggle="collapse" data-target=".navbar-collapse.in" class="dropdown">
         <a href="#" class="dropbtn">
-             <span class="glyphicon glyphicon-user"></span>Username
+             <span class="glyphicon glyphicon-user"></span>Profile
         </a>
         <div class="dropdown-content">
             <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>

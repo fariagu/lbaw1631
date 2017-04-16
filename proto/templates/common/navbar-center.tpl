@@ -5,7 +5,7 @@
 <ul class="nav navbar-nav navbar-right">
     <li data-toggle="collapse" data-target=".navbar-collapse.in" class="dropdown">
         <a href="#" class="dropbtn">
-             <span class="glyphicon glyphicon-user"></span>Username
+             <span class="glyphicon glyphicon-user"></span>Profile
         </a>
         <div class="dropdown-content">
             <a href="{$BASE_URL}pages/user/profile.php">Your Profile</a>
