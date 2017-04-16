@@ -5,10 +5,11 @@
   if(!$_GET['id'])
   {
 	  http_response_code(404);
+	  exit;
   }
   
-  try(createAdmin($_GET['id'])
-  {
+  try {
+	  createAdmin($_GET['id']);
 	  http_response_code(200);
   }
   catch (PDOException $e) {
