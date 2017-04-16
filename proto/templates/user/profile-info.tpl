@@ -7,6 +7,9 @@
             <p>{$profile.no_answers} answers</p>
             <p>{$profile.no_questions} questions</p>
             <p>score: {$profile.score}</p>
+			{if $ADMIN && !$pubadmin}
+				<a href="" id="give_privileges" class="list-group-item">Give admin privileges</a>
+			{/if}
         </div>
     </div>    
 </div>

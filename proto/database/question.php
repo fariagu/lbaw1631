@@ -52,8 +52,12 @@
                                          WHERE name = ?;");
         $category_stmt->execute(array($category));
         $category_id = $category_stmt->fetch()['id'];
+		
+		$question_id = $post_id->fetch()['id_post'];
         
         $question_stmt = $conn->prepare("INSERT INTO question (id, title, id_category) VALUES (?,?,?)");
-        $question_stmt->execute(array($post_id->fetch()['id_post'], $title, $category_id));
+        $question_stmt->execute(array($question_id, $title, $category_id));
+		
+		return $question_id;
     }
 ?>

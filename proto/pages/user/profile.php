@@ -10,6 +10,7 @@
 	  $own = false;
   }
   else if($_SESSION['id']) {
+	  $id = $_SESSION['id'];
 	  $profile = getProfileInfo($_SESSION['id']);
 	  $own = true;
   }
@@ -31,9 +32,13 @@
   
   $top_categories = getTopCategories();
   
+  $pubadmin = isAdmin($profile['username']);
+  
   $smarty->assign('top_categories', $top_categories);
   $smarty->assign('profile', $profile);
   $smarty->assign('own', $own);
+  $smarty->assign('profile_id', $id);
+  $smarty->assign('pubadmin', $pubadmin);
   
   $smarty->display('user/profile.tpl');
 ?>

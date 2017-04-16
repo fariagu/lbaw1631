@@ -5,6 +5,12 @@
 		$stmt = $conn->prepare("INSERT INTO member (username,password,firstname,lastname,email) VALUES (?, ?, ?, ?, ?)");
 		$stmt->execute(array($username, sha1($password), $firstname, $lastname, $email));
 	}
+	
+	function createAdmin($id) {
+		global $conn;
+		$stmt = $conn->prepare("INSERT INTO admin (id) VALUES (?)");
+		$stmt->execute(array($id));
+	}
 
 	function isLoginCorrect($username, $password) {
 		global $conn;

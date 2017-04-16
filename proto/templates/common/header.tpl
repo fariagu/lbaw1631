@@ -10,6 +10,7 @@
       <!-- Bootstrap -->
       <link href="{$BASE_URL}css/bootstrap.min.css" rel="stylesheet">
       <link href="{$BASE_URL}css/styles.css" rel="stylesheet">
+	  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
