@@ -5,7 +5,7 @@
 				<h2 id="topic-title">{$category.name}</h2>
 				<div class="list-group">
 					{foreach $questions as $question}
-						<a href="{$BASE_URL}pages/posts/question.php?id={$question.id_question}" class="list-group-item">
+						<a href="{$BASE_URL}pages/posts/question.php?id={$question.id}" class="list-group-item">
 							<p>{$question.title}</p>
 							<div>
 								<p>{$question.rating} votes</p>
