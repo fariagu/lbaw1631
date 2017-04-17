@@ -15,7 +15,7 @@
 	
 	function getAllQuestionsFromCategory($id) {
 		global $conn;
-		$stmt = $conn->prepare("SELECT question.id, title, rating
+		$stmt = $conn->prepare("SELECT question.id as id, title, rating
 								FROM question
 								INNER JOIN post ON question.id = post.id
 								WHERE id_category = ?
