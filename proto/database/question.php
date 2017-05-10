@@ -60,4 +60,63 @@
 		
 		return $question_id;
     }
+	
+	function getCorrectAnswer($id)
+	{
+		global $conn;
+		$stmt = $conn->prepare("SELECT answer.id as a_id, description, username, creation_date
+								FROM answer
+								INNER JOIN response ON answer.id = response.id
+								INNER JOIN post ON response.id = post.id
+								INNER JOIN member ON post.id_author = member.id
+								INNER JOIN question ON question.id = id_question AND question.id_correct = answer.id
+								WHERE id_question = ?;");
+		$stmt->execute(array($id));
+		$correct = $stmt->fetchAll();
+		
+		$correct['comments'] = getComments($correct['a_id']);
+		
+		return $correct;
+	}
+	
+	function getAnswers($id)
+	{
+		global $conn;
+		$stmt = $conn->prepare("SELECT answer.id as a_id, description, member.id as m_id, username, creation_date
+								FROM answer
+								INNER JOIN response ON answer.id = response.id
+								INNER JOIN post ON response.id = post.id
+								INNER JOIN member ON post.id_author = member.id
+								INNER JOIN question ON question.id = id_question AND question.id_correct <> answer.id
+								WHERE id_question = ?;");
+		$stmt->execute(array($id));
+		$answers = $stmt->fetchAll();
+		
+		foreach($answers as $answer)
+		{
+			$answer['comments'] = getComments($answer['a_id']);
+		}
+		
+		return $answers;
+	}
+	
+	function getComments($id)
+	{
+		global $conn;
+		$stmt = $conn->prepare("SELECT comment.id as c_id, description, member.id as m_id, username, creation_date
+								FROM comment
+								INNER JOIN response ON comment.id = response.id
+								INNER JOIN post ON response.id = post.id
+								INNER JOIN member ON post.id_author = member.id
+								WHERE id_response = ?;");
+		$stmt->execute(array($id));
+		$comments = $stmt->fetchAll();
+		
+		foreach($comments as $comment)
+		{
+			$comment['comments'] = getComments($comment['c_id']);
+		}
+		
+		return $comments;
+	}
 ?>

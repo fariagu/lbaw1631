@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-16 18:42:24
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-18 01:16:02
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\categories\category-questions.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:206295928958f0c2e4233629-46117807%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0e896209629e0c0ead62c7a47359bd723c47955c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\categories\\category-questions.tpl',
-      1 => 1492356454,
+      1 => 1492470614,
       2 => 'file',
     ),
   ),
@@ -39,7 +39,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['question']->key => $_smarty_tpl->tpl_
 $_smarty_tpl->tpl_vars['question']->_loop = true;
 ?>
 						<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/posts/question.php?id=<?php echo $_smarty_tpl->tpl_vars['question']->value['id_question'];?>
+pages/posts/question.php?id=<?php echo $_smarty_tpl->tpl_vars['question']->value['id'];?>
 " class="list-group-item">
 							<p><?php echo $_smarty_tpl->tpl_vars['question']->value['title'];?>
 </p>
@@ -53,4 +53,5 @@ pages/posts/question.php?id=<?php echo $_smarty_tpl->tpl_vars['question']->value
 			</div>
 		</div>
 	</div>
-</div><?php }} ?>
+</div>
+<?php }} ?>

@@ -12,11 +12,16 @@
   $id = $_GET['id'];
   
   $question = getQuestionInfo($id);
+  $correct = getCorrectAnswer($id);
+  $answers = getAnswers($id);
   
   $top_categories = getTopCategories();
   
   $smarty->assign('top_categories', $top_categories);
   $smarty->assign('question', $question);
+  $smarty->assign('question_id', $id);
+  $smarty->assign('correct', $correct);
+  $smarty->assign('answers', $answers);
   
   $smarty->display('posts/question.tpl');
 

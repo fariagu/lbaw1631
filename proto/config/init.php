@@ -1,18 +1,18 @@
 <?php
-//session_set_cookie_params(3600, '/lbaw1631'); //local
-  session_set_cookie_params(3600, '/~lbaw1631'); //gnomo
+session_set_cookie_params(3600, '/lbaw1631'); //local
+//  session_set_cookie_params(3600, '/~lbaw1631'); //gnomo
   session_start();
 
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
 //  $BASE_DIR = '/mnt/d/CODE/www/lbaw1631/proto/'; //gustavo
-//  $BASE_DIR = 'C:/xampp/htdocs/lbaw1631/proto/'; //daniel
-	$BASE_DIR = '/opt/lbaw/lbaw1631/public_html/proto/'; //gnomo
-//	$BASE_URL = '/lbaw1631/proto/'; //local
-	$BASE_URL = '/~lbaw1631/proto/'; //gnomo
+  $BASE_DIR = 'C:/xampp/htdocs/lbaw1631/proto/'; //daniel
+//	$BASE_DIR = '/opt/lbaw/lbaw1631/public_html/proto/'; //gnomo
+	$BASE_URL = '/lbaw1631/proto/'; //local
+//	$BASE_URL = '/~lbaw1631/proto/'; //gnomo
 
-//$conn = new PDO('pgsql:host=dbm.fe.up.pt;dbname=lbaw1631', 'lbaw1631', 'iy55xp91'); //local
-  $conn = new PDO('pgsql:host=dbm;dbname=lbaw1631', 'lbaw1631', 'iy55xp91'); //gnomo
+$conn = new PDO('pgsql:host=dbm.fe.up.pt;dbname=lbaw1631', 'lbaw1631', 'iy55xp91'); //local
+//  $conn = new PDO('pgsql:host=dbm;dbname=lbaw1631', 'lbaw1631', 'iy55xp91'); //gnomo
   $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
