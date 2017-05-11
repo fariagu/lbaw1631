@@ -16,7 +16,7 @@
 			<div class="col-lg-12">
 				<h2 id="topic-title">Answers</h2>
 				{include file='posts/print-comments.tpl'}
-				{call print_correct answers=$correct}
+				{call print_correct answer=$correct}
 				{call print_comments answers=$answers}
 			</div>
 		</div>

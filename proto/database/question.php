@@ -72,7 +72,7 @@
 								INNER JOIN question ON question.id = id_question AND question.id_correct = answer.id
 								WHERE id_question = ?;");
 		$stmt->execute(array($id));
-		$correct = $stmt->fetchAll();
+		$correct = $stmt->fetch();
 		
 		$correct['comments'] = getComments($correct['a_id']);
 		
