@@ -5,6 +5,14 @@
 		$stmt = $conn->prepare("INSERT INTO member (username,password,firstname,lastname,email) VALUES (?, ?, ?, ?, ?)");
 		$stmt->execute(array($username, sha1($password), $firstname, $lastname, $email));
 	}
+
+	function deleteMember($username) {
+        global $conn;
+        $stmt = $conn->prepare("DELETE
+                                FROM member
+                                WHERE username = ?");
+        $stmt->execute(array($username));
+    }
 	
 	function createAdmin($id) {
 		global $conn;
