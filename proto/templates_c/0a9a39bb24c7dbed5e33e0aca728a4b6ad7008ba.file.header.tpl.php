@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-15 22:52:31
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-14 18:02:58
          compiled from "/mnt/d/CODE/www/lbaw1631/proto/templates/common/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:148137959158f0ed5a4f4b49-00631462%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0a9a39bb24c7dbed5e33e0aca728a4b6ad7008ba' => 
     array (
       0 => '/mnt/d/CODE/www/lbaw1631/proto/templates/common/header.tpl',
-      1 => 1492292998,
+      1 => 1494781315,
       2 => 'file',
     ),
   ),
@@ -37,6 +37,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 css/bootstrap.min.css" rel="stylesheet">
       <link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 css/styles.css" rel="stylesheet">
+	  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	  <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/common/main.js"></script>
 	
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

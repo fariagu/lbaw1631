@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-15 23:15:38
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-14 18:02:58
          compiled from "/mnt/d/CODE/www/lbaw1631/proto/templates/user/login-form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:108317746358f29b8ab9e238-80235063%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ecc57b87328f5027d5c6af05840fd6061bccf3f6' => 
     array (
       0 => '/mnt/d/CODE/www/lbaw1631/proto/templates/user/login-form.tpl',
-      1 => 1492292998,
+      1 => 1494781315,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_58f29b8aba1146_52540715',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_58f29b8aba1146_52540715',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58f29b8aba1146_52540715')) {function content_58f29b8aba1146_52540715($_smarty_tpl) {?><div class="enter-info">
     <form class="form-horizontal" id="login-form" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
