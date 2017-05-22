@@ -5,7 +5,7 @@
     <form class="form-horizontal" id="register-form">
 		<div class="form-group">
 			<label for="search">Search:</label>
-			<input type="text" class="form-control" id="search" placeholder="Search for a question">
+			<input type="text" class="form-control" id="search" placeholder="Search for a question" autofocus>
 		</div>
 		<div class="form-group">
 			<label for="sel1">Category:</label>

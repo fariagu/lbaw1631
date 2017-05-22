@@ -5,7 +5,7 @@
     <form class="form-horizontal" id="register-form" action="{$BASE_URL}actions/categories/add.php" method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="title">Name:</label>
-			<input name="name" type="text" class="form-control" id="title" placeholder="Enter the category name">
+			<input name="name" type="text" class="form-control" id="title" placeholder="Enter the category name" autofocus>
 		</div>
 		<div class="form-group">
 			<label for="question">Description:</label>

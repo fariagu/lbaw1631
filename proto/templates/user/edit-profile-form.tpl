@@ -4,7 +4,7 @@
       <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Password:</label>
             <div class="col-sm-10">
-                <input name="password" type="password" class="form-control" id="pwd" placeholder="Enter password" value="">
+                <input name="password" type="password" class="form-control" id="pwd" placeholder="Enter password" value="" autofocus>
             </div>
       </div>
       <div class="form-group">
