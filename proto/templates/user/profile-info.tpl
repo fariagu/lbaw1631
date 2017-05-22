@@ -8,7 +8,13 @@
             <p>{$profile.no_questions} questions</p>
             <p>score: {$profile.score}</p>
 			{if $ADMIN && !$pubadmin}
-				<a href="" id="give_privileges" class="list-group-item">Give admin privileges</a>
+				<form class="form-horizontal" id="give_privileges" action="" method="get" enctype="multipart/form-data">
+                    <div class="form-group" >
+                        <div class="col-sm-offset-3 col-sm-8">
+                            <button type="submit" class="btn btn-default">Give Admin Privileges</button>
+                        </div>
+                    </div>
+                </form>
 			{/if}
         </div>
     </div>    

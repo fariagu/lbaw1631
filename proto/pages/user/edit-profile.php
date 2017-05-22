@@ -9,9 +9,11 @@
   }
   
   $top_categories = getTopCategories();
-  
+  $delete_pressed = false;
+
   $smarty->assign('top_categories', $top_categories);
-  
+  $smarty->assign('delete_pressed', $delete_pressed);
+
   $smarty->display('user/edit-profile.tpl');
 
 ?>
