@@ -26,6 +26,31 @@ $(document).ready(function(){
 		
 		e.preventDefault();
 		
+		$(".reply").css({"display": "inline"});
+		
+		$(this).css({"display": "none"});
+		
+		$(".closeComment").css({"display": "none"});
+		
+		$(".comment").css({"display": "none"});
+		
+		$(".commentText").css({"display": "none"});
+		
 		$(this).siblings().css({"display": "inline"});
+    });
+	
+	$(".closeComment").click(function(e){
+		
+		e.preventDefault();
+		
+		$(".reply").css({"display": "inline"});
+		
+		$(this).css({"display": "none"});
+		
+		$(".closeComment").css({"display": "none"});
+		
+		$(".comment").css({"display": "none"});
+		
+		$(".commentText").css({"display": "none"});
     });
 });

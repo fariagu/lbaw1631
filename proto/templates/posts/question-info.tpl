@@ -16,8 +16,8 @@
 			<div class="col-lg-12">
 				<h2 id="topic-title">Answers</h2>
 				{include file='posts/print-comments.tpl'}
-				{call print_correct answer=$correct}
-				{call print_comments answers=$answers}
+				{call print_correct answer=$correct user=$USER_ID}
+				{call print_comments answers=$answers user=$USER_ID}
 				{if $USER_ID}
 					<div class="form-group" id="answerForm">
 						<label for="question">Answer:</label>

@@ -342,3 +342,7 @@ body {
 .comment {
 	margin-top: 10px;
 }
+
+.closeComment {
+	float: right;
+}

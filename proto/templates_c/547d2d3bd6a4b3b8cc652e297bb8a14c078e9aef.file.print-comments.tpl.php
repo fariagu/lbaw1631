@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-25 20:21:02
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-25 23:10:35
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\print-comments.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:672381039591396c9c44ae5-47234055%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '547d2d3bd6a4b3b8cc652e297bb8a14c078e9aef' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\print-comments.tpl',
-      1 => 1495736460,
+      1 => 1495746633,
       2 => 'file',
     ),
   ),
@@ -38,6 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'answer' => 0,
     'margin' => 0,
     'BASE_URL' => 0,
+    'user' => 0,
     'answers' => 0,
   ),
   'has_nocache_code' => 0,
@@ -56,13 +57,16 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_
 </a>
 			<div class="panel-body"><?php echo $_smarty_tpl->tpl_vars['answer']->value['description'];?>
 
-				<button type="submit" class="btn btn-default reply">Reply</button>
-				<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
-				<button style="display: none" type="submit" class="btn btn-default comment" hidden>Post</button>
+				<?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
+					<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
+					<button type="submit" class="btn btn-default reply">Reply</button>
+					<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
+					<button style="display: none" type="submit" class="btn btn-default comment" hidden>Post</button>
+				<?php }?>
 			</div>
 		</div>
 		<?php if ($_smarty_tpl->tpl_vars['answer']->value['comments']) {?>
-		  <?php smarty_template_function_print_comments($_smarty_tpl,array('answers'=>$_smarty_tpl->tpl_vars['answer']->value['comments'],'margin'=>$_smarty_tpl->tpl_vars['margin']->value+50));?>
+		  <?php smarty_template_function_print_comments($_smarty_tpl,array('answers'=>$_smarty_tpl->tpl_vars['answer']->value['comments'],'user'=>$_smarty_tpl->tpl_vars['user']->value,'margin'=>$_smarty_tpl->tpl_vars['margin']->value+50));?>
 
 		<?php }?>
 	<?php }?>
@@ -88,13 +92,16 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['m_
 </a>
 		<div class="panel-body"><?php echo $_smarty_tpl->tpl_vars['answer']->value['description'];?>
 
-			<button type="submit" class="btn btn-default reply">Reply</button>
-			<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
-			<button style="display: none" type="submit" class="btn btn-default comment" hidden>Post</button>
+			<?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
+				<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
+				<button type="submit" class="btn btn-default reply">Reply</button>
+				<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
+				<button style="display: none" type="submit" class="btn btn-default comment" hidden>Post</button>
+			<?php }?>
 		</div>
 	</div>
 	<?php if ($_smarty_tpl->tpl_vars['answer']->value['comments']) {?>
-      <?php smarty_template_function_print_comments($_smarty_tpl,array('answers'=>$_smarty_tpl->tpl_vars['answer']->value['comments'],'margin'=>$_smarty_tpl->tpl_vars['margin']->value+50));?>
+      <?php smarty_template_function_print_comments($_smarty_tpl,array('answers'=>$_smarty_tpl->tpl_vars['answer']->value['comments'],'user'=>$_smarty_tpl->tpl_vars['user']->value,'margin'=>$_smarty_tpl->tpl_vars['margin']->value+50));?>
 
     <?php }?>
   <?php } ?>
