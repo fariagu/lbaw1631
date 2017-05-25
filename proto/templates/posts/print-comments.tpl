@@ -1,7 +1,7 @@
 {function print_correct margin=0 }
-	{if $answer}
+	{if $answer.a_id}
 		<div class="panel panel-default" id="correctAnswer" style="margin-left:{$margin}px">
-			<a href="{$BASE_URL}pages/user/profile.php?id={$answer.m_id}" class="list-group-item">{$answer.username}</a>
+			<a href="{$BASE_URL}pages/user/profile.php?id={$answer.a_id}" class="list-group-item">{$answer.username}</a>
 			<div class="panel-body">{$answer.description}</div>
 		</div>
 		{if $answer.comments}

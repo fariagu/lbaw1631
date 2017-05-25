@@ -18,6 +18,13 @@
 				{include file='posts/print-comments.tpl'}
 				{call print_correct answer=$correct}
 				{call print_comments answers=$answers}
+				{if $USER_ID}
+					<div class="form-group" id="answerForm">
+						<label for="question">Answer:</label>
+						<textarea name="answer" class="form-control" rows="5" id="answerText"></textarea>
+					</div>
+					<button type="submit" id="answer" class="btn btn-default">Post</button>
+				{/if}
 			</div>
 		</div>
 	</div>

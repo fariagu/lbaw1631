@@ -87,8 +87,8 @@
 								INNER JOIN response ON answer.id = response.id
 								INNER JOIN post ON response.id = post.id
 								INNER JOIN member ON post.id_author = member.id
-								INNER JOIN question ON question.id = id_question AND question.id_correct <> answer.id
-								WHERE id_question = ?;");
+								INNER JOIN question ON question.id = id_question
+								WHERE id_question = ? AND id_correct IS NULL OR id_correct <> answer.id;");
 		$stmt->execute(array($id));
 		$answers = $stmt->fetchAll();
 		
@@ -118,5 +118,13 @@
 		}
 		
 		return $comments;
+	}
+	
+	function createAnswer($question_id, $profile_id, $content)
+	{
+		global $conn;
+		
+        $post_stmt = $conn->prepare("SELECT insert_answer(?, ?, ?);");
+        $post_stmt->execute(array($profile_id, $content, $question_id));
 	}
 ?>
