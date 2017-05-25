@@ -4,7 +4,7 @@
       <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Password:</label>
             <div class="col-sm-10">
-                <input name="password" type="password" class="form-control" id="pwd" placeholder="Enter password" value="">
+                <input name="password" type="password" class="form-control" id="pwd" placeholder="Enter password" value="" autofocus>
             </div>
       </div>
       <div class="form-group">
@@ -35,11 +35,25 @@
             </div>
       </div>
     </form>
-    <form class="form-horizontal" id="delete-button" action="{$BASE_URL}actions/user/delete-profile.php" method="post" enctype="multipart/form-data">
+
+    <form class="form-horizontal" id="delete_button" action="" method="get" enctype="multipart/form-data">
         <div class="form-group" >
             <div class="col-sm-offset-3 col-sm-10">
                 <button type="submit" class="btn btn-default">Delete Account</button>
             </div>
       </div>
+    </form>
+    <form class="form-horizontal" id="confirmation" action="" method="post" enctype="multipart/form-data">
+        <p>Are you sure?</p>
+        <div class="form-group" >
+            <div class="col-sm-offset-3 col-sm-10">
+                <button type="submit" class="btn btn-default" formaction="{$BASE_URL}actions/user/delete-profile.php">Yes</button>
+            </div>
+        </div>
+        <div class="form-group" >
+            <div class="col-sm-offset-3 col-sm-10">
+                <button type="submit" id="cancel" class="btn btn-default">No</button>
+            </div>
+        </div>
     </form>
 </div>

@@ -5,7 +5,7 @@
     <form class="form-horizontal" id="register-form" action="{$BASE_URL}actions/posts/new-question.php" method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="title">Title:</label>
-			<input name="title" type="text" class="form-control" id="title" placeholder="Enter your question title">
+			<input name="title" type="text" class="form-control" id="title" placeholder="Enter your question title" autofocus>
 		</div>
 		<div class="form-group">
 			<label for="question">Question:</label>

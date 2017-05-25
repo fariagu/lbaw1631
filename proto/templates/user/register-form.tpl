@@ -4,7 +4,7 @@
       <div class="form-group">
             <label class="control-label col-sm-2" for="username">Username:</label>
             <div class="col-sm-10">
-                <input name="username" type="text" class="form-control" id="username" placeholder="Enter username" value="{$FORM_VALUES.username}">
+                <input name="username" type="text" class="form-control" id="username" placeholder="Enter username" value="{$FORM_VALUES.username}" autofocus>
             </div>
       </div>
       <div class="form-group">

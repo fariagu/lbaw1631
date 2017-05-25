@@ -319,6 +319,14 @@ body {
 	margin-left: 80px;
 }
 
-#delete-button div button{
+#delete_button div button{
     float: right;
+}
+
+#confirmation {
+    float: right;
+}
+
+#confirmation div {
+    display: inline-block;
 }
