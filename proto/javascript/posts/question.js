@@ -21,4 +21,11 @@ $(document).ready(function(){
 		});
 		
     });
+	
+	$(".reply").click(function(e){
+		
+		e.preventDefault();
+		
+		$(this).siblings().css({"display": "inline"});
+    });
 });

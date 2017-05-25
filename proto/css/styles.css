@@ -330,3 +330,15 @@ body {
 #confirmation div {
     display: inline-block;
 }
+
+.reply {
+	float: right;
+}
+
+.commentText {
+	margin-top: 10px;
+}
+
+.comment {
+	margin-top: 10px;
+}
