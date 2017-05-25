@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-25 23:10:35
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-26 00:06:46
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\print-comments.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:672381039591396c9c44ae5-47234055%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '547d2d3bd6a4b3b8cc652e297bb8a14c078e9aef' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\print-comments.tpl',
-      1 => 1495746633,
+      1 => 1495749941,
       2 => 'file',
     ),
   ),
@@ -61,7 +61,8 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_
 					<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
 					<button type="submit" class="btn btn-default reply">Reply</button>
 					<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
-					<button style="display: none" type="submit" class="btn btn-default comment" hidden>Post</button>
+					<button style="display: none" type="submit" class="btn btn-default comment" id="<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_id'];?>
+">Post</button>
 				<?php }?>
 			</div>
 		</div>
@@ -96,7 +97,8 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['m_
 				<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
 				<button type="submit" class="btn btn-default reply">Reply</button>
 				<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
-				<button style="display: none" type="submit" class="btn btn-default comment" hidden>Post</button>
+				<button style="display: none" type="submit" class="btn btn-default comment" id="<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_id'];?>
+">Post</button>
 			<?php }?>
 		</div>
 	</div>

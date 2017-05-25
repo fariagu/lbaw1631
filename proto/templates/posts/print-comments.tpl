@@ -7,7 +7,7 @@
 					<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
 					<button type="submit" class="btn btn-default reply">Reply</button>
 					<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
-					<button style="display: none" type="submit" class="btn btn-default comment" hidden>Post</button>
+					<button style="display: none" type="submit" class="btn btn-default comment" id="{$answer.a_id}">Post</button>
 				{/if}
 			</div>
 		</div>
@@ -26,7 +26,7 @@
 				<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
 				<button type="submit" class="btn btn-default reply">Reply</button>
 				<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
-				<button style="display: none" type="submit" class="btn btn-default comment" hidden>Post</button>
+				<button style="display: none" type="submit" class="btn btn-default comment" id="{$answer.a_id}">Post</button>
 			{/if}
 		</div>
 	</div>

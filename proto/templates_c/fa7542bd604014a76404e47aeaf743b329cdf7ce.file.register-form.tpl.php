@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-14 21:38:56
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-26 00:00:08
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\user\register-form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:29886032358f0c9a7c44259-22514250%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa7542bd604014a76404e47aeaf743b329cdf7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\user\\register-form.tpl',
-      1 => 1494790571,
+      1 => 1495734446,
       2 => 'file',
     ),
   ),
@@ -32,7 +32,7 @@ actions/user/register.php" method="post" enctype="multipart/form-data">
             <label class="control-label col-sm-2" for="username">Username:</label>
             <div class="col-sm-10">
                 <input name="username" type="text" class="form-control" id="username" placeholder="Enter username" value="<?php echo $_smarty_tpl->tpl_vars['FORM_VALUES']->value['username'];?>
-">
+" autofocus>
             </div>
       </div>
       <div class="form-group">

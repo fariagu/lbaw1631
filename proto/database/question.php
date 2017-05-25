@@ -92,9 +92,9 @@
 		$stmt->execute(array($id));
 		$answers = $stmt->fetchAll();
 		
-		foreach($answers as $answer)
+		foreach($answers as $key => $answer)
 		{
-			$answer['comments'] = getComments($answer['a_id']);
+			$answers[$key]['comments'] = getComments($answer['a_id']);
 		}
 		
 		return $answers;
@@ -103,7 +103,7 @@
 	function getComments($id)
 	{
 		global $conn;
-		$stmt = $conn->prepare("SELECT comment.id as c_id, description, member.id as m_id, username, creation_date
+		$stmt = $conn->prepare("SELECT comment.id as a_id, description, member.id as m_id, username, creation_date
 								FROM comment
 								INNER JOIN response ON comment.id = response.id
 								INNER JOIN post ON response.id = post.id
@@ -112,9 +112,9 @@
 		$stmt->execute(array($id));
 		$comments = $stmt->fetchAll();
 		
-		foreach($comments as $comment)
+		foreach($comments as $key => $comment)
 		{
-			$comment['comments'] = getComments($comment['c_id']);
+			$comments[$key]['comments'] = getComments($comment['a_id']);
 		}
 		
 		return $comments;
@@ -126,5 +126,13 @@
 		
         $post_stmt = $conn->prepare("SELECT insert_answer(?, ?, ?);");
         $post_stmt->execute(array($profile_id, $content, $question_id));
+	}
+	
+	function createComment($response_id, $profile_id, $content)
+	{
+		global $conn;
+		
+        $post_stmt = $conn->prepare("SELECT insert_comment(?, ?, ?);");
+        $post_stmt->execute(array($profile_id, $content, $response_id));
 	}
 ?>
