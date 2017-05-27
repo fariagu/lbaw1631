@@ -18,7 +18,7 @@
   
   $reported_member = $_GET['id_member'];
   $reported_post = $_GET['id_post'];
-  
+
   $top_categories = getTopCategories();
 
   $smarty->assign('top_categories', $top_categories);
