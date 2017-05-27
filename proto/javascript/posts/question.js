@@ -92,6 +92,55 @@ $(document).ready(function(){
 				$(".commentText").css({"display": "none"});
 			}
 		}).fail(function(data, statusText, xhr){
+			
+		});
+    });
+	
+	$(".like").click(function(e){
+		
+		e.preventDefault();
+		
+		var response_id = $(this).siblings(".comment").attr("id");
+		
+		console.log(response_id);
+		console.log(profile_id);
+		
+		$.ajax({
+			url  : BASE_URL + "api/posts/vote.php",
+			type : 'get',
+			data : {r_id: response_id, p_id: profile_id, value: 1}
+		}).done(function(data, statusText, xhr){
+			var status = xhr.status;
+		
+			if(status == 200)
+			{
+				$(this).removeClass("like");
+				$(this).addClass("liked");
+			}
+		}).fail(function(data, statusText, xhr){
+			alert(data);
+		});
+    });
+	
+	$(".dislike").click(function(e){
+		
+		e.preventDefault();
+		
+		var response_id = $(this).siblings(".comment").attr("id");
+		
+		$.ajax({
+			url  : BASE_URL + "api/posts/vote.php",
+			type : 'get',
+			data : {r_id: response_id, p_id: profile_id, value: -1}
+		}).done(function(data, statusText, xhr){
+			var status = xhr.status;
+		
+			if(status == 200)
+			{
+				$(this).removeClass("dislike");
+				$(this).addClass("disliked");
+			}
+		}).fail(function(data, statusText, xhr){
 			alert(data);
 		});
     });
