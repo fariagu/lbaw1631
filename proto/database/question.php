@@ -161,4 +161,12 @@
         $post_stmt = $conn->prepare("INSERT INTO vote(id_member, id_post, value) VALUES (?, ?, ?);");
         $post_stmt->execute(array($profile_id, $response_id, $value));
 	}
+	
+	function deleteVote($response_id, $profile_id)
+	{
+		global $conn;
+		
+        $post_stmt = $conn->prepare("DELETE FROM vote where id_member = ? AND id_post = ?");
+        $post_stmt->execute(array($profile_id, $response_id));
+	}
 ?>

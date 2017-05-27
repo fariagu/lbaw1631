@@ -6,6 +6,7 @@ $(document).ready(function(){
 		var textTyped = $("#answerText").val();
 		
 		$.ajax({
+			context: this,
 			url  : BASE_URL + "api/posts/new-answer.php",
 			type : 'get',
 			data : {q_id: question_id, p_id: profile_id, content: textTyped}
@@ -65,6 +66,7 @@ $(document).ready(function(){
 		var response_id = $(this).attr("id");
 		
 		$.ajax({
+			context: this,
 			url  : BASE_URL + "api/posts/new-comment.php",
 			type : 'get',
 			data : {r_id: response_id, p_id: profile_id, content: textTyped}
@@ -91,21 +93,40 @@ $(document).ready(function(){
 				
 				$(".commentText").css({"display": "none"});
 			}
-		}).fail(function(data, statusText, xhr){
-			
 		});
     });
 	
-	$(".like").click(function(e){
-		
+	$(document).on("click", ".like", function(e){
+			
 		e.preventDefault();
 		
 		var response_id = $(this).siblings(".comment").attr("id");
+			
+		var newVal = parseInt($(this).siblings(".rating").text()) + 1;
 		
-		console.log(response_id);
-		console.log(profile_id);
-		
+		if($(this).siblings(".disliked").length == 1)
+		{	
+			newVal++;
+			
+			$.ajax({
+				context: this,
+				url  : BASE_URL + "api/posts/delete-vote.php",
+				type : 'get',
+				data : {r_id: response_id, p_id: profile_id}
+			}).done(function(data, statusText, xhr){
+				var status = xhr.status;
+			
+				if(status == 200)
+				{
+					$(this).siblings(".disliked").removeClass("disliked").addClass("dislike");
+					$(this).siblings(".dislike").css({"background-color": "initial", "color": "initial"});
+					$(this).siblings(".rating").text(newVal);
+				}
+			});
+		}
+			
 		$.ajax({
+			context: this,
 			url  : BASE_URL + "api/posts/vote.php",
 			type : 'get',
 			data : {r_id: response_id, p_id: profile_id, value: 1}
@@ -116,19 +137,69 @@ $(document).ready(function(){
 			{
 				$(this).removeClass("like");
 				$(this).addClass("liked");
+				$(this).css({"background-color": "black", "color": "white"});
+				$(this).siblings(".rating").text(newVal);
 			}
-		}).fail(function(data, statusText, xhr){
-			alert(data);
 		});
     });
 	
-	$(".dislike").click(function(e){
+	$(document).on("click", ".liked", function(e){
+		
+		e.preventDefault();
+		
+		var response_id = $(this).siblings(".comment").attr("id");
+	
+		var newVal = parseInt($(this).siblings(".rating").text()) - 1;
+	
+		$.ajax({
+			context: this,
+			url  : BASE_URL + "api/posts/delete-vote.php",
+			type : 'get',
+			data : {r_id: response_id, p_id: profile_id}
+		}).done(function(data, statusText, xhr){
+			var status = xhr.status;
+		
+			if(status == 200)
+			{
+				$(this).removeClass("liked");
+				$(this).addClass("like");
+				$(this).css({"background-color": "initial", "color": "initial"});
+				$(this).siblings(".rating").text(newVal);
+			}
+		});
+    });
+	
+	$(document).on("click", ".dislike", function(e){
 		
 		e.preventDefault();
 		
 		var response_id = $(this).siblings(".comment").attr("id");
 		
+		var newVal = parseInt($(this).siblings(".rating").text()) - 1;
+		
+		if($(this).siblings(".liked").length == 1)
+		{	
+			newVal--;
+			
+			$.ajax({
+				context: this,
+				url  : BASE_URL + "api/posts/delete-vote.php",
+				type : 'get',
+				data : {r_id: response_id, p_id: profile_id}
+			}).done(function(data, statusText, xhr){
+				var status = xhr.status;
+			
+				if(status == 200)
+				{
+					$(this).siblings(".liked").removeClass("liked").addClass("like");
+					$(this).siblings(".like").css({"background-color": "initial", "color": "initial"});
+					$(this).siblings(".rating").text(newVal);
+				}
+			});
+		}
+		
 		$.ajax({
+			context: this,
 			url  : BASE_URL + "api/posts/vote.php",
 			type : 'get',
 			data : {r_id: response_id, p_id: profile_id, value: -1}
@@ -139,9 +210,35 @@ $(document).ready(function(){
 			{
 				$(this).removeClass("dislike");
 				$(this).addClass("disliked");
+				$(this).css({"background-color": "black", "color": "white"});
+				$(this).siblings(".rating").text(newVal);
 			}
-		}).fail(function(data, statusText, xhr){
-			alert(data);
+		});
+    });
+	
+	$(document).on("click", ".disliked", function(e){
+		
+		e.preventDefault();
+		
+		var response_id = $(this).siblings(".comment").attr("id");
+	
+		var newVal = parseInt($(this).siblings(".rating").text()) + 1;
+	
+		$.ajax({
+			context: this,
+			url  : BASE_URL + "api/posts/delete-vote.php",
+			type : 'get',
+			data : {r_id: response_id, p_id: profile_id}
+		}).done(function(data, statusText, xhr){
+			var status = xhr.status;
+		
+			if(status == 200)
+			{
+				$(this).removeClass("disliked");
+				$(this).addClass("dislike");
+				$(this).css({"background-color": "initial", "color": "initial"});
+				$(this).siblings(".rating").text(newVal);
+			}
 		});
     });
 });
