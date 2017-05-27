@@ -6,6 +6,17 @@
 				{if $user}
 					<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
 					<button type="submit" class="btn btn-default reply">Reply</button>
+					{if $answer.value == -1}
+						<button class="btn btn-default glyphicon glyphicon-thumbs-down disliked"></button>
+					{else}
+						<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>
+					{/if}
+					{if $answer.value == 1}
+						<button class="btn btn-default glyphicon glyphicon-thumbs-up liked"></button>
+					{else}
+						<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>
+					{/if}
+					<p class="rating correctRating">{$answer.rating}</p>
 					<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
 					<button style="display: none" type="submit" class="btn btn-default comment" id="{$answer.a_id}">Post</button>
 				{/if}
@@ -25,6 +36,17 @@
 			{if $user}
 				<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
 				<button type="submit" class="btn btn-default reply">Reply</button>
+				{if $answer.value == -1}
+					<button class="btn btn-default glyphicon glyphicon-thumbs-down disliked"></button>
+				{else}
+					<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>
+				{/if}
+				{if $answer.value == 1}
+					<button class="btn btn-default glyphicon glyphicon-thumbs-up liked"></button>
+				{else}
+					<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>
+				{/if}
+				<p class="rating">{$answer.rating}</p>
 				<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
 				<button style="display: none" type="submit" class="btn btn-default comment" id="{$answer.a_id}">Post</button>
 			{/if}

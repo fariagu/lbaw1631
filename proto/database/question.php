@@ -61,7 +61,7 @@
 		return $question_id;
     }
 	
-	function getCorrectAnswer($id)
+	function getCorrectAnswer($id, $profile_id)
 	{
 		global $conn;
 		$stmt = $conn->prepare("SELECT answer.id as a_id, description, username, creation_date
@@ -74,15 +74,21 @@
 		$stmt->execute(array($id));
 		$correct = $stmt->fetch();
 		
-		$correct['comments'] = getComments($correct['a_id']);
+		$voteStmt = $conn->prepare("SELECT value
+									FROM vote
+									WHERE id_member = ? AND id_post = ?;");
+		$voteStmt->execute(array($profile_id, $correct['a_id']));
+		
+		$correct['value'] = $voteStmt->fetch()['value'];
+		$correct['comments'] = getComments($correct['a_id'], $profile_id);
 		
 		return $correct;
 	}
 	
-	function getAnswers($id)
+	function getAnswers($id, $profile_id)
 	{
 		global $conn;
-		$stmt = $conn->prepare("SELECT answer.id as a_id, description, member.id as m_id, username, creation_date
+		$stmt = $conn->prepare("SELECT answer.id as a_id, description, member.id as m_id, username, creation_date, rating
 								FROM answer
 								INNER JOIN response ON answer.id = response.id
 								INNER JOIN post ON response.id = post.id
@@ -94,16 +100,22 @@
 		
 		foreach($answers as $key => $answer)
 		{
-			$answers[$key]['comments'] = getComments($answer['a_id']);
+			$voteStmt = $conn->prepare("SELECT value
+										FROM vote
+										WHERE id_member = ? AND id_post = ?;");
+			$voteStmt->execute(array($profile_id, $answer['a_id']));
+			$answers[$key]['value'] = $voteStmt->fetch()['value'];
+			
+			$answers[$key]['comments'] = getComments($answer['a_id'], $profile_id);
 		}
 		
 		return $answers;
 	}
 	
-	function getComments($id)
+	function getComments($id, $profile_id)
 	{
 		global $conn;
-		$stmt = $conn->prepare("SELECT comment.id as a_id, description, member.id as m_id, username, creation_date
+		$stmt = $conn->prepare("SELECT comment.id as a_id, description, member.id as m_id, username, creation_date, rating
 								FROM comment
 								INNER JOIN response ON comment.id = response.id
 								INNER JOIN post ON response.id = post.id
@@ -114,7 +126,13 @@
 		
 		foreach($comments as $key => $comment)
 		{
-			$comments[$key]['comments'] = getComments($comment['a_id']);
+			$voteStmt = $conn->prepare("SELECT value
+										FROM vote
+										WHERE id_member = ? AND id_post = ?;");
+			$voteStmt->execute(array($profile_id, $comment['a_id']));
+			$comments[$key]['value'] = $voteStmt->fetch()['value'];
+			
+			$comments[$key]['comments'] = getComments($comment['a_id'], $profile_id);
 		}
 		
 		return $comments;
@@ -134,5 +152,13 @@
 		
         $post_stmt = $conn->prepare("SELECT insert_comment(?, ?, ?);");
         $post_stmt->execute(array($profile_id, $content, $response_id));
+	}
+	
+	function vote($response_id, $profile_id, $value)
+	{
+		global $conn;
+		
+        $post_stmt = $conn->prepare("INSERT INTO vote(id_member, id_post, value) VALUES (?, ?, ?);");
+        $post_stmt->execute(array($profile_id, $response_id, $value));
 	}
 ?>

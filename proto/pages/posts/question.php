@@ -12,8 +12,8 @@
   $id = $_GET['id'];
   
   $question = getQuestionInfo($id);
-  $correct = getCorrectAnswer($id);
-  $answers = getAnswers($id);
+  $correct = getCorrectAnswer($id, $_SESSION['id']);
+  $answers = getAnswers($id, $_SESSION['id']);
   
   $top_categories = getTopCategories();
   

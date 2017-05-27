@@ -346,3 +346,39 @@ body {
 .closeComment {
 	float: right;
 }
+
+.like {
+	float: right;
+	margin-right: 3px;
+}
+
+.dislike {
+	float: right;
+	margin-right: 3px;
+}
+
+.liked {
+	float: right;
+	margin-right: 3px;
+	background-color: black;
+	color: white;
+}
+
+.disliked {
+	float: right;
+	margin-right: 3px;
+	background-color: black;
+	color: white;
+}
+
+
+
+.correctRating {
+	color: white;
+}
+
+.rating {
+	float: right;
+	margin-right: 5px;
+	margin-top: 10px;
+}
