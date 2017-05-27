@@ -169,6 +169,14 @@ function createQuestion($title, $description, $category, $tags, $id) {
         $post_stmt->execute(array($profile_id, $response_id, $value));
 	}
 
+    function deleteVote($response_id, $profile_id)
+    {
+        global $conn;
+
+        $post_stmt = $conn->prepare("DELETE FROM vote where id_member = ? AND id_post = ?");
+        $post_stmt->execute(array($profile_id, $response_id));
+    }
+
 	function createTag($name) {
         global $conn;
         $stmt = $conn->prepare("INSERT INTO tag (name) VALUES (?)");

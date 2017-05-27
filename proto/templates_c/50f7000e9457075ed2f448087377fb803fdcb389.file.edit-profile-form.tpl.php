@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-14 21:40:04
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-27 22:44:55
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\user\edit-profile-form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:65301745558f20c99166397-30989315%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '50f7000e9457075ed2f448087377fb803fdcb389' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\user\\edit-profile-form.tpl',
-      1 => 1494790571,
+      1 => 1495905090,
       2 => 'file',
     ),
   ),
@@ -31,7 +31,7 @@ actions/user/edit-profile.php" method="post" enctype="multipart/form-data">
       <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Password:</label>
             <div class="col-sm-10">
-                <input name="password" type="password" class="form-control" id="pwd" placeholder="Enter password" value="">
+                <input name="password" type="password" class="form-control" id="pwd" placeholder="Enter password" value="" autofocus>
             </div>
       </div>
       <div class="form-group">
@@ -64,12 +64,26 @@ actions/user/edit-profile.php" method="post" enctype="multipart/form-data">
             </div>
       </div>
     </form>
-    <form class="form-horizontal" id="delete-button" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-actions/user/delete-profile.php" method="post" enctype="multipart/form-data">
+
+    <form class="form-horizontal" id="delete_button" action="" method="get" enctype="multipart/form-data">
         <div class="form-group" >
             <div class="col-sm-offset-3 col-sm-10">
                 <button type="submit" class="btn btn-default">Delete Account</button>
             </div>
       </div>
+    </form>
+    <form class="form-horizontal" id="confirmation" action="" method="post" enctype="multipart/form-data">
+        <p>Are you sure?</p>
+        <div class="form-group" >
+            <div class="col-sm-offset-3 col-sm-10">
+                <button type="submit" class="btn btn-default" formaction="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+actions/user/delete-profile.php">Yes</button>
+            </div>
+        </div>
+        <div class="form-group" >
+            <div class="col-sm-offset-3 col-sm-10">
+                <button type="submit" id="cancel" class="btn btn-default">No</button>
+            </div>
+        </div>
     </form>
 </div><?php }} ?>
