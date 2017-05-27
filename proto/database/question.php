@@ -37,30 +37,37 @@
 		return $stmt->fetch();
 	}
 
-    function createQuestion($title, $description, $category, $id) {
-        global $conn;
-        
-        $post_stmt = $conn->prepare("INSERT INTO post (description,id_author) VALUES (?,?)");
-        $post_stmt->execute(array($description, $id));
-        
-        $post_id = $conn->prepare("SELECT MAX(id) as id_post
-									FROM post");
-        $post_id->execute();
-        
-        $category_stmt = $conn->prepare("SELECT id
-                                         FROM category
-                                         WHERE name = ?;");
-        $category_stmt->execute(array($category));
-        $category_id = $category_stmt->fetch()['id'];
-		
-		$question_id = $post_id->fetch()['id_post'];
-        
-        $question_stmt = $conn->prepare("INSERT INTO question (id, title, id_category) VALUES (?,?,?)");
-        $question_stmt->execute(array($question_id, $title, $category_id));
-		
-		return $question_id;
-    }
-	
+function createQuestion($title, $description, $category, $tags, $id) {
+    global $conn;
+    $post_stmt = $conn->prepare("INSERT INTO post (description,id_author) VALUES (?,?)");
+    $post_stmt->execute(array($description, $id));
+
+    $post_id = $conn->prepare("SELECT MAX(id) as id_post
+                                        FROM post");
+    $post_id->execute();
+
+    $category_stmt = $conn->prepare("SELECT id
+                                             FROM category
+                                             WHERE name = ?;");
+    $category_stmt->execute(array($category));
+    $category_id = $category_stmt->fetch()['id'];
+
+    $question_id = $post_id->fetch()['id_post'];
+
+    $question_stmt = $conn->prepare("INSERT INTO question (id, title, id_category) VALUES (?,?,?)");
+    $question_stmt->execute(array($question_id, $title, $category_id));
+
+    $tagArray = explode(";", $tags);
+
+    //$tagIDarray = array();
+	for ($i=0; $i < sizeof($tagArray); $i++){
+		//array_push($tagIDarray, createTag($tagArray[$i]));
+		$tag_stmt = $conn->prepare("INSERT INTO question_tag (id_question, id_tag) VALUES (?, ?)");
+		$tag_stmt->execute(array($question_id, createTag($tagArray[$i])));
+	}
+
+    return $question_id;
+}
 	function getCorrectAnswer($id, $profile_id)
 	{
 		global $conn;
@@ -161,4 +168,18 @@
         $post_stmt = $conn->prepare("INSERT INTO vote(id_member, id_post, value) VALUES (?, ?, ?);");
         $post_stmt->execute(array($profile_id, $response_id, $value));
 	}
+
+	function createTag($name) {
+        global $conn;
+        $stmt = $conn->prepare("INSERT INTO tag (name) VALUES (?)");
+        $stmt->execute(array($name));
+
+        $tag_stmt = $conn->prepare("SELECT id
+                                         FROM tag
+                                         WHERE name = ?;");
+        $tag_stmt->execute(array($name));
+        $tag_id = $tag_stmt->fetch()['id'];
+
+        return $tag_id;
+    }
 ?>
