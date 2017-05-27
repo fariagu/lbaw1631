@@ -19,6 +19,11 @@
 				{/foreach}
 			</select>
 		</div>
+		<div class="form-group">
+            <label for="tags">Tags:</label>
+            <textarea name="tags" class="form-control" rows="5" id="tags" placeholder="Separate each tag by a semicolon (;)"></textarea>
+        </div>
+
         <button type="submit" class="btn btn-default">Post</button>
 	</form>
 </div>

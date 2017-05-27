@@ -18,9 +18,10 @@
   $title = strip_tags($_POST['title']);
   $description = strip_tags($_POST['question']);
   $category = strip_tags($_POST['sel1']);
-  
+  $tags = strip_tags($_POST['tags']);
+
   try {
-    $question_id = createQuestion($title, $description, $category, $_SESSION['id']);
+    $question_id = createQuestion($title, $description, $category, $tags, $_SESSION['id']);
       
   } catch (PDOException $e) {
 
