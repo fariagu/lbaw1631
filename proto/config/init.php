@@ -5,8 +5,8 @@ session_set_cookie_params(3600, '/lbaw1631'); //local
 
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-//  $BASE_DIR = '/mnt/d/CODE/www/lbaw1631/proto/'; //gustavo
-  $BASE_DIR = 'C:/xampp/htdocs/lbaw1631/proto/'; //daniel
+//	$BASE_DIR = '/mnt/d/CODE/www/lbaw1631/proto/'; //gustavo
+	$BASE_DIR = 'C:/xampp/htdocs/lbaw1631/proto/'; //daniel
 //	$BASE_DIR = '/opt/lbaw/lbaw1631/public_html/proto/'; //gnomo
 	$BASE_URL = '/lbaw1631/proto/'; //local
 //	$BASE_URL = '/~lbaw1631/proto/'; //gnomo
