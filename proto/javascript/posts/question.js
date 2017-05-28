@@ -337,9 +337,25 @@ $(document).ready(function(){
 		
 			if(status == 200)
 			{
+				$(".alert").remove();
+				var str = '<div class="alert alert-success">' +
+				 '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
+				'<strong>Success!</strong>   Report successful!' + 
+				'</div>';
 				
+				$("#topic-title").before(str);
 			}
+		}).fail(function(data, statusText, xhr){
+			$(".alert").remove();
+			var str = '<div class="alert alert-info">' +
+			 '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
+			'<strong>Error!</strong>   Report failed!' + 
+			'</div>';
+			
+			$("#topic-title").before(str);
 		});
+		
+		$("#report-text").val('');
 		
 		$('#reportModal').modal('toggle');
 	});
