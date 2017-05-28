@@ -35,6 +35,6 @@
 				<option>Most recent</option>
 			</select>
 		</div>
-        <button type="submit" class="btn btn-default">Search</button>
+        <button type="submit" class="btn btn-default searchButton">Search</button>
 	</form>
 </div>
