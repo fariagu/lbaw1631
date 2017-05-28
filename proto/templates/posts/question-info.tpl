@@ -2,9 +2,21 @@
     <div id="question-space" class="container-fluid">
         <h1>{$question.title}</h1>
         <div>
-            <p>{$question.rating} votes</p>
+            <p class="rating">{$question.rating} votes</p>
             <a href="{$BASE_URL}pages/user/profile.php?id={$question.id_author}" class="list-group-item">{$question.author_name}</a>
 			<a href="{$BASE_URL}pages/categories/category.php?id={$question.id_category}" class="list-group-item">{$question.category_name}</a>
+			{if $USER_ID}
+				{if $question.value == -1}
+					<button class="btn btn-default glyphicon glyphicon-thumbs-down disliked question"></button>
+				{else}
+					<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike question"></button>
+				{/if}
+				{if $question.value == 1}
+					<button class="btn btn-default glyphicon glyphicon-thumbs-up liked question"></button>
+				{else}
+					<button class="btn btn-default glyphicon glyphicon-thumbs-up like question"></button>
+				{/if}
+			{/if}
         </div>
 		<p id="question-body">{$question.description}</p>
     </div>    

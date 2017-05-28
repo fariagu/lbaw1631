@@ -11,7 +11,7 @@
   
   $id = $_GET['id'];
   
-  $question = getQuestionInfo($id);
+  $question = getQuestionInfo($id, $_SESSION['id']);
   $correct = getCorrectAnswer($id, $_SESSION['id']);
   $answers = getAnswers($id, $_SESSION['id']);
   

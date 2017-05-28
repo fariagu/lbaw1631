@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-27 19:12:31
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-28 23:54:55
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\question-info.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:85119251458f0ce9e7be188-69637342%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e4e12dd2c0f2dc20b3df2dc5b5e9a56c543b52e7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\question-info.tpl',
-      1 => 1495905090,
+      1 => 1496008493,
       2 => 'file',
     ),
   ),
@@ -21,8 +21,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'question' => 0,
     'BASE_URL' => 0,
-    'correct' => 0,
     'USER_ID' => 0,
+    'correct' => 0,
     'answers' => 0,
   ),
   'has_nocache_code' => false,
@@ -32,7 +32,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <h1><?php echo $_smarty_tpl->tpl_vars['question']->value['title'];?>
 </h1>
         <div>
-            <p><?php echo $_smarty_tpl->tpl_vars['question']->value['rating'];?>
+            <p class="rating"><?php echo $_smarty_tpl->tpl_vars['question']->value['rating'];?>
  votes</p>
             <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['question']->value['id_author'];?>
@@ -42,6 +42,18 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['question']->value['
 pages/categories/category.php?id=<?php echo $_smarty_tpl->tpl_vars['question']->value['id_category'];?>
 " class="list-group-item"><?php echo $_smarty_tpl->tpl_vars['question']->value['category_name'];?>
 </a>
+			<?php if ($_smarty_tpl->tpl_vars['USER_ID']->value) {?>
+				<?php if ($_smarty_tpl->tpl_vars['question']->value['value']==-1) {?>
+					<button class="btn btn-default glyphicon glyphicon-thumbs-down disliked question"></button>
+				<?php } else { ?>
+					<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike question"></button>
+				<?php }?>
+				<?php if ($_smarty_tpl->tpl_vars['question']->value['value']==1) {?>
+					<button class="btn btn-default glyphicon glyphicon-thumbs-up liked question"></button>
+				<?php } else { ?>
+					<button class="btn btn-default glyphicon glyphicon-thumbs-up like question"></button>
+				<?php }?>
+			<?php }?>
         </div>
 		<p id="question-body"><?php echo $_smarty_tpl->tpl_vars['question']->value['description'];?>
 </p>

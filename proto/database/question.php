@@ -25,7 +25,7 @@
 		return $stmt->fetchAll();
 	}
 	
-	function getQuestionInfo($id) {
+	function getQuestionInfo($id, $profile_id) {
 		global $conn;
 		$stmt = $conn->prepare("SELECT title, rating, post.description as description, id_author, id_category, member.username as author_name, category.name as category_name
 								FROM question
@@ -34,7 +34,16 @@
 								INNER JOIN member ON post.id_author = member.id
 								WHERE question.id = ?;");
 		$stmt->execute(array($id));
-		return $stmt->fetch();
+		
+		$voteStmt = $conn->prepare("SELECT value
+									FROM vote
+									WHERE id_member = ? AND id_post = ?;");
+		$voteStmt->execute(array($profile_id, $id));
+		
+		$question = $stmt->fetch();
+		$question['value'] = $voteStmt->fetch()['value'];
+		
+		return $question;
 	}
 
 function createQuestion($title, $description, $category, $tags, $id) {

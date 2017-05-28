@@ -102,7 +102,16 @@ $(document).ready(function(){
 			
 		e.preventDefault();
 		
-		var response_id = $(this).siblings(".comment").attr("id");
+		var response_id;
+		
+		if($(this).hasClass("question"))
+		{
+			response_id = question_id;
+		}
+		else
+		{
+			response_id = $(this).siblings(".comment").attr("id");
+		}
 			
 		var newVal = parseInt($(this).siblings(".rating").text()) + 1;
 		
@@ -121,7 +130,7 @@ $(document).ready(function(){
 				if(status == 200)
 				{
 					$(this).siblings(".disliked").removeClass("disliked").addClass("dislike");
-					$(this).siblings(".dislike").css({"background-color": "initial", "color": "initial"});
+					$(this).siblings(".dislike").css({"background-color": "#fff", "color": "initial"});
 					$(this).siblings(".rating").text(newVal);
 				}
 			});
@@ -149,7 +158,14 @@ $(document).ready(function(){
 		
 		e.preventDefault();
 		
-		var response_id = $(this).siblings(".comment").attr("id");
+		if($(this).hasClass("question"))
+		{
+			response_id = question_id;
+		}
+		else
+		{
+			response_id = $(this).siblings(".comment").attr("id");
+		}
 	
 		var newVal = parseInt($(this).siblings(".rating").text()) - 1;
 	
@@ -165,7 +181,7 @@ $(document).ready(function(){
 			{
 				$(this).removeClass("liked");
 				$(this).addClass("like");
-				$(this).css({"background-color": "initial", "color": "initial"});
+				$(this).css({"background-color": "#fff", "color": "initial"});
 				$(this).siblings(".rating").text(newVal);
 			}
 		});
@@ -175,7 +191,14 @@ $(document).ready(function(){
 		
 		e.preventDefault();
 		
-		var response_id = $(this).siblings(".comment").attr("id");
+		if($(this).hasClass("question"))
+		{
+			response_id = question_id;
+		}
+		else
+		{
+			response_id = $(this).siblings(".comment").attr("id");
+		}
 		
 		var newVal = parseInt($(this).siblings(".rating").text()) - 1;
 		
@@ -194,7 +217,7 @@ $(document).ready(function(){
 				if(status == 200)
 				{
 					$(this).siblings(".liked").removeClass("liked").addClass("like");
-					$(this).siblings(".like").css({"background-color": "initial", "color": "initial"});
+					$(this).siblings(".like").css({"background-color": "#fff", "color": "initial"});
 					$(this).siblings(".rating").text(newVal);
 				}
 			});
@@ -222,7 +245,14 @@ $(document).ready(function(){
 		
 		e.preventDefault();
 		
-		var response_id = $(this).siblings(".comment").attr("id");
+		if($(this).hasClass("question"))
+		{
+			response_id = question_id;
+		}
+		else
+		{
+			response_id = $(this).siblings(".comment").attr("id");
+		}
 	
 		var newVal = parseInt($(this).siblings(".rating").text()) + 1;
 	
@@ -238,7 +268,7 @@ $(document).ready(function(){
 			{
 				$(this).removeClass("disliked");
 				$(this).addClass("dislike");
-				$(this).css({"background-color": "initial", "color": "initial"});
+				$(this).css({"background-color": "#fff", "color": "initial"});
 				$(this).siblings(".rating").text(newVal);
 			}
 		});
