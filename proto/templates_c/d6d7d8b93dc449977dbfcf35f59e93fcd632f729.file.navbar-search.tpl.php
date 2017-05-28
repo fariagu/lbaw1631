@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-27 19:12:24
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-28 21:52:44
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\common\navbar-search.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:73831550558ef9e765a9ba3-78483859%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd6d7d8b93dc449977dbfcf35f59e93fcd632f729' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\common\\navbar-search.tpl',
-      1 => 1495905090,
+      1 => 1496000702,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_58ef9e765abf47_49389146')) {function content_58ef9e765abf47_49389146($_smarty_tpl) {?><form class="navbar-form navbar-right" data-toggle="collapse" data-target=".navbar-collapse.in" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/posts/search-question.php">
 	<div class="form-group">
-		<input type="text" class="form-control" placeholder="Search" >
+		<input type="text" class="form-control" placeholder="Search" name="search" >
 	</div>
 	<button type="submit" class="btn btn-default">Search</button>
 </form><?php }} ?>

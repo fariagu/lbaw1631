@@ -197,4 +197,24 @@ function createQuestion($title, $description, $category, $tags, $id) {
         $stmt = $conn->prepare("INSERT INTO report (id_member, id_post, description) VALUES (?,?,?);");
         $stmt->execute(array($p_id, $r_id, $content));
 	}
+	
+	function searchQuestions($text)
+	{
+		global $conn;
+        $stmt = $conn->prepare("SELECT * FROM (
+									SELECT question.id as q_id, title, post.description, (
+										ts_rank_cd(setweight(to_tsvector('english', question.title), 'A'),
+													to_tsquery('english', ?)) +
+										ts_rank_cd(setweight(to_tsvector('english', post.description), 'B'),
+													to_tsquery('english', ?))
+										) AS score
+									FROM question
+									INNER JOIN post ON post.id = question.id
+									) AS tmp
+								WHERE score > 0
+								ORDER BY score DESC;");
+        $stmt->execute(array($text, $text));
+		
+		return $stmt->fetchAll();
+	}
 ?>
