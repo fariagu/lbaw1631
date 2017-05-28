@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-16 18:47:27
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-27 23:19:26
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\categories\categories.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:42423160158f0c0c08bc6d2-36158494%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ff11eb6496f4be4954be352e351933f0f1754dd2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\categories\\categories.tpl',
-      1 => 1492361236,
+      1 => 1495919946,
       2 => 'file',
     ),
   ),
@@ -39,8 +39,9 @@ $_smarty_tpl->tpl_vars['category']->_loop = true;
 						<a id="<?php echo $_smarty_tpl->tpl_vars['category']->value['id'];?>
 " href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/categories/category.php?id=<?php echo $_smarty_tpl->tpl_vars['category']->value['id'];?>
-" class="list-group-item"><?php echo $_smarty_tpl->tpl_vars['category']->value['name'];?>
+" class="list-group-item categoryItem"><?php echo $_smarty_tpl->tpl_vars['category']->value['name'];?>
 </a>
+						<button class="btn btn-default glyphicon glyphicon-remove deleteCategory"></button>
 					<?php } ?>
 				</div>
 			</div>

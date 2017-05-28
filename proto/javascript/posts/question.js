@@ -93,6 +93,8 @@ $(document).ready(function(){
 				
 				$(".commentText").css({"display": "none"});
 			}
+		}).fail(function(data, statusText, xhr){
+			alert(data);
 		});
     });
 	
