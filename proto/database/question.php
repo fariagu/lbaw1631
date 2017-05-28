@@ -190,4 +190,11 @@ function createQuestion($title, $description, $category, $tags, $id) {
 
         return $tag_id;
     }
+	
+	function createReport($r_id, $p_id, $content)
+	{
+		global $conn;
+        $stmt = $conn->prepare("INSERT INTO report (id_member, id_post, description) VALUES (?,?,?);");
+        $stmt->execute(array($p_id, $r_id, $content));
+	}
 ?>

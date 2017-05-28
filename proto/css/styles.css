@@ -333,6 +333,7 @@ body {
 
 .reply {
 	float: right;
+	margin-right: 3px;
 }
 
 .commentText {
@@ -379,4 +380,8 @@ body {
 	float: right;
 	margin-right: 5px;
 	margin-top: 10px;
+}
+
+.report {
+	float: right;
 }

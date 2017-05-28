@@ -243,4 +243,38 @@ $(document).ready(function(){
 			}
 		});
     });
+	
+	$(".report").click(function(e){
+		
+		var id = parseInt($(this).siblings(".comment").attr("id"));
+		
+		$(".reportButton").attr("id", id);
+    });
+	
+	$(".reportButton").click(function(e){
+		
+		var id = $(".reportButton").attr("id");
+		
+		var textTyped = $("#report-text").val();
+		
+		console.log(id);
+		console.log(textTyped);
+		console.log(profile_id);
+		
+		$.ajax({
+			context: this,
+			url  : BASE_URL + "api/posts/report.php",
+			type : 'get',
+			data : {r_id: id, p_id: profile_id, content: textTyped}
+		}).done(function(data, statusText, xhr){
+			var status = xhr.status;
+		
+			if(status == 200)
+			{
+				alert("asd");
+			}
+		}).fail(function(data, statusText, xhr){
+			alert(data);
+		});
+	});
 });

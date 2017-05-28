@@ -5,6 +5,7 @@
 			<div class="panel-body">{$answer.description}
 				{if $user}
 					<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
+					<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
 					<button type="submit" class="btn btn-default reply">Reply</button>
 					{if $answer.value == -1}
 						<button class="btn btn-default glyphicon glyphicon-thumbs-down disliked"></button>
@@ -35,6 +36,7 @@
 		<div class="panel-body">{$answer.description}
 			{if $user}
 				<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
+				<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
 				<button type="submit" class="btn btn-default reply">Reply</button>
 				{if $answer.value == -1}
 					<button class="btn btn-default glyphicon glyphicon-thumbs-down disliked"></button>
@@ -57,3 +59,28 @@
     {/if}
   {/foreach}
 {/function}
+
+<!-- Modal -->
+<div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Report post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="message-text" class="form-control-label">Reason:</label>
+            <textarea class="form-control" id="report-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default reportButton">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
