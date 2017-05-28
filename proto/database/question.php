@@ -160,6 +160,8 @@ function createQuestion($title, $description, $category, $tags, $id) {
 		
         $post_stmt = $conn->prepare("SELECT insert_answer(?, ?, ?);");
         $post_stmt->execute(array($profile_id, $content, $question_id));
+		
+		return $post_stmt->fetch()['insert_answer'];
 	}
 	
 	function createComment($response_id, $profile_id, $content)
@@ -168,6 +170,8 @@ function createQuestion($title, $description, $category, $tags, $id) {
 		
         $post_stmt = $conn->prepare("SELECT insert_comment(?, ?, ?);");
         $post_stmt->execute(array($profile_id, $content, $response_id));
+		
+		return $post_stmt->fetch()['insert_comment'];
 	}
 	
 	function vote($response_id, $profile_id, $value)

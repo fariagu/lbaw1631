@@ -17,7 +17,7 @@
 					{else}
 						<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>
 					{/if}
-					<p class="rating correctRating">{$answer.rating}</p>
+					<p class="rating correctRating">{$answer.rating} votes</p>
 					<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
 					<button style="display: none" type="submit" class="btn btn-default comment" id="{$answer.a_id}">Post</button>
 				{/if}
@@ -48,7 +48,7 @@
 				{else}
 					<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>
 				{/if}
-				<p class="rating">{$answer.rating}</p>
+				<p class="rating">{$answer.rating} votes</p>
 				<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
 				<button style="display: none" type="submit" class="btn btn-default comment" id="{$answer.a_id}">Post</button>
 			{/if}

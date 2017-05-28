@@ -9,7 +9,7 @@
   }
   
   try {
-	  createComment($_GET['r_id'], $_GET['p_id'], $_GET['content']);
+	  echo createComment($_GET['r_id'], $_GET['p_id'], $_GET['content']);
 	  http_response_code(200);
   }
   catch (PDOException $e) {

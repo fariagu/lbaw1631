@@ -384,6 +384,7 @@ body {
 
 .report {
 	float: right;
+	margin-right: 3px;
 }
 
 .deleteCategory {

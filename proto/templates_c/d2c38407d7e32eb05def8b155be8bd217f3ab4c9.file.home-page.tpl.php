@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-27 19:12:24
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 00:58:08
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\home\home-page.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:118547159258efa30672f419-81385442%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd2c38407d7e32eb05def8b155be8bd217f3ab4c9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\home\\home-page.tpl',
-      1 => 1495905090,
+      1 => 1496012285,
       2 => 'file',
     ),
   ),
@@ -19,6 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_58efa306730948_52327314',
   'variables' => 
   array (
+    'SUCCESS_MESSAGES' => 0,
     'top_questions' => 0,
     'BASE_URL' => 0,
     'question' => 0,
@@ -26,6 +27,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58efa306730948_52327314')) {function content_58efa306730948_52327314($_smarty_tpl) {?>		<!-- Page Content -->
+		<?php if ($_smarty_tpl->tpl_vars['SUCCESS_MESSAGES']->value) {?>
+			<div class="alert alert-success">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>Success!</strong>   <?php echo $_smarty_tpl->tpl_vars['SUCCESS_MESSAGES']->value;?>
+.
+			</div>
+		<?php }?>
+			
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">

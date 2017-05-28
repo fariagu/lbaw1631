@@ -6,6 +6,7 @@
             <a href="{$BASE_URL}pages/user/profile.php?id={$question.id_author}" class="list-group-item">{$question.author_name}</a>
 			<a href="{$BASE_URL}pages/categories/category.php?id={$question.id_category}" class="list-group-item">{$question.category_name}</a>
 			{if $USER_ID}
+				<button type="button" class="btn btn-default report question" data-toggle="modal" data-target="#reportModal">Report</button>
 				{if $question.value == -1}
 					<button class="btn btn-default glyphicon glyphicon-thumbs-down disliked question"></button>
 				{else}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-15 18:48:49
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 00:22:56
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\admin\solve-form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2028658258f24ef176f8b8-57096311%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd33fcfa5fee70448610be50ca153752f3d763756' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\admin\\solve-form.tpl',
-      1 => 1492274896,
+      1 => 1495734446,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_58f24ef1776aa9_92216059',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'reported_post' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_58f24ef1776aa9_92216059',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58f24ef1776aa9_92216059')) {function content_58f24ef1776aa9_92216059($_smarty_tpl) {?><div class="enter-info">
 	<div class="row">
@@ -32,7 +32,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <form class="form-horizontal" id="register-form" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 actions/admin/solve.php" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="id_member" value="<?php echo $_smarty_tpl->tpl_vars['reported_member']->value;?>
-">
+" autofocus>
 		<input type="hidden" name="id_post" value="<?php echo $_smarty_tpl->tpl_vars['reported_post']->value;?>
 ">
 		<div class="form-group">

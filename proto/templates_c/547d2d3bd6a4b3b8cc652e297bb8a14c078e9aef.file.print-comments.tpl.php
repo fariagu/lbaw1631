@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-28 23:13:50
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 00:03:48
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\print-comments.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:672381039591396c9c44ae5-47234055%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '547d2d3bd6a4b3b8cc652e297bb8a14c078e9aef' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\print-comments.tpl',
-      1 => 1496005985,
+      1 => 1496008961,
       2 => 'file',
     ),
   ),
@@ -72,7 +72,7 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_
 						<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>
 					<?php }?>
 					<p class="rating correctRating"><?php echo $_smarty_tpl->tpl_vars['answer']->value['rating'];?>
-</p>
+ votes</p>
 					<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
 					<button style="display: none" type="submit" class="btn btn-default comment" id="<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_id'];?>
 ">Post</button>
@@ -121,7 +121,7 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['m_
 					<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>
 				<?php }?>
 				<p class="rating"><?php echo $_smarty_tpl->tpl_vars['answer']->value['rating'];?>
-</p>
+ votes</p>
 				<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
 				<button style="display: none" type="submit" class="btn btn-default comment" id="<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_id'];?>
 ">Post</button>

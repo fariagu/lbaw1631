@@ -1,4 +1,11 @@
 		<!-- Page Content -->
+		{if $SUCCESS_MESSAGES}
+			<div class="alert alert-success">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>Success!</strong>   {$SUCCESS_MESSAGES}.
+			</div>
+		{/if}
+			
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">

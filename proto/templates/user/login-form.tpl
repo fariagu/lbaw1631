@@ -21,4 +21,10 @@
                 </div>
           </div>
     </form>
+	{if $ERROR_MESSAGES}
+		<div class="alert alert-info">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>Authentication error!</strong>   {$ERROR_MESSAGES}.
+		</div>
+	{/if}
 </div>

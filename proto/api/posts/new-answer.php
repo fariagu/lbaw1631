@@ -9,7 +9,7 @@
   }
   
   try {
-	  createAnswer($_GET['q_id'], $_GET['p_id'], $_GET['content']);
+	  echo createAnswer($_GET['q_id'], $_GET['p_id'], $_GET['content']);
 	  http_response_code(200);
   }
   catch (PDOException $e) {

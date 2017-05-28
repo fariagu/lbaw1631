@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#answer").click(function(e){
+    $(document).on("click", "#answer", function(e){
 		
 		e.preventDefault();
 		
@@ -15,7 +15,18 @@ $(document).ready(function(){
 		
 			if(status == 200)
 			{
-				var str = '<div class="panel panel-default" id="answerComment" style="margin-left:0px"><a href="' + BASE_URL + 'pages/user/profile.php?id=' + profile_id + '" class="list-group-item">' + username + '</a><div class="panel-body">' + textTyped + '</div></div>';
+				var str = '<div class="panel panel-default" id="answerComment" style="margin-left:0px"><a href="' + BASE_URL +
+				'pages/user/profile.php?id=' + profile_id + '" class="list-group-item">' + username + '</a><div class="panel-body">' + 
+				textTyped + 
+				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />' +
+					'<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>' +
+					'<button type="submit" class="btn btn-default reply">Reply</button>' +
+					'<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>' +
+					'<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>' +
+					'<p class="rating">0 votes</p>' +
+					'<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>' +
+				'<button style="display: none" type="submit" class="btn btn-default comment" id="' + data + '">Post</button>' +
+				'</div></div>';
 				$("#answerText").val('');
 				$("#answerForm").before(str);
 			}
@@ -23,7 +34,7 @@ $(document).ready(function(){
 		
     });
 	
-	$(".reply").click(function(e){
+	$(document).on("click", ".reply", function(e){
 		
 		e.preventDefault();
 		
@@ -55,7 +66,7 @@ $(document).ready(function(){
 		$(".commentText").css({"display": "none"});
     });
 	
-	$(".comment").click(function(e){
+	$(document).on("click", ".comment", function(e){
 		
 		var newMargin = parseInt($(this).parent().parent().css("margin-left")) + 50;
 		
@@ -79,7 +90,16 @@ $(document).ready(function(){
 				
 				var str = '<div class="panel panel-default" id="answerComment" style="margin-left:' + newMargin + 'px"><a href="'
 				+ BASE_URL + 'pages/user/profile.php?id=' + profile_id + '" class="list-group-item">' + username +
-				'</a><div class="panel-body">' + textTyped + '</div></div>';
+				'</a><div class="panel-body">' + textTyped +
+				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />' +
+					'<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>' +
+					'<button type="submit" class="btn btn-default reply">Reply</button>' +
+					'<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>' +
+					'<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>' +
+					'<p class="rating">0 votes</p>' +
+					'<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>' +
+				'<button style="display: none" type="submit" class="btn btn-default comment" id="' + data + '">Post</button>' +
+				'</div></div>';
 				
 				$("#" + response_id).parent().parent().after(str);
 				
@@ -131,7 +151,7 @@ $(document).ready(function(){
 				{
 					$(this).siblings(".disliked").removeClass("disliked").addClass("dislike");
 					$(this).siblings(".dislike").css({"background-color": "#fff", "color": "initial"});
-					$(this).siblings(".rating").text(newVal);
+					$(this).siblings(".rating").text(newVal + " votes");
 				}
 			});
 		}
@@ -149,7 +169,7 @@ $(document).ready(function(){
 				$(this).removeClass("like");
 				$(this).addClass("liked");
 				$(this).css({"background-color": "black", "color": "white"});
-				$(this).siblings(".rating").text(newVal);
+				$(this).siblings(".rating").text(newVal + " votes");
 			}
 		});
     });
@@ -182,7 +202,7 @@ $(document).ready(function(){
 				$(this).removeClass("liked");
 				$(this).addClass("like");
 				$(this).css({"background-color": "#fff", "color": "initial"});
-				$(this).siblings(".rating").text(newVal);
+				$(this).siblings(".rating").text(newVal + " votes");
 			}
 		});
     });
@@ -218,7 +238,7 @@ $(document).ready(function(){
 				{
 					$(this).siblings(".liked").removeClass("liked").addClass("like");
 					$(this).siblings(".like").css({"background-color": "#fff", "color": "initial"});
-					$(this).siblings(".rating").text(newVal);
+					$(this).siblings(".rating").text(newVal + " votes");
 				}
 			});
 		}
@@ -236,7 +256,7 @@ $(document).ready(function(){
 				$(this).removeClass("dislike");
 				$(this).addClass("disliked");
 				$(this).css({"background-color": "black", "color": "white"});
-				$(this).siblings(".rating").text(newVal);
+				$(this).siblings(".rating").text(newVal + " votes");
 			}
 		});
     });
@@ -269,21 +289,39 @@ $(document).ready(function(){
 				$(this).removeClass("disliked");
 				$(this).addClass("dislike");
 				$(this).css({"background-color": "#fff", "color": "initial"});
-				$(this).siblings(".rating").text(newVal);
+				$(this).siblings(".rating").text(newVal + " votes");
 			}
 		});
     });
 	
 	$(".report").click(function(e){
 		
-		var id = parseInt($(this).siblings(".comment").attr("id"));
+		var id;
+		
+		if($(this).hasClass("question"))
+		{
+			id = question_id;
+		}
+		else
+		{
+			id = parseInt($(this).siblings(".comment").attr("id"));
+		}
 		
 		$(".reportButton").attr("id", id);
     });
 	
-	$(".reportButton").click(function(e){
+	$(document).on("click", ".reportButton", function(e){
 		
-		var id = $(".reportButton").attr("id");
+		var id;
+		
+		if($(this).hasClass("question"))
+		{
+			id = question_id;
+		}
+		else
+		{
+			id = $(".reportButton").attr("id");
+		}
 		
 		var textTyped = $("#report-text").val();
 		
@@ -301,10 +339,10 @@ $(document).ready(function(){
 		
 			if(status == 200)
 			{
-				alert("asd");
+				
 			}
-		}).fail(function(data, statusText, xhr){
-			alert(data);
 		});
+		
+		$('#reportModal').modal('toggle');
 	});
 });

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-16 01:05:01
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 00:01:34
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\post-question-form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:77437148558f2179d7a8cd5-32814215%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2d73c99a4aa7311b9a71338fe1163231cecd8cf7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\post-question-form.tpl',
-      1 => 1492297497,
+      1 => 1496005985,
       2 => 'file',
     ),
   ),
@@ -33,7 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 actions/posts/new-question.php" method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="title">Title:</label>
-			<input name="title" type="text" class="form-control" id="title" placeholder="Enter your question title">
+			<input name="title" type="text" class="form-control" id="title" placeholder="Enter your question title" autofocus>
 		</div>
 		<div class="form-group">
 			<label for="question">Question:</label>
@@ -52,6 +52,10 @@ $_smarty_tpl->tpl_vars['category']->_loop = true;
 				<?php } ?>
 			</select>
 		</div>
+		<div class="form-group">
+            <label for="tags">Tags:</label>
+            <textarea name="tags" class="form-control" rows="5" id="tags" placeholder="Separate each tag by a semicolon (;)"></textarea>
+        </div>
         <button type="submit" class="btn btn-default">Post</button>
 	</form>
 </div><?php }} ?>

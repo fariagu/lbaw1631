@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-27 21:35:24
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 00:58:21
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\user\register-form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:29886032358f0c9a7c44259-22514250%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa7542bd604014a76404e47aeaf743b329cdf7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\user\\register-form.tpl',
-      1 => 1495905090,
+      1 => 1496012176,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'BASE_URL' => 0,
     'FORM_VALUES' => 0,
+    'ERROR_MESSAGES' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -78,4 +79,11 @@ actions/user/register.php" method="post" enctype="multipart/form-data">
             </div>
       </div>
     </form>
+	<?php if ($_smarty_tpl->tpl_vars['ERROR_MESSAGES']->value) {?>
+		<div class="alert alert-info">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>Register error!</strong>   <?php echo $_smarty_tpl->tpl_vars['ERROR_MESSAGES']->value;?>
+.
+		</div>
+	<?php }?>
 </div><?php }} ?>
