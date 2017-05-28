@@ -13,6 +13,7 @@
   
   $smarty->assign('top_categories', $top_categories);
   $smarty->assign('categories', $categories);
+  $smarty->assign('page_title', 'Post Question');
   
   $smarty->display('posts/new-question.tpl');
 ?>

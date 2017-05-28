@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 00:03:48
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 01:21:37
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\print-comments.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:672381039591396c9c44ae5-47234055%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '547d2d3bd6a4b3b8cc652e297bb8a14c078e9aef' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\print-comments.tpl',
-      1 => 1496008961,
+      1 => 1496013661,
       2 => 'file',
     ),
   ),
@@ -59,7 +59,9 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_
 
 				<?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
 					<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
-					<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
+					<?php if ($_smarty_tpl->tpl_vars['user']->value!=$_smarty_tpl->tpl_vars['answer']->value['m_id']) {?>
+						<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
+					<?php }?>
 					<button type="submit" class="btn btn-default reply">Reply</button>
 					<?php if ($_smarty_tpl->tpl_vars['answer']->value['value']==-1) {?>
 						<button class="btn btn-default glyphicon glyphicon-thumbs-down disliked"></button>
@@ -108,7 +110,9 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['m_
 
 			<?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
 				<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
-				<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
+				<?php if ($_smarty_tpl->tpl_vars['user']->value!=$_smarty_tpl->tpl_vars['answer']->value['m_id']) {?>
+					<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
+				<?php }?>
 				<button type="submit" class="btn btn-default reply">Reply</button>
 				<?php if ($_smarty_tpl->tpl_vars['answer']->value['value']==-1) {?>
 					<button class="btn btn-default glyphicon glyphicon-thumbs-down disliked"></button>

@@ -10,6 +10,7 @@
   $top_categories = getTopCategories();
 
   $smarty->assign('top_categories', $top_categories);
+  $smarty->assign('page_title', 'Add Category');
   
   $smarty->display('categories/add.tpl');
 ?>

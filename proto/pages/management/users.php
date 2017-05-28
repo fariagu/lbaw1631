@@ -14,6 +14,7 @@
   
   $smarty->assign('top_categories', $top_categories);
   $smarty->assign('profiles', $profiles);
+  $smarty->assign('page_title', 'All Users');
   
   $smarty->display('management/users.tpl');
 ?>

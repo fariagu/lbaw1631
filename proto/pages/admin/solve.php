@@ -24,6 +24,7 @@
   $smarty->assign('top_categories', $top_categories);
   $smarty->assign('reported_member', $reported_member);
   $smarty->assign('reported_post', $reported_post);
+  $smarty->assign('page_title', 'Solve Report');
   
   $smarty->display('admin/solve.tpl');
 ?>

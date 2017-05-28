@@ -14,6 +14,7 @@
   
   $smarty->assign('top_categories', $top_categories);
   $smarty->assign('reports', $reports);
+  $smarty->assign('page_title', 'All Reports');
   
   $smarty->display('admin/reports.tpl');
 ?>

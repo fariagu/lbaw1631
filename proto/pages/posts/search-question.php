@@ -11,6 +11,7 @@
   $top_categories = getTopCategories();
   
   $smarty->assign('top_categories', $top_categories);
+  $smarty->assign('page_title', 'Search Questions');
   
   $smarty->display('posts/search-question.tpl');
 

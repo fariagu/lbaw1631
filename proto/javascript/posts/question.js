@@ -19,7 +19,6 @@ $(document).ready(function(){
 				'pages/user/profile.php?id=' + profile_id + '" class="list-group-item">' + username + '</a><div class="panel-body">' + 
 				textTyped + 
 				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />' +
-					'<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>' +
 					'<button type="submit" class="btn btn-default reply">Reply</button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>' +
@@ -92,7 +91,6 @@ $(document).ready(function(){
 				+ BASE_URL + 'pages/user/profile.php?id=' + profile_id + '" class="list-group-item">' + username +
 				'</a><div class="panel-body">' + textTyped +
 				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />' +
-					'<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>' +
 					'<button type="submit" class="btn btn-default reply">Reply</button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>' +

@@ -19,6 +19,7 @@
   $smarty->assign('questions', $questions);
   $smarty->assign('category', $category);
   $smarty->assign('top_categories', $top_categories);
+  $smarty->assign('page_title', $category['name']);
   
   $smarty->display('categories/category.tpl');
 

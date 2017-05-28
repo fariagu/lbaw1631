@@ -13,6 +13,7 @@
 
   $smarty->assign('top_categories', $top_categories);
   $smarty->assign('delete_pressed', $delete_pressed);
+  $smarty->assign('page_title', 'Edit Info');
 
   $smarty->display('user/edit-profile.tpl');
 

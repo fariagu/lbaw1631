@@ -22,6 +22,7 @@
   $smarty->assign('question_id', $id);
   $smarty->assign('correct', $correct);
   $smarty->assign('answers', $answers);
+  $smarty->assign('page_title', $question['title']);
  
   $smarty->display('posts/question.tpl');
 

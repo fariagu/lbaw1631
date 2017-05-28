@@ -8,6 +8,7 @@
   
   $smarty->assign('top_questions', $top_questions);
   $smarty->assign('top_categories', $top_categories);
+  $smarty->assign('page_title', 'LBQ&AW Home');
   
   $smarty->display('home/home.tpl');
 

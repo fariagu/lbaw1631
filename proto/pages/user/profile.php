@@ -39,6 +39,7 @@
   $smarty->assign('own', $own);
   $smarty->assign('profile_id', $id);
   $smarty->assign('pubadmin', $pubadmin);
+  $smarty->assign('page_title', $profile['username'] . ' Profile Page');
   
   $smarty->display('user/profile.tpl');
 ?>

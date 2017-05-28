@@ -11,6 +11,7 @@
   $top_categories = getTopCategories();
   
   $smarty->assign('top_categories', $top_categories);
+  $smarty->assign('page_title', 'Admin Actions');
   
   $smarty->display('admin/admin.tpl');
 ?>

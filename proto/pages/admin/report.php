@@ -29,6 +29,7 @@
   $smarty->assign('report', $report);
   $smarty->assign('reported_member', $reported_member);
   $smarty->assign('reported_post', $reported_post);
+  $smarty->assign('page_title', 'Report');
   
   $smarty->display('admin/report.tpl');
 ?>

@@ -5,7 +5,9 @@
 			<div class="panel-body">{$answer.description}
 				{if $user}
 					<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
-					<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
+					{if $user != $answer.m_id}
+						<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
+					{/if}
 					<button type="submit" class="btn btn-default reply">Reply</button>
 					{if $answer.value == -1}
 						<button class="btn btn-default glyphicon glyphicon-thumbs-down disliked"></button>
@@ -36,7 +38,9 @@
 		<div class="panel-body">{$answer.description}
 			{if $user}
 				<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
-				<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
+				{if $user != $answer.m_id}
+					<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
+				{/if}
 				<button type="submit" class="btn btn-default reply">Reply</button>
 				{if $answer.value == -1}
 					<button class="btn btn-default glyphicon glyphicon-thumbs-down disliked"></button>

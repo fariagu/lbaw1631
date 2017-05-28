@@ -7,6 +7,7 @@
   
   $smarty->assign('categories', $categories);
   $smarty->assign('top_categories', $top_categories);
+  $smarty->assign('page_title', 'All Categories');
   
   $smarty->display('categories/all-categories.tpl');
 
