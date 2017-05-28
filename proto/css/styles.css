@@ -385,3 +385,7 @@ body {
 .report {
 	float: right;
 }
+
+.deleteCategory {
+	display: inline-block;
+}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-15 18:59:42
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-28 23:15:10
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\categories\add-category-form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:57158368958f2515070fee7-03295101%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ca20c3c7dccb71c775e1d6d4fb477bea2b5e9a7b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\categories\\add-category-form.tpl',
-      1 => 1492275579,
+      1 => 1495734446,
       2 => 'file',
     ),
   ),
@@ -31,7 +31,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 actions/categories/add.php" method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="title">Name:</label>
-			<input name="name" type="text" class="form-control" id="title" placeholder="Enter the category name">
+			<input name="name" type="text" class="form-control" id="title" placeholder="Enter the category name" autofocus>
 		</div>
 		<div class="form-group">
 			<label for="question">Description:</label>
