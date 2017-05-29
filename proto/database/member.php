@@ -74,7 +74,7 @@
   
 	function getProfileInfo($id) {
 		global $conn;
-		$stmt = $conn->prepare("SELECT username, email, firstname, lastname
+		$stmt = $conn->prepare("SELECT username, email, firstname, lastname, banned
 								FROM member
 								WHERE id = ?;");
 		$stmt->execute(array($id));
