@@ -23,6 +23,7 @@ $(document).ready(function(){
 				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />' +
 				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeEditComment" />' +
 					'<button type="button" class="btn btn-default editResponse">Edit</button>' +
+					'<button type="button" class="btn btn-default deleteResponse" data-toggle="modal" data-target="#deleteResponseModal">Delete</button>' +
 					'<button type="submit" class="btn btn-default reply">Reply</button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>' +
@@ -157,6 +158,7 @@ $(document).ready(function(){
 				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />' +
 					'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeEditComment" />' +
 					'<button type="button" class="btn btn-default editResponse">Edit</button>' +
+					'<button type="button" class="btn btn-default deleteResponse" data-toggle="modal" data-target="#deleteResponseModal">Delete</button>' +
 					'<button type="submit" class="btn btn-default reply">Reply</button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>' +
@@ -402,7 +404,7 @@ $(document).ready(function(){
 		});
     });
 	
-	$(".report").click(function(e){
+	$(document).on("click", ".report", function(e){
 		
 		var id;
 		
@@ -469,4 +471,50 @@ $(document).ready(function(){
 		
 		$('#reportModal').modal('toggle');
 	});
+	
+	$(document).on("click", ".deleteResponse", function(e){
+		
+		var id = parseInt($(this).siblings(".comment").attr("id"));
+		
+		$(".confirmButton").attr("id", id);
+    });
+	
+	$(document).on("click", ".confirmButton", function(e){
+		
+		e.preventDefault();
+		
+		var id = $(this).attr("id");
+		
+		$.ajax({
+			context: this,
+			url  : BASE_URL + "api/posts/delete-response.php",
+			type : 'get',
+			data : {r_id: id}
+		}).done(function(data, statusText, xhr){
+			var status = xhr.status;
+		
+			if(status == 200)
+			{
+				$("#" + id).parent().parent().remove();
+				$(".alert").remove();
+				
+				var str = '<div class="alert alert-success">' +
+				 '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
+				'<strong>Success!</strong>   Response deleted!' + 
+				'</div>';
+				
+				$("#topic-title").before(str);
+			}
+		}).fail(function(data, statusText, xhr){
+			$(".alert").remove();
+			var str = '<div class="alert alert-info">' +
+			 '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
+			'<strong>Error!</strong>   Could not delete response!' + 
+			'</div>';
+			
+			$("#topic-title").before(str);
+		});
+		
+		$('#confirmationModal').modal('toggle');
+    });
 });

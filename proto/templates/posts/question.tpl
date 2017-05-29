@@ -8,4 +8,5 @@ profile_id = {$USER_ID};
 username = "{$USERNAME}";
 </script>
 <script src="{$BASE_URL}javascript/posts/question.js"></script>
+{include file='common/confirmationModal.tpl'}
 {include file='common/footer.tpl'}

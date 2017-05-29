@@ -317,4 +317,12 @@ function createQuestion($title, $description, $category, $tags, $id) {
         $post_stmt = $conn->prepare("UPDATE post SET description = ? WHERE id = ?;");
         $post_stmt->execute(array($content, $response_id));
 	}
+	
+	function deleteResponse($response_id)
+	{
+		global $conn;
+		
+        $post_stmt = $conn->prepare("DELETE FROM post WHERE id = ?;");
+        $post_stmt->execute(array($response_id));
+	}
 ?>
