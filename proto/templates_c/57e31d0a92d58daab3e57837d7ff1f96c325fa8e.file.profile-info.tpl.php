@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 13:47:00
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 14:52:13
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\user\profile-info.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:58803249558f0d916e1b6e6-44309226%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '57e31d0a92d58daab3e57837d7ff1f96c325fa8e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\user\\profile-info.tpl',
-      1 => 1496058413,
+      1 => 1496062331,
       2 => 'file',
     ),
   ),
@@ -46,18 +46,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <p>score: <?php echo $_smarty_tpl->tpl_vars['profile']->value['score'];?>
 </p>
 			<?php if ($_smarty_tpl->tpl_vars['ADMIN']->value&&!$_smarty_tpl->tpl_vars['pubadmin']->value) {?>
-				<form class="form-horizontal" id="give_privileges" action="" method="get" enctype="multipart/form-data">
-                    <div class="form-group" >
-                        <div class="col-sm-offset-3 col-sm-8">
-							<?php if ($_smarty_tpl->tpl_vars['profile']->value['banned']) {?>
-								<button type="submit" class="btn btn-default unban">Unban</button>
-							<?php } else { ?>
-								<button type="submit" class="btn btn-default">Give Admin Privileges</button>
-								<button type="submit" class="btn btn-default ban">Ban</button>
-							<?php }?>
-                        </div>
-                    </div>
-                </form>
+				<div class="form-group" id="give_privileges">
+					<div class="col-sm-offset-3 col-sm-8">
+						<?php if ($_smarty_tpl->tpl_vars['profile']->value['banned']) {?>
+							<button type="submit" class="btn btn-default unban">Unban</button>
+						<?php } else { ?>
+							<button type="submit" class="btn btn-default give_privileges">Give Admin Privileges</button>
+							<button type="submit" class="btn btn-default ban">Ban</button>
+						<?php }?>
+					</div>
+				</div>
 			<?php }?>
         </div>
     </div>    

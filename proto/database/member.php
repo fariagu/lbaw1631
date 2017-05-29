@@ -174,4 +174,22 @@
 		
 		return $stmt->fetchAll();
 	}
+	
+	function banUser($id)
+	{
+		global $conn;
+		$stmt = $conn->prepare("UPDATE member 
+								SET banned = TRUE
+								WHERE id = ?;");
+		$stmt->execute(array($id));
+	}
+	
+	function unbanUser($id)
+	{
+		global $conn;
+		$stmt = $conn->prepare("UPDATE member 
+								SET banned = FALSE
+								WHERE id = ?;");
+		$stmt->execute(array($id));
+	}
 ?>

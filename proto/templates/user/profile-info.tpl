@@ -8,18 +8,16 @@
             <p>{$profile.no_questions} questions</p>
             <p>score: {$profile.score}</p>
 			{if $ADMIN && !$pubadmin}
-				<form class="form-horizontal" id="give_privileges" action="" method="get" enctype="multipart/form-data">
-                    <div class="form-group" >
-                        <div class="col-sm-offset-3 col-sm-8">
-							{if $profile.banned}
-								<button type="submit" class="btn btn-default unban">Unban</button>
-							{else}
-								<button type="submit" class="btn btn-default">Give Admin Privileges</button>
-								<button type="submit" class="btn btn-default ban">Ban</button>
-							{/if}
-                        </div>
-                    </div>
-                </form>
+				<div class="form-group" id="give_privileges">
+					<div class="col-sm-offset-3 col-sm-8">
+						{if $profile.banned}
+							<button type="submit" class="btn btn-default unban">Unban</button>
+						{else}
+							<button type="submit" class="btn btn-default give_privileges">Give Admin Privileges</button>
+							<button type="submit" class="btn btn-default ban">Ban</button>
+						{/if}
+					</div>
+				</div>
 			{/if}
         </div>
     </div>    
