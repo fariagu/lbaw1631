@@ -1,9 +1,16 @@
 $(document).ready(function(){
+	
+	$(".deleteCategory").click(function(e){
+		var id = $(this).prev().attr("id");	
+		
+		$(".confirmButton").attr("id", id);
+	});
+
     $(".confirmButton").click(function(e){
 		
 		e.preventDefault();
 		
-		var id = $(this).prev().attr("id");	
+		var id = $(this).attr("id");
 		
 		$.ajax({
 			context: this,
@@ -15,13 +22,28 @@ $(document).ready(function(){
 		
 			if(status == 200)
 			{
-				$(this).prev().remove();
-				$(this).remove();
+				$("#" + id).prev().remove();
+				$("#" + id).remove();
+				$(".alert").remove();
+				
+				var str = '<div class="alert alert-success">' +
+				 '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
+				'<strong>Success!</strong>   Category deleted!' + 
+				'</div>';
+				
+				$("#topic-title").before(str);
 			}
 		}).fail(function(data, statusText, xhr){
-			alert(data);
+			$(".alert").remove();
+			var str = '<div class="alert alert-info">' +
+			 '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
+			'<strong>Error!</strong>   Could not delete category!' + 
+			'</div>';
+			
+			$("#topic-title").before(str);
 		});
 		
+		$('#confirmationModal').modal('toggle');
     });
 
     $(".searchCategories").click(function(e){
