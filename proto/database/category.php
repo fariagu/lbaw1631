@@ -56,16 +56,17 @@
 	{
 		global $conn;
 		$stmt = $conn->prepare("SELECT * FROM (
-										SELECT description,
-											ts_rank_cd(
-												to_tsvector('english', description),
-												to_tsquery('english', ?)
+										SELECT id, name, description,
+											ts_rank_cd(setweight(to_tsvector('english', name), 'B'),
+													to_tsquery('english', ?)) +
+											ts_rank_cd(setweight(to_tsvector('english', description), 'C'),
+														to_tsquery('english', ?)
 											) AS score
 										FROM category
 										) AS tmp
 									WHERE score > 0
 									ORDER BY score DESC;");
-		$stmt->execute(array($text));
+		$stmt->execute(array($text, $text));
 
 		return $stmt->fetchAll();
 	}
