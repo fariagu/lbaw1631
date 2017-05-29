@@ -23,6 +23,7 @@
   $smarty->assign('correct', $correct);
   $smarty->assign('answers', $answers);
   $smarty->assign('page_title', $question['title']);
+  $smarty->assign('owner', $question['id_author'] == $_SESSION['id']);
  
   $smarty->display('posts/question.tpl');
 

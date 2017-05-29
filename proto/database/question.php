@@ -143,6 +143,8 @@ function createQuestion($title, $description, $category, $tags, $id) {
 			$voteStmt->execute(array($profile_id, $answer['a_id']));
 			$answers[$key]['value'] = $voteStmt->fetch()['value'];
 			
+			$answers[$key]['answer'] = true;
+			
 			$answers[$key]['comments'] = getComments($answer['a_id'], $profile_id);
 		}
 		
@@ -332,5 +334,21 @@ function createQuestion($title, $description, $category, $tags, $id) {
 		
         $post_stmt = $conn->prepare("DELETE FROM post WHERE id = ?;");
         $post_stmt->execute(array($id));
+	}
+	
+	function markCorrect($q_id, $r_id)
+	{
+		global $conn;
+		
+        $post_stmt = $conn->prepare("UPDATE question SET id_correct = ? WHERE id = ?;");
+        $post_stmt->execute(array($r_id, $q_id));
+	}
+	
+	function unmarkCorrect($q_id)
+	{
+		global $conn;
+		
+        $post_stmt = $conn->prepare("UPDATE question SET id_correct = NULL WHERE id = ?;");
+        $post_stmt->execute(array($q_id));
 	}
 ?>

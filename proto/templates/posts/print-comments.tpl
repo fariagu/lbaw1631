@@ -11,6 +11,9 @@
 					{if $user != $answer.m_id}
 						<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
 					{/if}
+					{if $owner}
+						<button type="submit" class="btn btn-default unmarkCorrect">Unmark as correct</button>
+					{/if}
 					{if $user == $answer.m_id && !$answer.comments}
 						<button type="button" class="btn btn-default editResponse">Edit</button>
 						<button class="btn btn-default glyphicon deleteResponse" data-toggle="modal" data-target="#confirmationModal">Delete</button>
@@ -52,6 +55,9 @@
 				<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeEditComment" />
 				{if $user != $answer.m_id}
 					<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
+				{/if}
+				{if $owner && $answer.answer}
+					<button type="submit" class="btn btn-default markCorrect">Mark as correct</button>
 				{/if}
 				{if $user == $answer.m_id && !$answer.comments}
 					<button type="button" class="btn btn-default editResponse">Edit</button>

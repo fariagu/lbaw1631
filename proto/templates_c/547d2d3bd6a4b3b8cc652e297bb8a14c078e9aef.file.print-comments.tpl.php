@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 17:17:46
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 18:55:58
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\print-comments.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:672381039591396c9c44ae5-47234055%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '547d2d3bd6a4b3b8cc652e297bb8a14c078e9aef' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\print-comments.tpl',
-      1 => 1496071063,
+      1 => 1496076956,
       2 => 'file',
     ),
   ),
@@ -39,6 +39,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'margin' => 0,
     'BASE_URL' => 0,
     'user' => 0,
+    'owner' => 0,
     'answers' => 0,
   ),
   'has_nocache_code' => 0,
@@ -64,6 +65,9 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_
 					<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeEditComment" />
 					<?php if ($_smarty_tpl->tpl_vars['user']->value!=$_smarty_tpl->tpl_vars['answer']->value['m_id']) {?>
 						<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
+					<?php }?>
+					<?php if ($_smarty_tpl->tpl_vars['owner']->value) {?>
+						<button type="submit" class="btn btn-default unmarkCorrect">Unmark as correct</button>
 					<?php }?>
 					<?php if ($_smarty_tpl->tpl_vars['user']->value==$_smarty_tpl->tpl_vars['answer']->value['m_id']&&!$_smarty_tpl->tpl_vars['answer']->value['comments']) {?>
 						<button type="button" class="btn btn-default editResponse">Edit</button>
@@ -124,6 +128,9 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['m_
 				<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeEditComment" />
 				<?php if ($_smarty_tpl->tpl_vars['user']->value!=$_smarty_tpl->tpl_vars['answer']->value['m_id']) {?>
 					<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
+				<?php }?>
+				<?php if ($_smarty_tpl->tpl_vars['owner']->value&&$_smarty_tpl->tpl_vars['answer']->value['answer']) {?>
+					<button type="submit" class="btn btn-default markCorrect">Mark as correct</button>
 				<?php }?>
 				<?php if ($_smarty_tpl->tpl_vars['user']->value==$_smarty_tpl->tpl_vars['answer']->value['m_id']&&!$_smarty_tpl->tpl_vars['answer']->value['comments']) {?>
 					<button type="button" class="btn btn-default editResponse">Edit</button>

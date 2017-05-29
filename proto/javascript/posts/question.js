@@ -479,11 +479,6 @@ $(document).ready(function(){
 		$(".confirmButton").attr("id", id);
     });
 	
-	$(document).on("click", ".deleteQuestion", function(e){
-		
-		delete_question = true;
-    });
-	
 	$(document).on("click", ".confirmButton", function(e){
 		
 		e.preventDefault();
@@ -521,5 +516,61 @@ $(document).ready(function(){
 		});
 		
 		$('#confirmationModal').modal('toggle');
+    });
+	
+	$(document).on("click", ".markCorrect", function(e){
+		
+		var id = $(this).siblings(".comment").attr("id");
+		
+		$.ajax({
+			context: this,
+			url  : BASE_URL + "api/posts/mark-correct.php",
+			type : 'get',
+			data : {q_id: question_id, r_id: id}
+		}).done(function(data, statusText, xhr){
+			var status = xhr.status;
+		
+			if(status == 200)
+			{
+				var str1 = '<button type="submit" class="btn btn-default markCorrect">Mark as correct</button>';
+				var str2 = '<button type="submit" class="btn btn-default unmarkCorrect">Unmark as correct</button>';
+				
+				$(this).parent().parent().css({"background-color": "#222", "color": "white"});
+				$(this).parent().siblings("a").css({"background-color": "#222", "color": "white"});
+				$("#correctAnswer").css({"background-color": "#fff", "color": "#333"});
+				$("#correctAnswer a").css({"background-color": "#fff", "color": "#333"});
+				$("#correctAnswer .unmarkCorrect").before(str1);
+				$("#correctAnswer .unmarkCorrect").remove();
+				$("#correctAnswer").attr("id", "answerComment");
+				$(this).parent().parent().attr("id", "correctAnswer");
+				$(this).before(str2);
+				$(this).remove();
+				
+			}
+		});
+    });
+	
+	$(document).on("click", ".unmarkCorrect", function(e){
+		
+		$.ajax({
+			context: this,
+			url  : BASE_URL + "api/posts/unmark-correct.php",
+			type : 'get',
+			data : {q_id: question_id}
+		}).done(function(data, statusText, xhr){
+			var status = xhr.status;
+		
+			if(status == 200)
+			{
+				var str = '<button type="submit" class="btn btn-default markCorrect">Mark as correct</button>';
+				
+				$(this).parent().parent().css({"background-color": "#fff", "color": "#333"});
+				$(this).parent().siblings("a").css({"background-color": "#fff", "color": "#333"});
+				$(this).parent().parent().attr("id", "answerComment");
+				$(this).before(str);
+				$(this).remove();
+				
+			}
+		});
     });
 });
