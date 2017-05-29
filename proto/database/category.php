@@ -33,11 +33,6 @@
     		global $conn;
     		$stmt = $conn->prepare("INSERT INTO category (name,description) VALUES (?, ?)");
     		$stmt->execute(array($name, $description));
-/*
-    		$category_stmt = $conn->prepare("SELECT MAX(id) FROM category");
-            $category_stmt->execute();
-            $category_id = $category_stmt->fetch()['id'];
-*/
 
             $category_stmt = $conn->prepare("SELECT id
                                                      FROM category
@@ -55,5 +50,23 @@
 								WHERE id = ?;");
 		$stmt->execute(array($id));
 		return $stmt->fetch();
+	}
+
+	function searchCategories($text)
+	{
+		global $conn;
+		$stmt = $conn->prepare("SELECT * FROM (
+										SELECT description,
+											ts_rank_cd(
+												to_tsvector('english', description),
+												to_tsquery('english', ?)
+											) AS score
+										FROM category
+										) AS tmp
+									WHERE score > 0
+									ORDER BY score DESC;");
+		$stmt->execute(array($text));
+
+		return $stmt->fetchAll();
 	}
 ?>

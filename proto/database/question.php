@@ -230,4 +230,62 @@ function createQuestion($title, $description, $category, $tags, $id) {
 		
 		return $stmt->fetchAll();
 	}
+
+	function searchAnswers($text)
+	{
+		global $conn;
+		$stmt = $conn->prepare("SELECT * FROM (
+								SELECT post.description, 
+									ts_rank_cd(
+										to_tsvector('english', post.description),
+										to_tsquery('english', ?)
+									) AS score
+								FROM answer
+								INNER JOIN post ON post.id = answer.id
+								) AS tmp
+							WHERE score > 0
+							ORDER BY score DESC;");
+		$stmt->execute(array($text));
+
+		return $stmt->fetchAll();
+	}
+
+	function searchComments($text)
+	{
+		global $conn;
+		$stmt = $conn->prepare("SELECT * FROM (
+								SELECT post.description,
+									ts_rank_cd(
+										to_tsvector('english', post.description),
+										to_tsquery('english', ?)
+									) AS score
+								FROM comment
+								INNER JOIN post ON post.id = comment.id
+								) AS tmp
+							WHERE score > 0
+							ORDER BY score DESC;");
+		$stmt->execute(array($text));
+
+		return $stmt->fetchAll();
+	}
+
+	function searchPosts($text)
+	{
+		global $conn;
+		$stmt = $conn->prepare("SELECT * FROM (
+									SELECT description,
+										ts_rank_cd(setweight(to_tsvector('english', question.title), 'B'),
+													to_tsquery('english', ?)) +
+										ts_rank_cd(setweight(to_tsvector('english', post.description), 'C'),
+													to_tsquery('english', ?)
+										) AS score
+									FROM post
+									FULL OUTER JOIN question ON question.id = post.id
+									) AS tmp
+								WHERE score > 0
+								ORDER BY score DESC;");
+		$stmt->execute(array($text, $text));
+
+		return $stmt->fetchAll();
+	}
 ?>

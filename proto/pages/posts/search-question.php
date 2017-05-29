@@ -5,7 +5,7 @@
   
   if ($_GET['search']) {
 	  $search_results = searchQuestions($_GET['search']);
-    $smarty->assign('search_results', $search_results);
+      $smarty->assign('search_results', $search_results);
   }
   
   $top_categories = getTopCategories();

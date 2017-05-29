@@ -26,4 +26,40 @@
         $stmt->execute(array($solution, $id_member, $id_post));
         return $stmt->fetch();
 	}
+
+	function searchReports($text)
+	{
+		global $conn;
+		$stmt = $conn->prepare("SELECT * FROM (
+										SELECT id_member, id_post, description,
+											ts_rank_cd(
+												to_tsvector('english', description),
+												to_tsquery('english', ?)
+											) AS score
+										FROM report
+										) AS tmp
+									WHERE score > 0
+									ORDER BY score DESC;");
+		$stmt->execute(array($text));
+
+		return $stmt->fetchAll();
+	}
+
+	function searchReportsSolution($text)
+	{
+		global $conn;
+		$stmt = $conn->prepare("SELECT * FROM (
+										SELECT solution,
+											ts_rank_cd(
+												to_tsvector('english', solution),
+												to_tsquery('english', ?)
+											) AS score
+										FROM report
+										) AS tmp
+									WHERE score > 0
+									ORDER BY score DESC;");
+		$stmt->execute(array($text));
+
+		return $stmt->fetchAll();
+	}
 ?>
