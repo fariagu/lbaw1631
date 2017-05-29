@@ -574,4 +574,8 @@ $(document).ready(function(){
 			}
 		});
     });
+
+	$(document).on("click", ".editQuestionButton", function(e){
+        //TODO: THIS
+	})
 });

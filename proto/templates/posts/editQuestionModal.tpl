@@ -12,24 +12,31 @@
         <form>
 			<div class="form-group">
 				<label for="title">Title:</label>
-				<input name="title" type="text" class="form-control" id="title" placeholder="Enter your question title" autofocus>
+				<input name="title" type="text" class="form-control" id="title" value="{$question.title}" placeholder="Enter your question title" autofocus>
 			</div>
 			<div class="form-group">
 				<label for="question">Question:</label>
-				<textarea name="question" class="form-control" rows="5" id="question"></textarea>
+				<textarea name="question" class="form-control" rows="5" id="question">{$question.description}</textarea>
 			</div>
 			<div class="form-group">
 				<label for="sel1">Category:</label>
 				<select name="sel1" class="form-control" id="sel1">
 					{foreach $categories as $category}
-						<option>{$category.name}</option>
+						{if $category.id eq $question.id_category}
+							<option select="selected">{$category.name}</option>
+						{else}
+							<option>{$category.name}</option>
+                        {/if}
 					{/foreach}
 				</select>
 			</div>
 			<div class="form-group">
 				<label for="tags">Tags:</label>
-				<textarea name="tags" class="form-control" rows="5" id="tags" placeholder="Separate each tag by a semicolon (;)"></textarea>
+				<textarea name="tags" class="form-control" rows="5" id="tags" placeholder="Separate each tag by a semicolon (;)">
+					{foreach $tags as $tag}{/foreach}<!-- TODO: this. não faço ideia se $tags existe só pus aí para mostrar a ideia do que estava a pensar, que é fazer $tag;$tag etc-->
+				</textarea>
 			</div>
+			<input type="hidden" value="{$id}">
 		</form>
 		</div>
       <div class="modal-footer">

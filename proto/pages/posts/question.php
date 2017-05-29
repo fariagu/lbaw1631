@@ -14,10 +14,12 @@
   $question = getQuestionInfo($id, $_SESSION['id']);
   $correct = getCorrectAnswer($id, $_SESSION['id']);
   $answers = getAnswers($id, $_SESSION['id']);
+  $categories = getAllCategories();
   
   $top_categories = getTopCategories();
   
   $smarty->assign('top_categories', $top_categories);
+  $smarty->assign('categories', $categories);
   $smarty->assign('question', $question);
   $smarty->assign('question_id', $id);
   $smarty->assign('correct', $correct);

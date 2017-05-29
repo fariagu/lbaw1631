@@ -68,36 +68,71 @@
 	}
 
 	function createQuestion($title, $description, $category, $tags, $id) {
-    global $conn;
-    $post_stmt = $conn->prepare("INSERT INTO post (description,id_author) VALUES (?,?)");
-    $post_stmt->execute(array($description, $id));
+		global $conn;
+		$post_stmt = $conn->prepare("INSERT INTO post (description,id_author) VALUES (?,?)");
+		$post_stmt->execute(array($description, $id));
 
-    $post_id = $conn->prepare("SELECT MAX(id) as id_post
-                                        FROM post");
-    $post_id->execute();
+		$post_id = $conn->prepare("SELECT MAX(id) as id_post
+											FROM post");
+		$post_id->execute();
 
-    $category_stmt = $conn->prepare("SELECT id
-                                             FROM category
-                                             WHERE name = ?;");
-    $category_stmt->execute(array($category));
-    $category_id = $category_stmt->fetch()['id'];
+		$category_stmt = $conn->prepare("SELECT id
+												 FROM category
+												 WHERE name = ?;");
+		$category_stmt->execute(array($category));
+		$category_id = $category_stmt->fetch()['id'];
 
-    $question_id = $post_id->fetch()['id_post'];
+		$question_id = $post_id->fetch()['id_post'];
 
-    $question_stmt = $conn->prepare("INSERT INTO question (id, title, id_category) VALUES (?,?,?)");
-    $question_stmt->execute(array($question_id, $title, $category_id));
+		$question_stmt = $conn->prepare("INSERT INTO question (id, title, id_category) VALUES (?,?,?)");
+		$question_stmt->execute(array($question_id, $title, $category_id));
 
-    $tagArray = explode(";", $tags);
+		$tagArray = explode(";", $tags);
 
-    //$tagIDarray = array();
-	for ($i=0; $i < sizeof($tagArray); $i++){
-		//array_push($tagIDarray, createTag($tagArray[$i]));
-		$tag_stmt = $conn->prepare("INSERT INTO question_tag (id_question, id_tag) VALUES (?, ?)");
-		$tag_stmt->execute(array($question_id, createTag($tagArray[$i])));
+        for ($i=0; $i < sizeof($tagArray); $i++){
+            if (strlen($tagArray[$i]) > 0){
+                $tag_stmt = $conn->prepare("INSERT INTO question_tag (id_question, id_tag) VALUES (?, ?)");
+                $tag_stmt->execute(array($question_id, createTag($tagArray[$i])));
+            }
+        }
+
+		return $question_id;
 	}
 
-    return $question_id;
-}
+	function updateQuestion($title, $description, $category, $tags, $post_id, $id_author) {
+		global $conn;
+		$post_stmt = $conn->prepare("UPDATE post
+										SET description = ?
+										WHERE id_author = ?");
+		$post_stmt->execute(array($description, $id_author));
+
+		$category_stmt = $conn->prepare("SELECT id
+													 FROM category
+													 WHERE name = ?;");
+		$category_stmt->execute(array($category));
+		$category_id = $category_stmt->fetch()['id'];
+
+		$question_id = $post_id->fetch()['id_post'];
+
+		$question_stmt = $conn->prepare("UPDATE question 
+											SET id = ?, title = ?, id_category = ?");
+		$question_stmt->execute(array($question_id, $title, $category_id));
+
+		$pre_tag_stmt = $conn->prepare("DELETE FROM question_tag
+												WHERE id_question = ?");
+        $pre_tag_stmt->execute(array($question_id));
+
+		$tagArray = explode(";", $tags);
+
+		for ($i=0; $i < sizeof($tagArray); $i++){
+			if (strlen($tagArray[$i]) > 0){
+                $tag_stmt = $conn->prepare("INSERT INTO question_tag (id_question, id_tag) VALUES (?, ?)");
+                $tag_stmt->execute(array($question_id, createTag($tagArray[$i])));
+			}
+		}
+
+		return $question_id;
+	}
 
 	function getCorrectAnswer($id, $profile_id)
 	{
@@ -358,5 +393,13 @@
 		
         $post_stmt = $conn->prepare("UPDATE question SET id_correct = NULL WHERE id = ?;");
         $post_stmt->execute(array($q_id));
+	}
+
+	function getQuestionTags($q_id){
+        global $conn;
+        $stmt = $conn->prepare("SELECT ");
+        $stmt->execute(array($q_id));
+
+        $question = $stmt->fetch();
 	}
 ?>
