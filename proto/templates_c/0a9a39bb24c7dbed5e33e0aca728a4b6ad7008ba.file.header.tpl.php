@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-14 18:02:58
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 22:27:01
          compiled from "/mnt/d/CODE/www/lbaw1631/proto/templates/common/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:148137959158f0ed5a4f4b49-00631462%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0a9a39bb24c7dbed5e33e0aca728a4b6ad7008ba' => 
     array (
       0 => '/mnt/d/CODE/www/lbaw1631/proto/templates/common/header.tpl',
-      1 => 1494781315,
+      1 => 1496093189,
       2 => 'file',
     ),
   ),
@@ -19,6 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_58f0ed5a4fc3d2_89352084',
   'variables' => 
   array (
+    'page_title' => 0,
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
@@ -30,7 +31,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>LBQ&AW</title>
+    <title><?php echo $_smarty_tpl->tpl_vars['page_title']->value;?>
+</title>
       
       <!-- Bootstrap -->
       <link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>

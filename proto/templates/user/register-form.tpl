@@ -4,37 +4,37 @@
       <div class="form-group">
             <label class="control-label col-sm-2" for="username">Username:</label>
             <div class="col-sm-10">
-                <input name="username" type="text" class="form-control" id="username" placeholder="Enter username" value="{$FORM_VALUES.username}" autofocus>
+                <input name="username" type="text" class="form-control" id="username" placeholder="Enter username" value="{$FORM_VALUES.username}" autofocus required>
             </div>
       </div>
       <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Password:</label>
             <div class="col-sm-10">
-                <input name="password" type="password" class="form-control" id="pwd" placeholder="Enter password" value="">
+                <input name="password" type="password" class="form-control" id="pwd" placeholder="Enter password" value="" required>
             </div>
       </div>
       <div class="form-group">
             <label class="control-label col-sm-2" for="pwd2">Confirm Password:</label>
             <div class="col-sm-10">
-                <input name="confirmpassword" type="password" class="form-control" id="pwd2" placeholder="Enter password" value="">
+                <input name="confirmpassword" type="password" class="form-control" id="pwd2" placeholder="Enter password" value="" required>
             </div>
       </div>
 	  <div class="form-group">
             <label class="control-label col-sm-2" for="email">E-mail:</label>
             <div class="col-sm-10">
-                <input name="email" type="email" class="form-control" id="email" placeholder="Enter email" value="{$FORM_VALUES.email}">
+                <input name="email" type="email" class="form-control" id="email" placeholder="Enter email" value="{$FORM_VALUES.email}" required>
             </div>
       </div>
       <div class="form-group">
             <label class="control-label col-sm-2" for="firstName">First name:</label>
             <div class="col-sm-10">
-                <input name="firstname" type="text" class="form-control" id="firstName" placeholder="Enter your first name" value="{$FORM_VALUES.firstname}">
+                <input name="firstname" type="text" class="form-control" id="firstName" placeholder="Enter your first name" value="{$FORM_VALUES.firstname}" required>
             </div>
       </div>
       <div class="form-group">
             <label class="control-label col-sm-2" for="lastName">Last name:</label>
             <div class="col-sm-10">
-                <input name="lastname" type="text" class="form-control" id="lastName" placeholder="Enter your last name" value="{$FORM_VALUES.lastname}">
+                <input name="lastname" type="text" class="form-control" id="lastName" placeholder="Enter your last name" value="{$FORM_VALUES.lastname}" required>
             </div>
       </div>
       <div class="form-group" id="picButton">
