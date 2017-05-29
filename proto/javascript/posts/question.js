@@ -18,6 +18,8 @@ $(document).ready(function(){
 				var str = '<div class="panel panel-default" id="answerComment" style="margin-left:0px"><a href="' + BASE_URL +
 				'pages/user/profile.php?id=' + profile_id + '" class="list-group-item">' + username + '</a><div class="panel-body">' + 
 				textTyped + 
+				'</div>' + 
+				'<div class="panel-body">' + 
 				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />' +
 					'<button type="submit" class="btn btn-default reply">Reply</button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>' +
@@ -90,6 +92,8 @@ $(document).ready(function(){
 				var str = '<div class="panel panel-default" id="answerComment" style="margin-left:' + newMargin + 'px"><a href="'
 				+ BASE_URL + 'pages/user/profile.php?id=' + profile_id + '" class="list-group-item">' + username +
 				'</a><div class="panel-body">' + textTyped +
+				'</div>' + 
+				'<div class="panel-body">' + 
 				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />' +
 					'<button type="submit" class="btn btn-default reply">Reply</button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>' +

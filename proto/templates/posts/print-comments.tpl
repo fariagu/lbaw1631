@@ -3,6 +3,8 @@
 		<div class="panel panel-default" id="correctAnswer" style="margin-left:{$margin}px">
 			<a href="{$BASE_URL}pages/user/profile.php?id={$answer.a_id}" class="list-group-item">{$answer.username}</a>
 			<div class="panel-body">{$answer.description}
+			</div>
+			<div class="panel-body">
 				{if $user}
 					<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
 					{if $user != $answer.m_id}
@@ -36,6 +38,8 @@
 	<div class="panel panel-default" id="answerComment" style="margin-left:{$margin}px">
 		<a href="{$BASE_URL}pages/user/profile.php?id={$answer.m_id}" class="list-group-item">{$answer.username}</a>
 		<div class="panel-body">{$answer.description}
+		</div>
+		<div class="panel-body">
 			{if $user}
 				<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
 				{if $user != $answer.m_id}

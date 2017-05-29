@@ -1,0 +1,14 @@
+tags na question (remove)
+are you sure nas categorias
+(are you sure no delete profile)
+(melhorar o sql do new question)
+resolver id do post na pagina do report (pode ser question, answer ou comment)
+acabar search normal(filtros para questoes/categorias)
+banir users
+escolher resposta correta
+
+EXTRAS:
+modulo das mensagens
+modulo dos logs
+modulo das comunidades
+badges

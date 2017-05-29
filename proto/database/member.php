@@ -119,7 +119,9 @@
 								WHERE id_author = ?;");
 		$stmt->execute(array($id));
 		
-		return $stmt->fetch();
+		$number['score'] = intval($stmt->fetch()['score'] * ($p = pow(10, 3))) / $p;
+		
+		return $number;
 	}
 	
 	function getAllQuestionsFromMember($id) {
@@ -136,7 +138,8 @@
 	function getAllUsers() {
 		global $conn;
 		$stmt = $conn->prepare("SELECT id, username 
-								FROM member;");
+								FROM member
+								ORDER BY username;");
 		$stmt->execute();
 		return $stmt->fetchAll();
 	}
@@ -149,5 +152,26 @@
 								WHERE id = ?;");
 		$stmt->execute(array($id));
 		return $stmt->fetch()['username'];
+	}
+	
+	function searchUsers($text)
+	{
+		global $conn;
+        $stmt = $conn->prepare("SELECT * FROM (
+								SELECT id, username, firstname, lastname, (
+										ts_rank_cd(setweight(to_tsvector('english', username), 'A'),
+													to_tsquery('english', ?)) +
+										ts_rank_cd(setweight(to_tsvector('english', firstname), 'C'),
+													to_tsquery('english', ?)) +
+										ts_rank_cd(setweight(to_tsvector('english', lastname), 'D'),
+													to_tsquery('english', ?))
+										) AS score
+									FROM member
+									) AS tmp
+								WHERE score > 0
+								ORDER BY score DESC;");
+        $stmt->execute(array($text, $text, $text));
+		
+		return $stmt->fetchAll();
 	}
 ?>

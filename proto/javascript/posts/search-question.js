@@ -5,8 +5,6 @@ $(document).ready(function(){
 		
 		var textTyped = $("#search").val();
 		
-		console.log(textTyped);
-		
 		$.getJSON(BASE_URL + "api/posts/search-question.php", {content: textTyped}, function(data) {
 			
 			$(".list-group a").remove();
