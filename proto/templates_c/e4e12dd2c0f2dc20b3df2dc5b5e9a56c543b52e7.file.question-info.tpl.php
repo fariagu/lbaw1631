@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 01:22:36
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 13:55:55
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\question-info.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:85119251458f0ce9e7be188-69637342%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e4e12dd2c0f2dc20b3df2dc5b5e9a56c543b52e7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\question-info.tpl',
-      1 => 1496013747,
+      1 => 1496058952,
       2 => 'file',
     ),
   ),
@@ -38,10 +38,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['question']->value['id_author'];?>
 " class="list-group-item"><?php echo $_smarty_tpl->tpl_vars['question']->value['author_name'];?>
 </a>
-			<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+			<?php if ($_smarty_tpl->tpl_vars['question']->value['id_category']) {?>
+				<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/categories/category.php?id=<?php echo $_smarty_tpl->tpl_vars['question']->value['id_category'];?>
 " class="list-group-item"><?php echo $_smarty_tpl->tpl_vars['question']->value['category_name'];?>
 </a>
+			<?php }?>
 			<?php if ($_smarty_tpl->tpl_vars['USER_ID']->value) {?>
 				<?php if ($_smarty_tpl->tpl_vars['USER_ID']->value!=$_smarty_tpl->tpl_vars['question']->value['id_author']) {?>
 					<button type="button" class="btn btn-default report question" data-toggle="modal" data-target="#reportModal">Report</button>
