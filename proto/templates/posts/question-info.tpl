@@ -25,6 +25,9 @@
 			{foreach $question.tags as $tag}
 				<p>{$tag.name} <button class="btn btn-default glyphicon glyphicon-remove removeTag"></button> </p>
 			{/foreach}
+			{if $USER_ID == $question.id_author}
+				<button class="btn btn-default deleteQuestion" data-toggle="modal" data-target="#deleteQuestionModal">Delete Question</button>
+			{/if}
         </div>
 		<p id="question-body">{$question.description}</p>
     </div>

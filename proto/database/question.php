@@ -325,4 +325,12 @@ function createQuestion($title, $description, $category, $tags, $id) {
         $post_stmt = $conn->prepare("DELETE FROM post WHERE id = ?;");
         $post_stmt->execute(array($response_id));
 	}
+	
+	function deleteQuestion($id)
+	{
+		global $conn;
+		
+        $post_stmt = $conn->prepare("DELETE FROM post WHERE id = ?;");
+        $post_stmt->execute(array($id));
+	}
 ?>

@@ -479,6 +479,11 @@ $(document).ready(function(){
 		$(".confirmButton").attr("id", id);
     });
 	
+	$(document).on("click", ".deleteQuestion", function(e){
+		
+		delete_question = true;
+    });
+	
 	$(document).on("click", ".confirmButton", function(e){
 		
 		e.preventDefault();
