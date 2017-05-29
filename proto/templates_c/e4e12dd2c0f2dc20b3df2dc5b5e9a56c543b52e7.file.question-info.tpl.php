@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 19:11:54
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 19:20:50
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\question-info.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:85119251458f0ce9e7be188-69637342%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e4e12dd2c0f2dc20b3df2dc5b5e9a56c543b52e7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\question-info.tpl',
-      1 => 1496077908,
+      1 => 1496078384,
       2 => 'file',
     ),
   ),
@@ -70,6 +70,7 @@ $_smarty_tpl->tpl_vars['tag']->_loop = true;
  <button class="btn btn-default glyphicon glyphicon-remove removeTag"></button> </p>
 			<?php } ?>
 			<?php if ($_smarty_tpl->tpl_vars['USER_ID']->value==$_smarty_tpl->tpl_vars['question']->value['id_author']) {?>
+				<button class="btn btn-default editQuestion" data-toggle="modal" data-target="#editQuestionModal">Edit Question</button>
 				<button class="btn btn-default deleteQuestion" data-toggle="modal" data-target="#deleteQuestionModal">Delete Question</button>
 			<?php }?>
         </div>

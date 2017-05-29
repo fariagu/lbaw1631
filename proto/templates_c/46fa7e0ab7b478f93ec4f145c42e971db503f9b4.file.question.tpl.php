@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 17:49:53
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 19:20:50
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\question.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21454338058f0ce64065017-66206825%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '46fa7e0ab7b478f93ec4f145c42e971db503f9b4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\question.tpl',
-      1 => 1496072908,
+      1 => 1496078414,
       2 => 'file',
     ),
   ),
@@ -47,6 +47,8 @@ javascript/posts/question.js"></script>
 <?php echo $_smarty_tpl->getSubTemplate ('common/confirmationModal.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ('posts/deleteQuestionModal.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+<?php echo $_smarty_tpl->getSubTemplate ('posts/editQuestionModal.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 <?php }} ?>

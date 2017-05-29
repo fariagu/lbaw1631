@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 19:15:56
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 19:21:44
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\print-comments.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:672381039591396c9c44ae5-47234055%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '547d2d3bd6a4b3b8cc652e297bb8a14c078e9aef' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\print-comments.tpl',
-      1 => 1496078153,
+      1 => 1496078501,
       2 => 'file',
     ),
   ),
@@ -89,7 +89,8 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_
 					<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
 					<button style="display: none" type="submit" class="btn btn-default comment" id="<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_id'];?>
 ">Post</button>
-					<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5"></textarea>
+					<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5"><?php echo $_smarty_tpl->tpl_vars['answer']->value['description'];?>
+</textarea>
 					<button style="display: none" type="submit" class="btn btn-default commentEdit">Save</button>
 				<?php }?>
 			</div>
@@ -152,7 +153,8 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['m_
 				<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
 				<button style="display: none" type="submit" class="btn btn-default comment" id="<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_id'];?>
 ">Post</button>
-				<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5"></textarea>
+				<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5"><?php echo $_smarty_tpl->tpl_vars['answer']->value['description'];?>
+</textarea>
 				<button style="display: none" type="submit" class="btn btn-default commentEdit">Save</button>
 			<?php }?>
 		</div>
