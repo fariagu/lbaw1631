@@ -23,11 +23,7 @@
 				{/if}
 			{/if}
 			{foreach $question.tags as $tag}
-				<br>
-				<div style="margin: 0; padding: 0;" id="qTag">
-					<p>{$tag.name}</p>
-					<button class="btn btn-default glyphicon glyphicon-remove deleteTag" data-toggle="modal" data-target="#confirmationModal"></button>
-				</div>
+				<p>{$tag.name} <button class="btn btn-default glyphicon glyphicon-remove removeTag"></button> </p>
 			{/foreach}
         </div>
 		<p id="question-body">{$question.description}</p>

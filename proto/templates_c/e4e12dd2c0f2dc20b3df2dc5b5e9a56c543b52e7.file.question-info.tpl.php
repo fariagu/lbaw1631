@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 14:28:43
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 16:01:51
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\question-info.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:85119251458f0ce9e7be188-69637342%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e4e12dd2c0f2dc20b3df2dc5b5e9a56c543b52e7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\question-info.tpl',
-      1 => 1496060921,
+      1 => 1496066507,
       2 => 'file',
     ),
   ),
@@ -66,12 +66,12 @@ foreach ($_from as $_smarty_tpl->tpl_vars['tag']->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars['tag']->_loop = true;
 ?>
 				<p><?php echo $_smarty_tpl->tpl_vars['tag']->value['name'];?>
-</p>
+ <button class="btn btn-default glyphicon glyphicon-remove removeTag"></button> </p>
 			<?php } ?>
         </div>
 		<p id="question-body"><?php echo $_smarty_tpl->tpl_vars['question']->value['description'];?>
 </p>
-    </div>    
+    </div>
 </div>
 
 <div id="page-content-wrapper">
