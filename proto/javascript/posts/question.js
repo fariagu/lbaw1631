@@ -30,7 +30,7 @@ $(document).ready(function(){
 					'<p class="rating">0 votes</p>' +
 					'<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>' +
 				'<button style="display: none" type="submit" class="btn btn-default comment" id="' + data + '">Post</button>' +
-				'<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5"></textarea>' +
+				'<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5">' + textTyped + '</textarea>' +
 				'<button style="display: none" type="submit" class="btn btn-default commentEdit">Save</button>' + 
 				'</div></div>';
 				$("#answerText").val('');
@@ -165,7 +165,7 @@ $(document).ready(function(){
 					'<p class="rating">0 votes</p>' +
 					'<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>' +
 				'<button style="display: none" type="submit" class="btn btn-default comment" id="' + data + '">Post</button>' +
-				'<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5"></textarea>' +
+				'<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5">' + textTyped + '</textarea>' +
 				'<button style="display: none" type="submit" class="btn btn-default commentEdit">Save</button>' + 
 				'</div></div>';
 				
@@ -222,6 +222,8 @@ $(document).ready(function(){
 				$(".commentEdit").css({"display": "none"});
 				
 				$(".commentTextEdit").css({"display": "none"});
+				
+				$(this).siblings(".commentTextEdit").val(textTyped);
 			}
 		}).fail(function(data, statusText, xhr){
 			alert(data);

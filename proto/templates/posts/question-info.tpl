@@ -26,6 +26,7 @@
 				<p>{$tag.name} <button class="btn btn-default glyphicon glyphicon-remove removeTag"></button> </p>
 			{/foreach}
 			{if $USER_ID == $question.id_author}
+				<button class="btn btn-default editQuestion" data-toggle="modal" data-target="#editQuestionModal">Edit Question</button>
 				<button class="btn btn-default deleteQuestion" data-toggle="modal" data-target="#deleteQuestionModal">Delete Question</button>
 			{/if}
         </div>

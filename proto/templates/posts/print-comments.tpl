@@ -32,7 +32,7 @@
 					<p class="rating correctRating">{$answer.rating} votes</p>
 					<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
 					<button style="display: none" type="submit" class="btn btn-default comment" id="{$answer.a_id}">Post</button>
-					<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5"></textarea>
+					<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5">{$answer.description}</textarea>
 					<button style="display: none" type="submit" class="btn btn-default commentEdit">Save</button>
 				{/if}
 			</div>
@@ -77,7 +77,7 @@
 				<p class="rating">{$answer.rating} votes</p>
 				<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
 				<button style="display: none" type="submit" class="btn btn-default comment" id="{$answer.a_id}">Post</button>
-				<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5"></textarea>
+				<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5">{$answer.description}</textarea>
 				<button style="display: none" type="submit" class="btn btn-default commentEdit">Save</button>
 			{/if}
 		</div>
