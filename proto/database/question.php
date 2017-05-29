@@ -228,11 +228,18 @@
         return $tag_id;
     }
 	
-	function createReport($r_id, $p_id, $content)
+	function createReport($q_id, $p_id, $content)
 	{
 		global $conn;
         $stmt = $conn->prepare("INSERT INTO report (id_member, id_post, description) VALUES (?,?,?);");
-        $stmt->execute(array($p_id, $r_id, $content));
+        $stmt->execute(array($p_id, $q_id, $content));
+	}
+	
+	function createReport2($q_id, $p_id, $content, $r_id)
+	{
+		global $conn;
+        $stmt = $conn->prepare("INSERT INTO report (id_member, id_post, description, id_response) VALUES (?,?,?,?);");
+        $stmt->execute(array($p_id, $r_id, $content, $q_id));
 	}
 	
 	function searchQuestions($text)

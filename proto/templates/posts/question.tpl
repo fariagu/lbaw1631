@@ -6,6 +6,7 @@
 question_id = {$question_id};
 profile_id = {$USER_ID};
 username = "{$USERNAME}";
+reportQuestion = false;
 </script>
 <script src="{$BASE_URL}javascript/posts/question.js"></script>
 {include file='common/confirmationModal.tpl'}

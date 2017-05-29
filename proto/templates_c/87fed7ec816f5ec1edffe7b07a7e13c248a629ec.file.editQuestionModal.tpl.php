@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 19:21:11
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 19:30:20
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\editQuestionModal.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:233531615592c58724233c6-06439477%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '87fed7ec816f5ec1edffe7b07a7e13c248a629ec' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\editQuestionModal.tpl',
-      1 => 1496078467,
+      1 => 1496079017,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.15',
   'unifunc' => 'content_592c5872424970_83668347',
+  'variables' => 
+  array (
+    'categories' => 0,
+    'category' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_592c5872424970_83668347')) {function content_592c5872424970_83668347($_smarty_tpl) {?><!-- Modal -->
@@ -24,19 +29,40 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Question</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><strong>Edit Question</strong></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <form>
-          <div class="form-group">
-            <label for="message-text" class="form-control-label">Reason:</label>
-            <textarea class="form-control" id="report-text"></textarea>
-          </div>
-        </form>
-      </div>
+			<div class="form-group">
+				<label for="title">Title:</label>
+				<input name="title" type="text" class="form-control" id="title" placeholder="Enter your question title" autofocus>
+			</div>
+			<div class="form-group">
+				<label for="question">Question:</label>
+				<textarea name="question" class="form-control" rows="5" id="question"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="sel1">Category:</label>
+				<select name="sel1" class="form-control" id="sel1">
+					<?php  $_smarty_tpl->tpl_vars['category'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['category']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['categories']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['category']->key => $_smarty_tpl->tpl_vars['category']->value) {
+$_smarty_tpl->tpl_vars['category']->_loop = true;
+?>
+						<option><?php echo $_smarty_tpl->tpl_vars['category']->value['name'];?>
+</option>
+					<?php } ?>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="tags">Tags:</label>
+				<textarea name="tags" class="form-control" rows="5" id="tags" placeholder="Separate each tag by a semicolon (;)"></textarea>
+			</div>
+		</form>
+		</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default editQuestionButton">Submit</button>
       </div>

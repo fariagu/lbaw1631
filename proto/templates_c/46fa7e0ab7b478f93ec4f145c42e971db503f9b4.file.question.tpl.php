@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 19:20:50
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 19:50:29
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\question.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21454338058f0ce64065017-66206825%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '46fa7e0ab7b478f93ec4f145c42e971db503f9b4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\question.tpl',
-      1 => 1496078414,
+      1 => 1496080205,
       2 => 'file',
     ),
   ),
@@ -41,6 +41,7 @@ profile_id = <?php echo $_smarty_tpl->tpl_vars['USER_ID']->value;?>
 ;
 username = "<?php echo $_smarty_tpl->tpl_vars['USERNAME']->value;?>
 ";
+reportQuestion = false;
 </script>
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/posts/question.js"></script>

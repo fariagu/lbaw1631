@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 19:21:44
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 20:25:16
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\print-comments.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:672381039591396c9c44ae5-47234055%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '547d2d3bd6a4b3b8cc652e297bb8a14c078e9aef' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\print-comments.tpl',
-      1 => 1496078501,
+      1 => 1496082314,
       2 => 'file',
     ),
   ),
@@ -54,6 +54,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 px">
 			<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_id'];?>
+" id="answer<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_id'];?>
 " class="list-group-item"><?php echo $_smarty_tpl->tpl_vars['answer']->value['username'];?>
 </a>
 			<div class="panel-body postDescription"><?php echo $_smarty_tpl->tpl_vars['answer']->value['description'];?>
@@ -118,6 +119,7 @@ $_smarty_tpl->tpl_vars['answer']->_loop = true;
 px">
 		<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['m_id'];?>
+" id="answer<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_id'];?>
 " class="list-group-item"><?php echo $_smarty_tpl->tpl_vars['answer']->value['username'];?>
 </a>
 		<div class="panel-body postDescription"><?php echo $_smarty_tpl->tpl_vars['answer']->value['description'];?>
@@ -173,7 +175,7 @@ foreach (Smarty::$global_tpl_vars as $key => $value) if(!isset($_smarty_tpl->tpl
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Report post</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><strong>Report post</strong></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

@@ -3,6 +3,7 @@
   include_once($BASE_DIR .'database/category.php');
   include_once($BASE_DIR .'database/member.php');
   include_once($BASE_DIR .'database/report.php');
+  include_once($BASE_DIR .'database/question.php');
   
   if(!$_SESSION['admin'])
   {
@@ -23,7 +24,18 @@
   $report = getReportInfo($member, $post);
   $reported_member['id'] = $member;
   $reported_member['username'] = getMemberUsername($member);
-  $reported_post = $post;
+  
+  if($report['id_response'])
+  {
+	  $reported_post = getQuestionInfo($report['id_response'], $_SESSION['id']);
+	  $reported_post['response'] = $post;
+	  $reported_post['id'] = $report['id_response'] . '#answer' . $post;
+  }
+  else
+  {
+	  $reported_post = getQuestionInfo($post, $_SESSION['id']);
+	  $reported_post['id'] = $post;
+  }
   
   $smarty->assign('top_categories', $top_categories);
   $smarty->assign('report', $report);

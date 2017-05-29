@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-28 21:28:23
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 20:13:18
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\admin\report-info.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:83189343858f249ba2249f3-17500747%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c889e971a83f1b25b6183b3df43fc2f38c82b3d7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\admin\\report-info.tpl',
-      1 => 1495905090,
+      1 => 1496081484,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'BASE_URL' => 0,
     'reported_member' => 0,
-    'reported_page' => 0,
-    'report' => 0,
     'reported_post' => 0,
+    'report' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -39,8 +38,8 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['reported_member']->
 " class="list-group-item"><?php echo $_smarty_tpl->tpl_vars['reported_member']->value['username'];?>
 </a>
 						<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/posts/question.php?id=<?php echo $_smarty_tpl->tpl_vars['reported_page']->value['id'];?>
-" class="list-group-item"><?php echo $_smarty_tpl->tpl_vars['reported_page']->value['title'];?>
+pages/posts/question.php?id=<?php echo $_smarty_tpl->tpl_vars['reported_post']->value['id'];?>
+" class="list-group-item"><?php echo $_smarty_tpl->tpl_vars['reported_post']->value['title'];?>
 </a>
 					</div>
 					<div class="panel panel-default">

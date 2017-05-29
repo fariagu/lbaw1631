@@ -412,6 +412,7 @@ $(document).ready(function(){
 		
 		if($(this).hasClass("question"))
 		{
+			reportQuestion = true;
 			id = question_id;
 		}
 		else
@@ -426,11 +427,7 @@ $(document).ready(function(){
 		
 		var id;
 		
-		if($(this).hasClass("question"))
-		{
-			id = question_id;
-		}
-		else
+		if(!reportQuestion)
 		{
 			id = $(".reportButton").attr("id");
 		}
@@ -445,7 +442,7 @@ $(document).ready(function(){
 			context: this,
 			url  : BASE_URL + "api/posts/report.php",
 			type : 'get',
-			data : {r_id: id, p_id: profile_id, content: textTyped}
+			data : {r_id: id, p_id: profile_id, content: textTyped, q_id: question_id}
 		}).done(function(data, statusText, xhr){
 			var status = xhr.status;
 		
@@ -472,6 +469,8 @@ $(document).ready(function(){
 		$("#report-text").val('');
 		
 		$('#reportModal').modal('toggle');
+		
+		reportQuestion = false;
 	});
 	
 	$(document).on("click", ".deleteResponse", function(e){

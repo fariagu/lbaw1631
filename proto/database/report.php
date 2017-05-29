@@ -11,7 +11,7 @@
 	
 	function getReportInfo($member, $post) {
 		global $conn;
-		$stmt = $conn->prepare("SELECT description
+		$stmt = $conn->prepare("SELECT *
 								FROM report
 								WHERE id_member = ? AND id_post = ?;");
 		$stmt->execute(array($member, $post));

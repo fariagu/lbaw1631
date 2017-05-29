@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 18:01:48
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 19:31:37
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\deleteQuestionModal.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2145928127592c432189f594-95575194%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ec133b2e599a662325915cb9cd5c03019b7be4da' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\deleteQuestionModal.tpl',
-      1 => 1496073693,
+      1 => 1496079065,
       2 => 'file',
     ),
   ),
@@ -28,7 +28,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                <h5 class="modal-title" id="exampleModalLabel"><strong>Are you sure?</strong></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

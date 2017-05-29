@@ -1,7 +1,5 @@
 tags na question (remove)
-resolver id do post na pagina do report (pode ser question, answer ou comment)
 acabar search normal(filtros para questoes/categorias)
-escolher resposta correta
 
 EXTRAS:
 modulo das mensagens

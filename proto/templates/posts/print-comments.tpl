@@ -1,7 +1,7 @@
 {function print_correct margin=0 }
 	{if $answer.a_id}
 		<div class="panel panel-default" id="correctAnswer" style="margin-left:{$margin}px">
-			<a href="{$BASE_URL}pages/user/profile.php?id={$answer.a_id}" class="list-group-item">{$answer.username}</a>
+			<a href="{$BASE_URL}pages/user/profile.php?id={$answer.a_id}" id="answer{$answer.a_id}" class="list-group-item">{$answer.username}</a>
 			<div class="panel-body postDescription">{$answer.description}
 			</div>
 			<div class="panel-body">
@@ -46,7 +46,7 @@
 {function print_comments margin=0 }
   {foreach $answers as $answer}
 	<div class="panel panel-default" id="answerComment" style="margin-left:{$margin}px">
-		<a href="{$BASE_URL}pages/user/profile.php?id={$answer.m_id}" class="list-group-item">{$answer.username}</a>
+		<a href="{$BASE_URL}pages/user/profile.php?id={$answer.m_id}" id="answer{$answer.a_id}" class="list-group-item">{$answer.username}</a>
 		<div class="panel-body postDescription">{$answer.description}
 		</div>
 		<div class="panel-body">
@@ -93,7 +93,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Report post</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><strong>Report post</strong></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
