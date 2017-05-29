@@ -23,7 +23,7 @@ $(document).ready(function(){
 				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />' +
 				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeEditComment" />' +
 					'<button type="button" class="btn btn-default editResponse">Edit</button>' +
-					'<button type="button" class="btn btn-default deleteResponse" data-toggle="modal" data-target="#deleteResponseModal">Delete</button>' +
+					'<button type="button" class="btn btn-default deleteResponse" data-toggle="modal" data-target="#confirmationModal">Delete</button>' +
 					'<button type="submit" class="btn btn-default reply">Reply</button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>' +
@@ -158,7 +158,7 @@ $(document).ready(function(){
 				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />' +
 					'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeEditComment" />' +
 					'<button type="button" class="btn btn-default editResponse">Edit</button>' +
-					'<button type="button" class="btn btn-default deleteResponse" data-toggle="modal" data-target="#deleteResponseModal">Delete</button>' +
+					'<button type="button" class="btn btn-default deleteResponse" data-toggle="modal" data-target="#confirmationModal">Delete</button>' +
 					'<button type="submit" class="btn btn-default reply">Reply</button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>' +
