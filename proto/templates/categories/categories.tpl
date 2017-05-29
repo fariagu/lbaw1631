@@ -7,7 +7,7 @@
 					{foreach $categories as $category}
 						{if $ADMIN}
 							<a id="{$category.id}" href="{$BASE_URL}pages/categories/category.php?id={$category.id}" class="list-group-item categoryItem" style="display: inline-block; width: 95%">{$category.name}</a>
-							<button class="btn btn-default glyphicon glyphicon-remove deleteCategory"></button>
+							<button class="btn btn-default glyphicon glyphicon-remove deleteCategory" data-toggle="modal" data-target="#confirmationModal"></button>
 						{else}
 							<a id="{$category.id}" href="{$BASE_URL}pages/categories/category.php?id={$category.id}" class="list-group-item categoryItem">{$category.name}</a>
 						{/if}

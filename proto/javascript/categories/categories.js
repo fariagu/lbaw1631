@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $(".deleteCategory").click(function(e){
+    $(".confirmButton").click(function(e){
 		
 		e.preventDefault();
 		

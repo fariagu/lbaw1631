@@ -297,7 +297,7 @@ body {
     display: block;
 }
 
-.dropdown-content a: hover {
+.dropdown-content a:hover {
     background-color: black;
 }
 

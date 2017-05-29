@@ -9,4 +9,5 @@
     <script>var admin = false;</script>
 {/if}
 <script src="{$BASE_URL}javascript/categories/categories.js"></script>
+{include file='common/confirmationModal.tpl'}
 {include file='common/footer.tpl'}
