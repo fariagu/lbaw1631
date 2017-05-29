@@ -30,6 +30,7 @@
 			{/if}
         </div>
 		<p id="question-body">{$question.description}</p>
+		
     </div>
 </div>
 
@@ -39,7 +40,7 @@
 			<div class="col-lg-12">
 				<h2 id="topic-title">Answers</h2>
 				{include file='posts/print-comments.tpl'}
-				{call print_correct answer=$correct user=$USER_ID}
+				{call print_correct answer=$correct user=$USER_ID owner=$owner}
 				{call print_comments answers=$answers user=$USER_ID owner=$owner}
 				{if $USER_ID}
 					<div class="form-group" id="answerForm">

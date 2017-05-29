@@ -101,7 +101,7 @@ function createQuestion($title, $description, $category, $tags, $id) {
 	function getCorrectAnswer($id, $profile_id)
 	{
 		global $conn;
-		$stmt = $conn->prepare("SELECT answer.id as a_id, description, username, creation_date
+		$stmt = $conn->prepare("SELECT answer.id as a_id, description, username, creation_date, post.id_author as m_id
 								FROM answer
 								INNER JOIN response ON answer.id = response.id
 								INNER JOIN post ON response.id = post.id

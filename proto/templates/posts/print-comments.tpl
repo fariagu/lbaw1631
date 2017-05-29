@@ -16,7 +16,7 @@
 					{/if}
 					{if $user == $answer.m_id && !$answer.comments}
 						<button type="button" class="btn btn-default editResponse">Edit</button>
-						<button class="btn btn-default glyphicon deleteResponse" data-toggle="modal" data-target="#confirmationModal">Delete</button>
+						<button class="btn btn-default deleteResponse" data-toggle="modal" data-target="#confirmationModal">Delete</button>
 					{/if}
 					<button type="submit" class="btn btn-default reply">Reply</button>
 					{if $answer.value == -1}
