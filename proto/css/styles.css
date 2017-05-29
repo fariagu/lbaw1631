@@ -348,6 +348,10 @@ body {
 	float: right;
 }
 
+.closeEditComment {
+	float: right;
+}
+
 .like {
 	float: right;
 	margin-right: 3px;
@@ -389,4 +393,21 @@ body {
 
 .deleteCategory {
 	display: inline-block;
+}
+
+.editResponse {
+	float: right;
+	margin-right: 3px;
+}
+
+.commentEdit {
+	float: right;
+}
+
+.comment {
+	float: right;
+}
+
+#answer {
+	float: right;
 }

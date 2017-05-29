@@ -2,13 +2,17 @@
 	{if $answer.a_id}
 		<div class="panel panel-default" id="correctAnswer" style="margin-left:{$margin}px">
 			<a href="{$BASE_URL}pages/user/profile.php?id={$answer.a_id}" class="list-group-item">{$answer.username}</a>
-			<div class="panel-body">{$answer.description}
+			<div class="panel-body postDescription">{$answer.description}
 			</div>
 			<div class="panel-body">
 				{if $user}
 					<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
+					<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeEditComment" />
 					{if $user != $answer.m_id}
 						<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
+					{/if}
+					{if $user == $answer.m_id && !$answer.comments}
+						<button type="button" class="btn btn-default editResponse">Edit</button>
 					{/if}
 					<button type="submit" class="btn btn-default reply">Reply</button>
 					{if $answer.value == -1}
@@ -24,6 +28,8 @@
 					<p class="rating correctRating">{$answer.rating} votes</p>
 					<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
 					<button style="display: none" type="submit" class="btn btn-default comment" id="{$answer.a_id}">Post</button>
+					<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5"></textarea>
+					<button style="display: none" type="submit" class="btn btn-default commentEdit">Save</button>
 				{/if}
 			</div>
 		</div>
@@ -37,13 +43,17 @@
   {foreach $answers as $answer}
 	<div class="panel panel-default" id="answerComment" style="margin-left:{$margin}px">
 		<a href="{$BASE_URL}pages/user/profile.php?id={$answer.m_id}" class="list-group-item">{$answer.username}</a>
-		<div class="panel-body">{$answer.description}
+		<div class="panel-body postDescription">{$answer.description}
 		</div>
 		<div class="panel-body">
 			{if $user}
 				<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
+				<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeEditComment" />
 				{if $user != $answer.m_id}
 					<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
+				{/if}
+				{if $user == $answer.m_id && !$answer.comments}
+					<button type="button" class="btn btn-default editResponse">Edit</button>
 				{/if}
 				<button type="submit" class="btn btn-default reply">Reply</button>
 				{if $answer.value == -1}
@@ -59,6 +69,8 @@
 				<p class="rating">{$answer.rating} votes</p>
 				<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
 				<button style="display: none" type="submit" class="btn btn-default comment" id="{$answer.a_id}">Post</button>
+				<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5"></textarea>
+				<button style="display: none" type="submit" class="btn btn-default commentEdit">Save</button>
 			{/if}
 		</div>
 	</div>

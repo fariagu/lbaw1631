@@ -309,4 +309,12 @@ function createQuestion($title, $description, $category, $tags, $id) {
 
 		return $stmt->fetchAll();
 	}
+	
+	function updateResponse($response_id, $content)
+	{
+		global $conn;
+		
+        $post_stmt = $conn->prepare("UPDATE post SET description = ? WHERE id = ?;");
+        $post_stmt->execute(array($content, $response_id));
+	}
 ?>

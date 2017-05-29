@@ -16,17 +16,21 @@ $(document).ready(function(){
 			if(status == 200)
 			{
 				var str = '<div class="panel panel-default" id="answerComment" style="margin-left:0px"><a href="' + BASE_URL +
-				'pages/user/profile.php?id=' + profile_id + '" class="list-group-item">' + username + '</a><div class="panel-body">' + 
+				'pages/user/profile.php?id=' + profile_id + '" class="list-group-item">' + username + '</a><div class="panel-body postDescription">' + 
 				textTyped + 
 				'</div>' + 
 				'<div class="panel-body">' + 
 				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />' +
+				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeEditComment" />' +
+					'<button type="button" class="btn btn-default editResponse">Edit</button>' +
 					'<button type="submit" class="btn btn-default reply">Reply</button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>' +
 					'<p class="rating">0 votes</p>' +
 					'<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>' +
 				'<button style="display: none" type="submit" class="btn btn-default comment" id="' + data + '">Post</button>' +
+				'<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5"></textarea>' +
+				'<button style="display: none" type="submit" class="btn btn-default commentEdit">Save</button>' + 
 				'</div></div>';
 				$("#answerText").val('');
 				$("#answerForm").before(str);
@@ -41,20 +45,32 @@ $(document).ready(function(){
 		
 		$(".reply").css({"display": "inline"});
 		
+		$(".editResponse").css({"display": "inline"});
+		
 		$(this).css({"display": "none"});
 		
 		$(".closeComment").css({"display": "none"});
+		
+		$(".closeEditComment").css({"display": "none"});
 		
 		$(".comment").css({"display": "none"});
 		
 		$(".commentText").css({"display": "none"});
 		
-		$(this).siblings().css({"display": "inline"});
+		$(this).siblings(".editResponse").css({"display": "none"});
+		
+		$(this).siblings(".comment").css({"display": "inline"});
+		
+		$(this).siblings(".commentText").css({"display": "inline"});
+		
+		$(this).siblings(".closeComment").css({"display": "inline"});
     });
 	
-	$(".closeComment").click(function(e){
+	$(document).on("click", ".editResponse", function(e){
 		
 		e.preventDefault();
+		
+		$(".editResponse").css({"display": "inline"});
 		
 		$(".reply").css({"display": "inline"});
 		
@@ -62,9 +78,53 @@ $(document).ready(function(){
 		
 		$(".closeComment").css({"display": "none"});
 		
+		$(".closeEditComment").css({"display": "none"});
+		
+		$(".commentEdit").css({"display": "none"});
+		
+		$(".commentTextEdit").css({"display": "none"});
+		
+		$(this).siblings(".reply").css({"display": "none"});
+		
+		$(this).siblings(".commentEdit").css({"display": "inline"});
+		
+		$(this).siblings(".commentTextEdit").css({"display": "inline"});
+		
+		$(this).siblings(".closeEditComment").css({"display": "inline"});
+    });
+	
+	$(document).on("click", ".closeComment", function(e){
+		
+		e.preventDefault();
+		
+		$(".reply").css({"display": "inline"});
+		
+		$(".editResponse").css({"display": "inline"});
+		
+		$(this).css({"display": "none"});
+		
+		$(".closeComment").css({"display": "none"});
+		
 		$(".comment").css({"display": "none"});
 		
 		$(".commentText").css({"display": "none"});
+    });
+	
+	$(document).on("click", ".closeEditComment", function(e){
+		
+		e.preventDefault();
+		
+		$(".reply").css({"display": "inline"});
+		
+		$(".editResponse").css({"display": "inline"});
+		
+		$(this).css({"display": "none"});
+		
+		$(".closeEditComment").css({"display": "none"});
+		
+		$(".commentEdit").css({"display": "none"});
+		
+		$(".commentTextEdit").css({"display": "none"});
     });
 	
 	$(document).on("click", ".comment", function(e){
@@ -91,16 +151,20 @@ $(document).ready(function(){
 				
 				var str = '<div class="panel panel-default" id="answerComment" style="margin-left:' + newMargin + 'px"><a href="'
 				+ BASE_URL + 'pages/user/profile.php?id=' + profile_id + '" class="list-group-item">' + username +
-				'</a><div class="panel-body">' + textTyped +
+				'</a><div class="panel-body postDescription">' + textTyped +
 				'</div>' + 
 				'<div class="panel-body">' + 
 				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />' +
+					'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeEditComment" />' +
+					'<button type="button" class="btn btn-default editResponse">Edit</button>' +
 					'<button type="submit" class="btn btn-default reply">Reply</button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>' +
 					'<p class="rating">0 votes</p>' +
 					'<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>' +
 				'<button style="display: none" type="submit" class="btn btn-default comment" id="' + data + '">Post</button>' +
+				'<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5"></textarea>' +
+				'<button style="display: none" type="submit" class="btn btn-default commentEdit">Save</button>' + 
 				'</div></div>';
 				
 				$("#" + response_id).parent().parent().after(str);
@@ -114,6 +178,48 @@ $(document).ready(function(){
 				$(".comment").css({"display": "none"});
 				
 				$(".commentText").css({"display": "none"});
+			}
+		}).fail(function(data, statusText, xhr){
+			alert(data);
+		});
+    });
+	
+	$(document).on("click", ".commentEdit", function(e){
+		
+		e.preventDefault();
+		
+		var textTyped = $(this).prev().val();
+		
+		var response_id = $(this).siblings(".comment").attr("id");
+		
+		console.log(textTyped);
+		console.log(response_id);
+		
+		$.ajax({
+			context: this,
+			url  : BASE_URL + "api/posts/update-response.php",
+			type : 'get',
+			data : {r_id: response_id, content: textTyped}
+		}).done(function(data, statusText, xhr){
+			var status = xhr.status;
+		
+			if(status == 200)
+			{
+				$(this).prev().val('');
+				
+				$(this).parent().siblings(".postDescription").text(textTyped);
+				
+				$(".reply").css({"display": "inline"});
+				
+				$(".editResponse").css({"display": "inline"});
+		
+				$(this).css({"display": "none"});
+				
+				$(".closeEditComment").css({"display": "none"});
+				
+				$(".commentEdit").css({"display": "none"});
+				
+				$(".commentTextEdit").css({"display": "none"});
 			}
 		}).fail(function(data, statusText, xhr){
 			alert(data);

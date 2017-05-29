@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 02:31:07
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 16:33:17
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\print-comments.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:672381039591396c9c44ae5-47234055%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '547d2d3bd6a4b3b8cc652e297bb8a14c078e9aef' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\print-comments.tpl',
-      1 => 1496017712,
+      1 => 1496068138,
       2 => 'file',
     ),
   ),
@@ -55,14 +55,18 @@ px">
 pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_id'];?>
 " class="list-group-item"><?php echo $_smarty_tpl->tpl_vars['answer']->value['username'];?>
 </a>
-			<div class="panel-body"><?php echo $_smarty_tpl->tpl_vars['answer']->value['description'];?>
+			<div class="panel-body postDescription"><?php echo $_smarty_tpl->tpl_vars['answer']->value['description'];?>
 
 			</div>
 			<div class="panel-body">
 				<?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
 					<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
+					<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeEditComment" />
 					<?php if ($_smarty_tpl->tpl_vars['user']->value!=$_smarty_tpl->tpl_vars['answer']->value['m_id']) {?>
 						<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
+					<?php }?>
+					<?php if ($_smarty_tpl->tpl_vars['user']->value==$_smarty_tpl->tpl_vars['answer']->value['m_id']&&!$_smarty_tpl->tpl_vars['answer']->value['comments']) {?>
+						<button type="button" class="btn btn-default editResponse">Edit</button>
 					<?php }?>
 					<button type="submit" class="btn btn-default reply">Reply</button>
 					<?php if ($_smarty_tpl->tpl_vars['answer']->value['value']==-1) {?>
@@ -80,6 +84,8 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_
 					<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
 					<button style="display: none" type="submit" class="btn btn-default comment" id="<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_id'];?>
 ">Post</button>
+					<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5"></textarea>
+					<button style="display: none" type="submit" class="btn btn-default commentEdit">Save</button>
 				<?php }?>
 			</div>
 		</div>
@@ -108,14 +114,18 @@ px">
 pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['m_id'];?>
 " class="list-group-item"><?php echo $_smarty_tpl->tpl_vars['answer']->value['username'];?>
 </a>
-		<div class="panel-body"><?php echo $_smarty_tpl->tpl_vars['answer']->value['description'];?>
+		<div class="panel-body postDescription"><?php echo $_smarty_tpl->tpl_vars['answer']->value['description'];?>
 
 		</div>
 		<div class="panel-body">
 			<?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
 				<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />
+				<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeEditComment" />
 				<?php if ($_smarty_tpl->tpl_vars['user']->value!=$_smarty_tpl->tpl_vars['answer']->value['m_id']) {?>
 					<button type="button" class="btn btn-default report" data-toggle="modal" data-target="#reportModal">Report</button>
+				<?php }?>
+				<?php if ($_smarty_tpl->tpl_vars['user']->value==$_smarty_tpl->tpl_vars['answer']->value['m_id']&&!$_smarty_tpl->tpl_vars['answer']->value['comments']) {?>
+					<button type="button" class="btn btn-default editResponse">Edit</button>
 				<?php }?>
 				<button type="submit" class="btn btn-default reply">Reply</button>
 				<?php if ($_smarty_tpl->tpl_vars['answer']->value['value']==-1) {?>
@@ -133,6 +143,8 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['answer']->value['m_
 				<textarea style="display: none" name="answer" class="form-control commentText" rows="5"></textarea>
 				<button style="display: none" type="submit" class="btn btn-default comment" id="<?php echo $_smarty_tpl->tpl_vars['answer']->value['a_id'];?>
 ">Post</button>
+				<textarea style="display: none" name="answer" class="form-control commentTextEdit" rows="5"></textarea>
+				<button style="display: none" type="submit" class="btn btn-default commentEdit">Save</button>
 			<?php }?>
 		</div>
 	</div>
