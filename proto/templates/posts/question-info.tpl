@@ -22,6 +22,9 @@
 					<button class="btn btn-default glyphicon glyphicon-thumbs-up like question"></button>
 				{/if}
 			{/if}
+			{foreach $question.tags as $tag}
+				<p>{$tag.name}</p>
+			{/foreach}
         </div>
 		<p id="question-body">{$question.description}</p>
     </div>    

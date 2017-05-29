@@ -54,7 +54,15 @@
 									WHERE id_member = ? AND id_post = ?;");
 		$voteStmt->execute(array($profile_id, $id));
 		
+		$tagsStmt = $conn->prepare("SELECT name
+									FROM tag
+									INNER JOIN question_tag ON id_tag = tag.id
+									INNER JOIN question ON question.id = question_tag.id_question
+									WHERE id_question = ?;");
+		$tagsStmt->execute(array($id));
+		
 		$question['value'] = $voteStmt->fetch()['value'];
+		$question['tags'] = $tagsStmt->fetchAll();
 		
 		return $question;
 	}

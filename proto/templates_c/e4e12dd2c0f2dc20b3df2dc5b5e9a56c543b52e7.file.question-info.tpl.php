@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 13:55:55
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 14:28:43
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\question-info.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:85119251458f0ce9e7be188-69637342%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e4e12dd2c0f2dc20b3df2dc5b5e9a56c543b52e7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\question-info.tpl',
-      1 => 1496058952,
+      1 => 1496060921,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'question' => 0,
     'BASE_URL' => 0,
     'USER_ID' => 0,
+    'tag' => 0,
     'correct' => 0,
     'answers' => 0,
   ),
@@ -59,6 +60,14 @@ pages/categories/category.php?id=<?php echo $_smarty_tpl->tpl_vars['question']->
 					<button class="btn btn-default glyphicon glyphicon-thumbs-up like question"></button>
 				<?php }?>
 			<?php }?>
+			<?php  $_smarty_tpl->tpl_vars['tag'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['tag']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['question']->value['tags']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['tag']->key => $_smarty_tpl->tpl_vars['tag']->value) {
+$_smarty_tpl->tpl_vars['tag']->_loop = true;
+?>
+				<p><?php echo $_smarty_tpl->tpl_vars['tag']->value['name'];?>
+</p>
+			<?php } ?>
         </div>
 		<p id="question-body"><?php echo $_smarty_tpl->tpl_vars['question']->value['description'];?>
 </p>
