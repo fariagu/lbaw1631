@@ -29,6 +29,15 @@
 		return $stmt->fetch();
 	}
 
+	function getCategoryID($name) {
+		global $conn;
+		$stmt = $conn->prepare("SELECT id
+									FROM category
+									WHERE name = ?;");
+		$stmt->execute(array($name));
+		return $stmt->fetch();
+	}
+
 	function createCategory($name, $description) {
     		global $conn;
     		$stmt = $conn->prepare("INSERT INTO category (name,description) VALUES (?, ?)");

@@ -11,21 +11,17 @@
 			<label for="sel1">Category:</label>
 			<select class="form-control" id="sel1">
 				<option>Any</option>
-				<option>Category 1</option>
-				<option>Category 2</option>
-				<option>Category 3</option>
-				<option>Category 4</option>
-				<option>Category 5</option>
-				<option>Category 6</option>
-				<option>Category 7</option>
-				<option>Category 8</option>
-				<option>Category 9</option>
-				<option>Category 10</option>
-				<option>Category 11</option>
-				<option>Category 12</option>
-				<option>Category 13</option>
+				<span style="display: none;">
+					<option style="display: none;">0</option>
+				</span>
+                {foreach $categories as $category}
+					<option>{$category.name}</option>
+					<span style="display: none;">
+						<option style="display: none;">{$category.id}</option>
+					</span>
+                {/foreach}
 			</select>
-			<label class="checkbox-inline"><input type="checkbox" value="">Answered</label>
+			<label class="checkbox-inline"><input type="checkbox" value="" id="answeredOnly">Answered</label>
 		</div>
 		<div class="form-group">
 			<label for="sel1">Sort by:</label>

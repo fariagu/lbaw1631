@@ -67,7 +67,7 @@
 		return $question;
 	}
 
-function createQuestion($title, $description, $category, $tags, $id) {
+	function createQuestion($title, $description, $category, $tags, $id) {
     global $conn;
     $post_stmt = $conn->prepare("INSERT INTO post (description,id_author) VALUES (?,?)");
     $post_stmt->execute(array($description, $id));
@@ -98,6 +98,7 @@ function createQuestion($title, $description, $category, $tags, $id) {
 
     return $question_id;
 }
+
 	function getCorrectAnswer($id, $profile_id)
 	{
 		global $conn;
@@ -236,7 +237,7 @@ function createQuestion($title, $description, $category, $tags, $id) {
 	{
 		global $conn;
         $stmt = $conn->prepare("SELECT * FROM (
-									SELECT question.id as q_id, title, post.description, (
+									SELECT question.id as q_id, title, post.description, id_category, id_correct, (
 										ts_rank_cd(setweight(to_tsvector('english', question.title), 'A'),
 													to_tsquery('english', ?)) +
 										ts_rank_cd(setweight(to_tsvector('english', post.description), 'B'),
