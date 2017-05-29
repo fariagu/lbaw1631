@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 16:01:51
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 19:11:54
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\question-info.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:85119251458f0ce9e7be188-69637342%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e4e12dd2c0f2dc20b3df2dc5b5e9a56c543b52e7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\question-info.tpl',
-      1 => 1496066507,
+      1 => 1496077908,
       2 => 'file',
     ),
   ),
@@ -24,6 +24,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'USER_ID' => 0,
     'tag' => 0,
     'correct' => 0,
+    'owner' => 0,
     'answers' => 0,
   ),
   'has_nocache_code' => false,
@@ -68,9 +69,13 @@ $_smarty_tpl->tpl_vars['tag']->_loop = true;
 				<p><?php echo $_smarty_tpl->tpl_vars['tag']->value['name'];?>
  <button class="btn btn-default glyphicon glyphicon-remove removeTag"></button> </p>
 			<?php } ?>
+			<?php if ($_smarty_tpl->tpl_vars['USER_ID']->value==$_smarty_tpl->tpl_vars['question']->value['id_author']) {?>
+				<button class="btn btn-default deleteQuestion" data-toggle="modal" data-target="#deleteQuestionModal">Delete Question</button>
+			<?php }?>
         </div>
 		<p id="question-body"><?php echo $_smarty_tpl->tpl_vars['question']->value['description'];?>
 </p>
+		
     </div>
 </div>
 
@@ -81,9 +86,9 @@ $_smarty_tpl->tpl_vars['tag']->_loop = true;
 				<h2 id="topic-title">Answers</h2>
 				<?php echo $_smarty_tpl->getSubTemplate ('posts/print-comments.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
-				<?php smarty_template_function_print_correct($_smarty_tpl,array('answer'=>$_smarty_tpl->tpl_vars['correct']->value,'user'=>$_smarty_tpl->tpl_vars['USER_ID']->value));?>
+				<?php smarty_template_function_print_correct($_smarty_tpl,array('answer'=>$_smarty_tpl->tpl_vars['correct']->value,'user'=>$_smarty_tpl->tpl_vars['USER_ID']->value,'owner'=>$_smarty_tpl->tpl_vars['owner']->value));?>
 
-				<?php smarty_template_function_print_comments($_smarty_tpl,array('answers'=>$_smarty_tpl->tpl_vars['answers']->value,'user'=>$_smarty_tpl->tpl_vars['USER_ID']->value));?>
+				<?php smarty_template_function_print_comments($_smarty_tpl,array('answers'=>$_smarty_tpl->tpl_vars['answers']->value,'user'=>$_smarty_tpl->tpl_vars['USER_ID']->value,'owner'=>$_smarty_tpl->tpl_vars['owner']->value));?>
 
 				<?php if ($_smarty_tpl->tpl_vars['USER_ID']->value) {?>
 					<div class="form-group" id="answerForm">

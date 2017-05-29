@@ -102,7 +102,7 @@
 	function getCorrectAnswer($id, $profile_id)
 	{
 		global $conn;
-		$stmt = $conn->prepare("SELECT answer.id as a_id, description, username, creation_date
+		$stmt = $conn->prepare("SELECT answer.id as a_id, description, username, creation_date, post.id_author as m_id
 								FROM answer
 								INNER JOIN response ON answer.id = response.id
 								INNER JOIN post ON response.id = post.id
@@ -143,6 +143,8 @@
 										WHERE id_member = ? AND id_post = ?;");
 			$voteStmt->execute(array($profile_id, $answer['a_id']));
 			$answers[$key]['value'] = $voteStmt->fetch()['value'];
+			
+			$answers[$key]['answer'] = true;
 			
 			$answers[$key]['comments'] = getComments($answer['a_id'], $profile_id);
 		}
@@ -317,5 +319,37 @@
 		
         $post_stmt = $conn->prepare("UPDATE post SET description = ? WHERE id = ?;");
         $post_stmt->execute(array($content, $response_id));
+	}
+	
+	function deleteResponse($response_id)
+	{
+		global $conn;
+		
+        $post_stmt = $conn->prepare("DELETE FROM post WHERE id = ?;");
+        $post_stmt->execute(array($response_id));
+	}
+	
+	function deleteQuestion($id)
+	{
+		global $conn;
+		
+        $post_stmt = $conn->prepare("DELETE FROM post WHERE id = ?;");
+        $post_stmt->execute(array($id));
+	}
+	
+	function markCorrect($q_id, $r_id)
+	{
+		global $conn;
+		
+        $post_stmt = $conn->prepare("UPDATE question SET id_correct = ? WHERE id = ?;");
+        $post_stmt->execute(array($r_id, $q_id));
+	}
+	
+	function unmarkCorrect($q_id)
+	{
+		global $conn;
+		
+        $post_stmt = $conn->prepare("UPDATE question SET id_correct = NULL WHERE id = ?;");
+        $post_stmt->execute(array($q_id));
 	}
 ?>

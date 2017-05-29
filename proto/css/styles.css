@@ -411,3 +411,8 @@ body {
 #answer {
 	float: right;
 }
+
+.deleteResponse {
+	float: right;
+	margin-right: 3px;
+}

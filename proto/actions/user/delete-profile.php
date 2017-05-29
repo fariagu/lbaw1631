@@ -13,6 +13,6 @@
     deleteMember($username);
     session_destroy();
 
-	$_SESSION['success_messages'][] = 'Profile deleted successfully';
+	$_SESSION['success_messages'] = 'Profile deleted successfully';
 	header("Location: $BASE_URL");
 ?>

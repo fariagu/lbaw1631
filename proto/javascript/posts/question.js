@@ -23,6 +23,7 @@ $(document).ready(function(){
 				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />' +
 				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeEditComment" />' +
 					'<button type="button" class="btn btn-default editResponse">Edit</button>' +
+					'<button type="button" class="btn btn-default deleteResponse" data-toggle="modal" data-target="#confirmationModal">Delete</button>' +
 					'<button type="submit" class="btn btn-default reply">Reply</button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>' +
@@ -157,6 +158,7 @@ $(document).ready(function(){
 				'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeComment" />' +
 					'<button style="display: none" class="btn btn-default glyphicon glyphicon-remove closeEditComment" />' +
 					'<button type="button" class="btn btn-default editResponse">Edit</button>' +
+					'<button type="button" class="btn btn-default deleteResponse" data-toggle="modal" data-target="#confirmationModal">Delete</button>' +
 					'<button type="submit" class="btn btn-default reply">Reply</button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-down dislike"></button>' +
 					'<button class="btn btn-default glyphicon glyphicon-thumbs-up like"></button>' +
@@ -402,7 +404,7 @@ $(document).ready(function(){
 		});
     });
 	
-	$(".report").click(function(e){
+	$(document).on("click", ".report", function(e){
 		
 		var id;
 		
@@ -469,4 +471,106 @@ $(document).ready(function(){
 		
 		$('#reportModal').modal('toggle');
 	});
+	
+	$(document).on("click", ".deleteResponse", function(e){
+		
+		var id = parseInt($(this).siblings(".comment").attr("id"));
+		
+		$(".confirmButton").attr("id", id);
+    });
+	
+	$(document).on("click", ".confirmButton", function(e){
+		
+		e.preventDefault();
+		
+		var id = $(this).attr("id");
+		
+		$.ajax({
+			context: this,
+			url  : BASE_URL + "api/posts/delete-response.php",
+			type : 'get',
+			data : {r_id: id}
+		}).done(function(data, statusText, xhr){
+			var status = xhr.status;
+		
+			if(status == 200)
+			{
+				$("#" + id).parent().parent().remove();
+				$(".alert").remove();
+				
+				var str = '<div class="alert alert-success">' +
+				 '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
+				'<strong>Success!</strong>   Response deleted!' + 
+				'</div>';
+				
+				$("#topic-title").before(str);
+			}
+		}).fail(function(data, statusText, xhr){
+			$(".alert").remove();
+			var str = '<div class="alert alert-info">' +
+			 '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
+			'<strong>Error!</strong>   Could not delete response!' + 
+			'</div>';
+			
+			$("#topic-title").before(str);
+		});
+		
+		$('#confirmationModal').modal('toggle');
+    });
+	
+	$(document).on("click", ".markCorrect", function(e){
+		
+		var id = $(this).siblings(".comment").attr("id");
+		
+		$.ajax({
+			context: this,
+			url  : BASE_URL + "api/posts/mark-correct.php",
+			type : 'get',
+			data : {q_id: question_id, r_id: id}
+		}).done(function(data, statusText, xhr){
+			var status = xhr.status;
+		
+			if(status == 200)
+			{
+				var str1 = '<button type="submit" class="btn btn-default markCorrect">Mark as correct</button>';
+				var str2 = '<button type="submit" class="btn btn-default unmarkCorrect">Unmark as correct</button>';
+				
+				$(this).parent().parent().css({"background-color": "#222", "color": "white"});
+				$(this).parent().siblings("a").css({"background-color": "#222", "color": "white"});
+				$("#correctAnswer").css({"background-color": "#fff", "color": "#333"});
+				$("#correctAnswer a").css({"background-color": "#fff", "color": "#333"});
+				$("#correctAnswer .unmarkCorrect").before(str1);
+				$("#correctAnswer .unmarkCorrect").remove();
+				$("#correctAnswer").attr("id", "answerComment");
+				$(this).parent().parent().attr("id", "correctAnswer");
+				$(this).before(str2);
+				$(this).remove();
+				
+			}
+		});
+    });
+	
+	$(document).on("click", ".unmarkCorrect", function(e){
+		
+		$.ajax({
+			context: this,
+			url  : BASE_URL + "api/posts/unmark-correct.php",
+			type : 'get',
+			data : {q_id: question_id}
+		}).done(function(data, statusText, xhr){
+			var status = xhr.status;
+		
+			if(status == 200)
+			{
+				var str = '<button type="submit" class="btn btn-default markCorrect">Mark as correct</button>';
+				
+				$(this).parent().parent().css({"background-color": "#fff", "color": "#333"});
+				$(this).parent().siblings("a").css({"background-color": "#fff", "color": "#333"});
+				$(this).parent().parent().attr("id", "answerComment");
+				$(this).before(str);
+				$(this).remove();
+				
+			}
+		});
+    });
 });
