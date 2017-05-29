@@ -28,7 +28,6 @@
 			<select class="form-control" id="sel2">
 				<option>Most answers</option>
 				<option>Most votes</option>
-				<option>Most recent</option>
 			</select>
 		</div>
         <button type="submit" class="btn btn-default searchButton">Search</button>

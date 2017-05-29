@@ -281,7 +281,7 @@
 	{
 		global $conn;
         $stmt = $conn->prepare("SELECT * FROM (
-									SELECT question.id as q_id, title, post.description, id_category, id_correct, (
+									SELECT question.id as q_id, title, post.description, id_category, id_correct, rating, creation_date,(
 										ts_rank_cd(setweight(to_tsvector('english', question.title), 'A'),
 													to_tsquery('english', ?)) +
 										ts_rank_cd(setweight(to_tsvector('english', post.description), 'B'),
@@ -294,7 +294,18 @@
 								ORDER BY score DESC;");
         $stmt->execute(array($text, $text));
 		
-		return $stmt->fetchAll();
+		$questions = $stmt->fetchAll();
+		
+		foreach($questions as $key => $question)
+		{
+			$answersStmt = $conn->prepare("SELECT count(*) as c
+										FROM answer
+										WHERE id_question = ?;");
+			$answersStmt->execute(array($question['q_id']));
+			$questions[$key]['noAnswers'] = $answersStmt->fetch()['c'];
+		}
+		
+		return $questions;
 	}
 
 	function searchAnswers($text)
