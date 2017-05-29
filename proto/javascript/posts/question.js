@@ -576,6 +576,39 @@ $(document).ready(function(){
     });
 
 	$(document).on("click", ".editQuestionButton", function(e){
-        //TODO: THIS
+        var titleTyped = $("#title").val();
+		var descriptionTyped = $("#question").val();
+		var categoryTyped = $("#sel1").val();
+		var tagsTyped = $("#tags").val();
+		
+		$.ajax({
+			context: this,
+			url  : BASE_URL + "api/posts/update-question.php",
+			type : 'post',
+			data : {q_id: question_id, title: titleTyped, description: descriptionTyped, category: categoryTyped, tags: tagsTyped}
+		}).done(function(data, statusText, xhr){
+			var status = xhr.status;
+		
+			if(status == 200)
+			{
+				$("#question-title").text(titleTyped);
+				$("#question-body").text(descriptionTyped);
+				$("#question-category").text(categoryTyped);
+				$("#question-category").attr("href", BASE_URL + "pages/categories/category.php?id=" + data);
+				
+				$(".tag").remove();
+				
+				var newTags = tagsTyped.split(';');
+				
+				for(var i = 0; i < newTags.length; i++)
+				{
+					$(".editQuestion").before('<p class="tag">' + newTags[i] + '</p>');
+				}
+			}
+		}).fail(function(data, statusText, xhr){
+			
+		});
+		
+		$('#editQuestionModal').modal('toggle');
 	})
 });

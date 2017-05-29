@@ -17,6 +17,19 @@ $(document).ready(function(){
 			
 			$(".list-group a").remove();
 			
+			$(".alert").remove();
+			
+			if(data.length == 0)
+			{
+				var str = '<div class="alert alert-info">' +
+				 '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
+				'No results found!' + 
+				'</div>';
+				
+				$("#topic-title").before(str);
+				return;
+			}
+			
 			switch(sort)
 			{
 				case "Most votes":

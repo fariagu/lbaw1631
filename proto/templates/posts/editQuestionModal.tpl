@@ -32,9 +32,7 @@
 			</div>
 			<div class="form-group">
 				<label for="tags">Tags:</label>
-				<textarea name="tags" class="form-control" rows="5" id="tags" placeholder="Separate each tag by a semicolon (;)">
-					{foreach $tags as $tag}{/foreach}<!-- TODO: this. não faço ideia se $tags existe só pus aí para mostrar a ideia do que estava a pensar, que é fazer $tag;$tag etc-->
-				</textarea>
+				<textarea name="tags" class="form-control" rows="5" id="tags" placeholder="Separate each tag by a semicolon (;)">{$tagsText}</textarea>
 			</div>
 			<input type="hidden" value="{$id}">
 		</form>

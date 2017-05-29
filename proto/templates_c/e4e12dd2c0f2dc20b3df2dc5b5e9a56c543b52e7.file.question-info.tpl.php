@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 19:20:50
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 23:19:56
          compiled from "C:\xampp\htdocs\lbaw1631\proto\templates\posts\question-info.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:85119251458f0ce9e7be188-69637342%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e4e12dd2c0f2dc20b3df2dc5b5e9a56c543b52e7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\lbaw1631\\proto\\templates\\posts\\question-info.tpl',
-      1 => 1496078384,
+      1 => 1496092793,
       2 => 'file',
     ),
   ),
@@ -31,7 +31,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58f0ce9e863648_15911073')) {function content_58f0ce9e863648_15911073($_smarty_tpl) {?><div id="for-margin-purposes">
     <div id="question-space" class="container-fluid">
-        <h1><?php echo $_smarty_tpl->tpl_vars['question']->value['title'];?>
+        <h1 id="question-title"><?php echo $_smarty_tpl->tpl_vars['question']->value['title'];?>
 </h1>
         <div>
             <p class="rating"><?php echo $_smarty_tpl->tpl_vars['question']->value['rating'];?>
@@ -41,7 +41,7 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['question']->value['
 " class="list-group-item"><?php echo $_smarty_tpl->tpl_vars['question']->value['author_name'];?>
 </a>
 			<?php if ($_smarty_tpl->tpl_vars['question']->value['id_category']) {?>
-				<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+				<a id="question-category" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/categories/category.php?id=<?php echo $_smarty_tpl->tpl_vars['question']->value['id_category'];?>
 " class="list-group-item"><?php echo $_smarty_tpl->tpl_vars['question']->value['category_name'];?>
 </a>
@@ -66,8 +66,8 @@ pages/categories/category.php?id=<?php echo $_smarty_tpl->tpl_vars['question']->
 foreach ($_from as $_smarty_tpl->tpl_vars['tag']->key => $_smarty_tpl->tpl_vars['tag']->value) {
 $_smarty_tpl->tpl_vars['tag']->_loop = true;
 ?>
-				<p><?php echo $_smarty_tpl->tpl_vars['tag']->value['name'];?>
- <button class="btn btn-default glyphicon glyphicon-remove removeTag"></button> </p>
+				<p class="tag"><?php echo $_smarty_tpl->tpl_vars['tag']->value['name'];?>
+</p>
 			<?php } ?>
 			<?php if ($_smarty_tpl->tpl_vars['USER_ID']->value==$_smarty_tpl->tpl_vars['question']->value['id_author']) {?>
 				<button class="btn btn-default editQuestion" data-toggle="modal" data-target="#editQuestionModal">Edit Question</button>

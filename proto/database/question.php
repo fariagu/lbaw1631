@@ -99,12 +99,12 @@
 		return $question_id;
 	}
 
-	function updateQuestion($title, $description, $category, $tags, $post_id, $id_author) {
+	function updateQuestion($post_id, $title, $description, $category, $tags) {
 		global $conn;
 		$post_stmt = $conn->prepare("UPDATE post
 										SET description = ?
-										WHERE id_author = ?");
-		$post_stmt->execute(array($description, $id_author));
+										WHERE id = ?");
+		$post_stmt->execute(array($description, $post_id));
 
 		$category_stmt = $conn->prepare("SELECT id
 													 FROM category
@@ -112,26 +112,24 @@
 		$category_stmt->execute(array($category));
 		$category_id = $category_stmt->fetch()['id'];
 
-		$question_id = $post_id->fetch()['id_post'];
-
-		$question_stmt = $conn->prepare("UPDATE question 
-											SET id = ?, title = ?, id_category = ?");
-		$question_stmt->execute(array($question_id, $title, $category_id));
+		$question_stmt = $conn->prepare("UPDATE question SET
+											title = ?, id_category = ? WHERE id = ?");
+		$question_stmt->execute(array($title, $category_id, $post_id));
 
 		$pre_tag_stmt = $conn->prepare("DELETE FROM question_tag
 												WHERE id_question = ?");
-        $pre_tag_stmt->execute(array($question_id));
+        $pre_tag_stmt->execute(array($post_id));
 
 		$tagArray = explode(";", $tags);
 
 		for ($i=0; $i < sizeof($tagArray); $i++){
 			if (strlen($tagArray[$i]) > 0){
                 $tag_stmt = $conn->prepare("INSERT INTO question_tag (id_question, id_tag) VALUES (?, ?)");
-                $tag_stmt->execute(array($question_id, createTag($tagArray[$i])));
+                $tag_stmt->execute(array($post_id, createTag($tagArray[$i])));
 			}
 		}
-
-		return $question_id;
+		
+		return $category_id;
 	}
 
 	function getCorrectAnswer($id, $profile_id)
@@ -408,9 +406,13 @@
 
 	function getQuestionTags($q_id){
         global $conn;
-        $stmt = $conn->prepare("SELECT ");
+        $stmt = $conn->prepare("SELECT name
+								FROM tag
+								INNER JOIN question_tag ON tag.id = question_tag.id_tag
+								INNER JOIN question ON question_tag.id_question = question.id
+								WHERE question.id = ?;");
         $stmt->execute(array($q_id));
 
-        $question = $stmt->fetch();
+        return $stmt->fetchAll();
 	}
 ?>

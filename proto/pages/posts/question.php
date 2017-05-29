@@ -15,6 +15,14 @@
   $correct = getCorrectAnswer($id, $_SESSION['id']);
   $answers = getAnswers($id, $_SESSION['id']);
   $categories = getAllCategories();
+  $tags = getQuestionTags($id);
+  
+  $tagsText = '';
+  
+  foreach($tags as $tag)
+  {
+	  $tagsText = $tagsText . $tagArray = explode(" ", $tag['name'])[0] . ';';
+  }
   
   $top_categories = getTopCategories();
   
@@ -26,6 +34,7 @@
   $smarty->assign('answers', $answers);
   $smarty->assign('page_title', $question['title']);
   $smarty->assign('owner', $question['id_author'] == $_SESSION['id']);
+  $smarty->assign('tagsText', $tagsText);
  
   $smarty->display('posts/question.tpl');
 

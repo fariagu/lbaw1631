@@ -9,7 +9,7 @@
   }
 
   if (!$_POST['title'] || !$_POST['question'] || !$_POST['sel1']) {
-    $_SESSION['error_messages'][] = 'All fields are mandatory';
+    $_SESSION['error_messages'] = 'All fields are mandatory';
     $_SESSION['form_values'] = $_POST;
     header("Location: $BASE_URL" . 'pages/posts/new-question.php');
     exit;
@@ -29,7 +29,7 @@
     header("Location: $BASE_URL" . 'pages/posts/new-question.php');
     exit;
   }
-  $_SESSION['success_messages'][] = 'Question created successfuly';  
+  $_SESSION['success_messages'] = 'Question created successfuly';  
   header("Location: $BASE_URL" . 'pages/posts/question.php?id=' . $question_id);
 
 ?>

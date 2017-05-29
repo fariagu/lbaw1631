@@ -1,11 +1,11 @@
 <div id="for-margin-purposes">
     <div id="question-space" class="container-fluid">
-        <h1>{$question.title}</h1>
+        <h1 id="question-title">{$question.title}</h1>
         <div>
             <p class="rating">{$question.rating} votes</p>
             <a href="{$BASE_URL}pages/user/profile.php?id={$question.id_author}" class="list-group-item">{$question.author_name}</a>
 			{if $question.id_category}
-				<a href="{$BASE_URL}pages/categories/category.php?id={$question.id_category}" class="list-group-item">{$question.category_name}</a>
+				<a id="question-category" href="{$BASE_URL}pages/categories/category.php?id={$question.id_category}" class="list-group-item">{$question.category_name}</a>
 			{/if}
 			{if $USER_ID}
 				{if $USER_ID != $question.id_author}
@@ -23,7 +23,7 @@
 				{/if}
 			{/if}
 			{foreach $question.tags as $tag}
-				<p>{$tag.name} <button class="btn btn-default glyphicon glyphicon-remove removeTag"></button> </p>
+				<p class="tag">{$tag.name}</p>
 			{/foreach}
 			{if $USER_ID == $question.id_author}
 				<button class="btn btn-default editQuestion" data-toggle="modal" data-target="#editQuestionModal">Edit Question</button>
