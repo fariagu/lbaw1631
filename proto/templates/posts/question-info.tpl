@@ -4,7 +4,9 @@
         <div>
             <p class="rating">{$question.rating} votes</p>
             <a href="{$BASE_URL}pages/user/profile.php?id={$question.id_author}" class="list-group-item">{$question.author_name}</a>
-			<a href="{$BASE_URL}pages/categories/category.php?id={$question.id_category}" class="list-group-item">{$question.category_name}</a>
+			{if $question.id_category}
+				<a href="{$BASE_URL}pages/categories/category.php?id={$question.id_category}" class="list-group-item">{$question.category_name}</a>
+			{/if}
 			{if $USER_ID}
 				{if $USER_ID != $question.id_author}
 					<button type="button" class="btn btn-default report question" data-toggle="modal" data-target="#reportModal">Report</button>

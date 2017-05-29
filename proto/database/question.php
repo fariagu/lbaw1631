@@ -35,12 +35,25 @@
 								WHERE question.id = ?;");
 		$stmt->execute(array($id));
 		
+		$question = $stmt->fetch();
+		
+		if(!$question)
+		{
+			$stmt2 = $conn->prepare("SELECT title, rating, post.description as description, id_author, member.username as author_name
+								FROM question
+								INNER JOIN post ON question.id = post.id
+								INNER JOIN member ON post.id_author = member.id
+								WHERE question.id = ?;");
+			$stmt2->execute(array($id));
+			
+			$question = $stmt2->fetch();
+		}
+		
 		$voteStmt = $conn->prepare("SELECT value
 									FROM vote
 									WHERE id_member = ? AND id_post = ?;");
 		$voteStmt->execute(array($profile_id, $id));
 		
-		$question = $stmt->fetch();
 		$question['value'] = $voteStmt->fetch()['value'];
 		
 		return $question;
