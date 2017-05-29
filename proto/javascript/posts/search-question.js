@@ -4,7 +4,8 @@ $(document).ready(function(){
 
 		var textTyped = $("#search").val();
 		var category = $("#sel1 option:selected").next().text();
-
+		
+		var sort = $("#sel2").val();
 
         if(document.getElementById('answeredOnly').checked) {
             var answeredOnly = true;
@@ -16,6 +17,22 @@ $(document).ready(function(){
 			
 			$(".list-group a").remove();
 			
+			switch(sort)
+			{
+				case "Most votes":
+					data.sort(function(a, b) {
+						return parseInt(a.rating) - parseInt(b.rating);
+					});
+					data.reverse();
+					break;
+				case "Most answers":
+					data.sort(function(a, b) {
+						return parseInt(a.noAnswers) - parseInt(b.noAnswers);
+					});
+					data.reverse();
+					break;
+			}
+			                                                                                                                                                                                                    
 			$.each(data, function(i, question) {
 				var valid = false;
 
@@ -43,7 +60,8 @@ $(document).ready(function(){
                     var str = '<a href="' + BASE_URL + 'pages/posts/question.php?id=' + question.q_id + '" class="list-group-item">' +
                         '<p>' + question.title + '</p>' +
                         '<div>' +
-                        '<p>' + question.score + ' votes</p>' +
+                        '<p>' + question.rating + ' votes</p>' +
+						'<p>' + question.noAnswers + ' answers</p>' +
                         '</div>' +
                         '</a>';
                     $(".list-group").append(str);
